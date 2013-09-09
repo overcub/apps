@@ -30,7 +30,7 @@ class Stream extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('updateTime', 'required'),
+			//array('updateTime', 'required'),
 			array('name', 'length', 'max'=>255),
 			array('createTime', 'safe'),
 			// The following rule is used by search().

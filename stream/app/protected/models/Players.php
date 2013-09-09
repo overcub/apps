@@ -33,7 +33,7 @@ class Players extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('updateTime', 'required'),
+			//array('updateTime', 'required'),
 			array('id_user', 'length', 'max'=>20),
 			array('username', 'length', 'max'=>255),
 			array('gender', 'length', 'max'=>1),

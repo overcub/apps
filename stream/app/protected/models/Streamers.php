@@ -34,7 +34,7 @@ class Streamers extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('updateTime', 'required'),
+			//array('updateTime', 'required'),
 			array('id_stream, id_players', 'length', 'max'=>20),
 			array('mainStream', 'length', 'max'=>1),
 			array('nickname', 'length', 'max'=>200),
@@ -115,4 +115,14 @@ class Streamers extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+
+
+	public function findByNickname($nickname){
+		$dependency = new CDbCacheDependency("SELECT MAX(updateTime) FROM ".$this->tableName()." WHERE nickname = '". $nickname ."'" );
+		if( ( $return = $this->cache(1000, $dependency)->find("nickname = '$nickname'") ) ){
+			return $return;
+		}else{
+			return false;
+		}
+	}	
 }

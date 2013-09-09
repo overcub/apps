@@ -296,3 +296,36 @@ Stack trace:
 REQUEST_URI=/gii/model/index
 HTTP_REFERER=http://local.stream.geeklifeclub.com.br/gii/module/index
 ---
+2013/09/09 23:46:16 [warning] [application] Failed to set unsafe attribute "updateTime" of "Stream".
+in /var/www/apps.geeklifeclub/stream/app/protected/controllers/StreamController.php (71)
+in /var/www/apps.geeklifeclub/stream/app/index.php (13)
+2013/09/09 23:47:28 [warning] [application] Failed to set unsafe attribute "updateTime" of "Players".
+in /var/www/apps.geeklifeclub/stream/app/protected/controllers/PlayersController.php (71)
+in /var/www/apps.geeklifeclub/stream/app/index.php (13)
+2013/09/09 23:48:23 [warning] [application] Failed to set unsafe attribute "updateTime" of "Streamers".
+in /var/www/apps.geeklifeclub/stream/app/protected/controllers/StreamersController.php (71)
+in /var/www/apps.geeklifeclub/stream/app/index.php (13)
+2013/09/09 23:55:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "streamer/rtancman".' in /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/web/CWebApplication.php(141): CWebApplication->runController('streamer/rtancm...')
+#1 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/apps.geeklifeclub/stream/app/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/streamer/rtancman
+---
+2013/09/09 23:56:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "streamer/rtancman".' in /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/web/CWebApplication.php(141): CWebApplication->runController('streamer/rtancm...')
+#1 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/apps.geeklifeclub/stream/app/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/streamer/rtancman
+---
+2013/09/09 23:56:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "streamer/rtancman".' in /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/web/CWebApplication.php(141): CWebApplication->runController('streamer/rtancm...')
+#1 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/apps.geeklifeclub/stream/app/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/streamer/rtancman
+---
