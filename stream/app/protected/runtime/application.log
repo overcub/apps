@@ -1,0 +1,166 @@
+2013/09/09 22:36:44 [error] [exception.CException] exception 'CException' with message 'Alias "ext.bootstrap.components.Bootstrap" is invalid. Make sure it points to an existing PHP file and the file is readable.' in /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/YiiBase.php:322
+Stack trace:
+#0 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/YiiBase.php(196): YiiBase::import('ext.bootstrap.c...', true)
+#1 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/base/CModule.php(386): YiiBase::createComponent(Array)
+#2 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/base/CModule.php(523): CModule->getComponent('bootstrap')
+#3 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/base/CApplication.php(163): CModule->preloadComponents()
+#4 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/YiiBase.php(125): CApplication->__construct('/var/www/apps.g...')
+#5 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/YiiBase.php(98): YiiBase::createApplication('CWebApplication', '/var/www/apps.g...')
+#6 /var/www/apps.geeklifeclub/stream/app/index.php(13): YiiBase::createWebApplication('/var/www/apps.g...')
+#7 {main}
+REQUEST_URI=/
+---
+2013/09/09 22:37:58 [error] [exception.CException] exception 'CException' with message 'Property "Bootstrap.responsiveCss" is not defined.' in /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/base/CComponent.php:173
+Stack trace:
+#0 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/YiiBase.php(220): CComponent->__set('responsiveCss', true)
+#1 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/base/CModule.php(386): YiiBase::createComponent(Array)
+#2 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/base/CModule.php(523): CModule->getComponent('bootstrap')
+#3 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/base/CApplication.php(163): CModule->preloadComponents()
+#4 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/YiiBase.php(125): CApplication->__construct('/var/www/apps.g...')
+#5 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/YiiBase.php(98): YiiBase::createApplication('CWebApplication', '/var/www/apps.g...')
+#6 /var/www/apps.geeklifeclub/stream/app/index.php(13): YiiBase::createWebApplication('/var/www/apps.g...')
+#7 {main}
+REQUEST_URI=/
+---
+2013/09/09 22:38:11 [error] [exception.CException] exception 'CException' with message 'Property "Bootstrap.responsiveCss" is not defined.' in /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/base/CComponent.php:173
+Stack trace:
+#0 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/YiiBase.php(220): CComponent->__set('responsiveCss', true)
+#1 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/base/CModule.php(386): YiiBase::createComponent(Array)
+#2 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/base/CModule.php(523): CModule->getComponent('bootstrap')
+#3 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/base/CApplication.php(163): CModule->preloadComponents()
+#4 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/YiiBase.php(125): CApplication->__construct('/var/www/apps.g...')
+#5 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/YiiBase.php(98): YiiBase::createApplication('CWebApplication', '/var/www/apps.g...')
+#6 /var/www/apps.geeklifeclub/stream/app/index.php(13): YiiBase::createWebApplication('/var/www/apps.g...')
+#7 {main}
+REQUEST_URI=/
+---
+2013/09/09 22:38:11 [error] [exception.CException] exception 'CException' with message 'Property "Bootstrap.responsiveCss" is not defined.' in /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/base/CComponent.php:173
+Stack trace:
+#0 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/YiiBase.php(220): CComponent->__set('responsiveCss', true)
+#1 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/base/CModule.php(386): YiiBase::createComponent(Array)
+#2 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/base/CModule.php(523): CModule->getComponent('bootstrap')
+#3 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/base/CApplication.php(163): CModule->preloadComponents()
+#4 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/YiiBase.php(125): CApplication->__construct('/var/www/apps.g...')
+#5 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/YiiBase.php(98): YiiBase::createApplication('CWebApplication', '/var/www/apps.g...')
+#6 /var/www/apps.geeklifeclub/stream/app/index.php(13): YiiBase::createWebApplication('/var/www/apps.g...')
+#7 {main}
+REQUEST_URI=/
+---
+2013/09/09 22:38:12 [error] [exception.CException] exception 'CException' with message 'Property "Bootstrap.responsiveCss" is not defined.' in /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/base/CComponent.php:173
+Stack trace:
+#0 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/YiiBase.php(220): CComponent->__set('responsiveCss', true)
+#1 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/base/CModule.php(386): YiiBase::createComponent(Array)
+#2 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/base/CModule.php(523): CModule->getComponent('bootstrap')
+#3 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/base/CApplication.php(163): CModule->preloadComponents()
+#4 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/YiiBase.php(125): CApplication->__construct('/var/www/apps.g...')
+#5 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/YiiBase.php(98): YiiBase::createApplication('CWebApplication', '/var/www/apps.g...')
+#6 /var/www/apps.geeklifeclub/stream/app/index.php(13): YiiBase::createWebApplication('/var/www/apps.g...')
+#7 {main}
+REQUEST_URI=/
+---
+2013/09/09 22:38:12 [error] [exception.CException] exception 'CException' with message 'Property "Bootstrap.responsiveCss" is not defined.' in /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/base/CComponent.php:173
+Stack trace:
+#0 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/YiiBase.php(220): CComponent->__set('responsiveCss', true)
+#1 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/base/CModule.php(386): YiiBase::createComponent(Array)
+#2 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/base/CModule.php(523): CModule->getComponent('bootstrap')
+#3 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/base/CApplication.php(163): CModule->preloadComponents()
+#4 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/YiiBase.php(125): CApplication->__construct('/var/www/apps.g...')
+#5 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/YiiBase.php(98): YiiBase::createApplication('CWebApplication', '/var/www/apps.g...')
+#6 /var/www/apps.geeklifeclub/stream/app/index.php(13): YiiBase::createWebApplication('/var/www/apps.g...')
+#7 {main}
+REQUEST_URI=/
+---
+2013/09/09 22:38:12 [error] [exception.CException] exception 'CException' with message 'Property "Bootstrap.responsiveCss" is not defined.' in /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/base/CComponent.php:173
+Stack trace:
+#0 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/YiiBase.php(220): CComponent->__set('responsiveCss', true)
+#1 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/base/CModule.php(386): YiiBase::createComponent(Array)
+#2 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/base/CModule.php(523): CModule->getComponent('bootstrap')
+#3 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/base/CApplication.php(163): CModule->preloadComponents()
+#4 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/YiiBase.php(125): CApplication->__construct('/var/www/apps.g...')
+#5 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/YiiBase.php(98): YiiBase::createApplication('CWebApplication', '/var/www/apps.g...')
+#6 /var/www/apps.geeklifeclub/stream/app/index.php(13): YiiBase::createWebApplication('/var/www/apps.g...')
+#7 {main}
+REQUEST_URI=/
+---
+2013/09/09 22:38:12 [error] [exception.CException] exception 'CException' with message 'Property "Bootstrap.responsiveCss" is not defined.' in /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/base/CComponent.php:173
+Stack trace:
+#0 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/YiiBase.php(220): CComponent->__set('responsiveCss', true)
+#1 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/base/CModule.php(386): YiiBase::createComponent(Array)
+#2 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/base/CModule.php(523): CModule->getComponent('bootstrap')
+#3 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/base/CApplication.php(163): CModule->preloadComponents()
+#4 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/YiiBase.php(125): CApplication->__construct('/var/www/apps.g...')
+#5 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/YiiBase.php(98): YiiBase::createApplication('CWebApplication', '/var/www/apps.g...')
+#6 /var/www/apps.geeklifeclub/stream/app/index.php(13): YiiBase::createWebApplication('/var/www/apps.g...')
+#7 {main}
+REQUEST_URI=/
+---
+2013/09/09 22:38:12 [error] [exception.CException] exception 'CException' with message 'Property "Bootstrap.responsiveCss" is not defined.' in /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/base/CComponent.php:173
+Stack trace:
+#0 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/YiiBase.php(220): CComponent->__set('responsiveCss', true)
+#1 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/base/CModule.php(386): YiiBase::createComponent(Array)
+#2 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/base/CModule.php(523): CModule->getComponent('bootstrap')
+#3 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/base/CApplication.php(163): CModule->preloadComponents()
+#4 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/YiiBase.php(125): CApplication->__construct('/var/www/apps.g...')
+#5 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/YiiBase.php(98): YiiBase::createApplication('CWebApplication', '/var/www/apps.g...')
+#6 /var/www/apps.geeklifeclub/stream/app/index.php(13): YiiBase::createWebApplication('/var/www/apps.g...')
+#7 {main}
+REQUEST_URI=/
+---
+2013/09/09 22:38:13 [error] [exception.CException] exception 'CException' with message 'Property "Bootstrap.responsiveCss" is not defined.' in /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/base/CComponent.php:173
+Stack trace:
+#0 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/YiiBase.php(220): CComponent->__set('responsiveCss', true)
+#1 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/base/CModule.php(386): YiiBase::createComponent(Array)
+#2 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/base/CModule.php(523): CModule->getComponent('bootstrap')
+#3 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/base/CApplication.php(163): CModule->preloadComponents()
+#4 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/YiiBase.php(125): CApplication->__construct('/var/www/apps.g...')
+#5 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/YiiBase.php(98): YiiBase::createApplication('CWebApplication', '/var/www/apps.g...')
+#6 /var/www/apps.geeklifeclub/stream/app/index.php(13): YiiBase::createWebApplication('/var/www/apps.g...')
+#7 {main}
+REQUEST_URI=/
+---
+2013/09/09 22:41:29 [error] [exception.CException] exception 'CException' with message 'Alias "ext.yii-bootstrap.components.Bootstrap" is invalid. Make sure it points to an existing PHP file and the file is readable.' in /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/YiiBase.php:322
+Stack trace:
+#0 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/YiiBase.php(196): YiiBase::import('ext.yii-bootstr...', true)
+#1 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/base/CModule.php(386): YiiBase::createComponent(Array)
+#2 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/base/CModule.php(523): CModule->getComponent('bootstrap')
+#3 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/base/CApplication.php(163): CModule->preloadComponents()
+#4 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/YiiBase.php(125): CApplication->__construct('/var/www/apps.g...')
+#5 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/YiiBase.php(98): YiiBase::createApplication('CWebApplication', '/var/www/apps.g...')
+#6 /var/www/apps.geeklifeclub/stream/app/index.php(13): YiiBase::createWebApplication('/var/www/apps.g...')
+#7 {main}
+REQUEST_URI=/
+---
+2013/09/09 22:42:38 [error] [exception.CException] exception 'CException' with message 'Alias "bootstrap.components.Bootstrap" is invalid. Make sure it points to an existing directory or file.' in /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/YiiBase.php:347
+Stack trace:
+#0 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/YiiBase.php(196): YiiBase::import('bootstrap.compo...', true)
+#1 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/base/CModule.php(386): YiiBase::createComponent(Array)
+#2 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/base/CModule.php(523): CModule->getComponent('bootstrap')
+#3 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/base/CApplication.php(163): CModule->preloadComponents()
+#4 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/YiiBase.php(125): CApplication->__construct('/var/www/apps.g...')
+#5 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/YiiBase.php(98): YiiBase::createApplication('CWebApplication', '/var/www/apps.g...')
+#6 /var/www/apps.geeklifeclub/stream/app/index.php(13): YiiBase::createWebApplication('/var/www/apps.g...')
+#7 {main}
+REQUEST_URI=/
+---
+2013/09/09 22:50:56 [error] [exception.CException] exception 'CException' with message 'The asset "/var/www/apps.geeklifeclub/stream/app/protected/assets" to be published does not exist.' in /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/web/CAssetManager.php:257
+Stack trace:
+#0 /var/www/apps.geeklifeclub/stream/app/protected/components/Controller.php(41): CAssetManager->publish('/var/www/apps.g...', false, -1, true)
+#1 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/base/CComponent.php(111): Controller->getAssetsBase()
+#2 /var/www/apps.geeklifeclub/stream/app/protected/components/Controller.php(27): CComponent->__get('assetsBase')
+#3 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/web/CWebApplication.php(281): Controller->init()
+#4 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#5 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#6 /var/www/apps.geeklifeclub/stream/app/index.php(13): CApplication->run()
+#7 {main}
+REQUEST_URI=/
+---
+2013/09/09 22:52:21 [error] [exception.CException] exception 'CException' with message 'Property "SiteController.layoutRoot" is not defined.' in /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/base/CComponent.php:173
+Stack trace:
+#0 /var/www/apps.geeklifeclub/stream/app/protected/components/Controller.php(30): CComponent->__set('layoutRoot', '//')
+#1 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/web/CWebApplication.php(281): Controller->init()
+#2 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#3 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /var/www/apps.geeklifeclub/stream/app/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/
+---
