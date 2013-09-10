@@ -61,7 +61,8 @@ class StreamersController extends Controller
 	 */
 	public function actionStreaming($nickname)
 	{
-		$this->render('view',array(
+		$this->layout='//layouts/default';
+		$this->render('streaming',array(
 			'model'=>Streamers::model()->findByNickname($nickname),
 		));
 	}

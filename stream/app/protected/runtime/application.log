@@ -329,3 +329,72 @@ Stack trace:
 #3 {main}
 REQUEST_URI=/streamer/rtancman
 ---
+2013/09/10 01:25:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "streamer/rtancman".' in /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/web/CWebApplication.php(141): CWebApplication->runController('streamer/rtancm...')
+#1 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/apps.geeklifeclub/stream/app/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/streamer/rtancman
+---
+2013/09/10 01:37:30 [error] [php] Trying to get property of non-object (/var/www/apps.geeklifeclub/stream/app/protected/views/streamers/streaming.php:5)
+Stack trace:
+#0 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/web/CController.php(869): StreamersController->renderFile()
+#1 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/web/CController.php(782): StreamersController->renderPartial()
+#2 /var/www/apps.geeklifeclub/stream/app/protected/controllers/StreamersController.php(67): StreamersController->render()
+#3 unknown(0): StreamersController->actionStreaming()
+#4 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#5 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/web/CController.php(308): CInlineAction->runWithParams()
+#7 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/web/filters/CFilterChain.php(133): StreamersController->runAction()
+#8 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#9 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#10 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/web/filters/CInlineFilter.php(58): StreamersController->filterAccessControl()
+#11 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#12 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/web/CController.php(291): CFilterChain->run()
+#13 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/web/CController.php(265): StreamersController->runActionWithFilters()
+#14 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/web/CWebApplication.php(282): StreamersController->run()
+#15 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#16 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#17 /var/www/apps.geeklifeclub/stream/app/index.php(13): CWebApplication->run()
+REQUEST_URI=/streamers/create
+in /var/www/apps.geeklifeclub/stream/app/protected/views/streamers/streaming.php (5)
+in /var/www/apps.geeklifeclub/stream/app/protected/controllers/StreamersController.php (67)
+in /var/www/apps.geeklifeclub/stream/app/index.php (13)
+2013/09/10 01:37:34 [error] [php] Trying to get property of non-object (/var/www/apps.geeklifeclub/stream/app/protected/views/streamers/streaming.php:5)
+Stack trace:
+#0 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/web/CController.php(869): StreamersController->renderFile()
+#1 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/web/CController.php(782): StreamersController->renderPartial()
+#2 /var/www/apps.geeklifeclub/stream/app/protected/controllers/StreamersController.php(67): StreamersController->render()
+#3 unknown(0): StreamersController->actionStreaming()
+#4 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#5 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/web/CController.php(308): CInlineAction->runWithParams()
+#7 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/web/filters/CFilterChain.php(133): StreamersController->runAction()
+#8 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#9 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#10 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/web/filters/CInlineFilter.php(58): StreamersController->filterAccessControl()
+#11 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#12 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/web/CController.php(291): CFilterChain->run()
+#13 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/web/CController.php(265): StreamersController->runActionWithFilters()
+#14 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/web/CWebApplication.php(282): StreamersController->run()
+#15 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#16 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#17 /var/www/apps.geeklifeclub/stream/app/index.php(13): CWebApplication->run()
+REQUEST_URI=/streamers/admin
+in /var/www/apps.geeklifeclub/stream/app/protected/views/streamers/streaming.php (5)
+in /var/www/apps.geeklifeclub/stream/app/protected/controllers/StreamersController.php (67)
+in /var/www/apps.geeklifeclub/stream/app/index.php (13)
+2013/09/10 01:40:04 [warning] [application] Failed to set unsafe attribute "updateTime" of "Streamers".
+in /var/www/apps.geeklifeclub/stream/app/protected/controllers/StreamersController.php (107)
+in /var/www/apps.geeklifeclub/stream/app/index.php (13)
+2013/09/10 01:40:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "rtancman_lol".' in /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/web/CController.php(270): CController->missingAction('rtancman_lol')
+#1 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/web/CWebApplication.php(282): CController->run('rtancman_lol')
+#2 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/web/CWebApplication.php(141): CWebApplication->runController('streamers/rtanc...')
+#3 /var/www/apps.geeklifeclub/stream/yii-1.1.14/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /var/www/apps.geeklifeclub/stream/app/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/streamers/rtancman_lol
+---
