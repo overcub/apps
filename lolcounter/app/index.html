@@ -1,27 +1,142 @@
-<div class="container" id="page">
-	<div class="row-fluid">
-		<div class="span12">
-			<?php $this->widget('bootstrap.widgets.TbBreadcrumbs', array(
-				'links'=>array( 
-					'Streamer' => '/streamer',
-					$model->nickname
-				)
-			)); ?>
-			<h1>Streamer - <?php echo $model->nickname; ?></h1>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Template &middot; Bootstrap</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 20px;
+        padding-bottom: 40px;
+      }
+
+      /* Custom container */
+      .container-narrow {
+        margin: 0 auto;
+        max-width: 700px;
+      }
+      .container-narrow > hr {
+        margin: 30px 0;
+      }
+
+      /* Main marketing message and sign up button */
+      .jumbotron {
+        margin: 60px 0;
+        text-align: center;
+      }
+      .jumbotron h1 {
+        font-size: 72px;
+        line-height: 1;
+      }
+      .jumbotron .btn {
+        font-size: 21px;
+        padding: 14px 24px;
+      }
+
+      /* Supporting marketing content */
+      .marketing {
+        margin: 60px 0;
+      }
+      .marketing p + h4 {
+        margin-top: 28px;
+      }
+    </style>
+  </head>
+<body>
+	<div class="container-narrow">
+	  <div class="masthead">
+	    <ul class="nav nav-pills pull-right">
+	      <li class="active"><a href="/">Home</a></li>
+	      <li><a href="/lista">Lista</a></li>
+	    </ul>
+	    <h3 class="muted">Geek Life Club</h3>
+	  </div>
+	  <hr>
+	</div>
+	<div class="container">
+	  <div class="jumbotron">
+	    <h1>LOL Counter</h1>
+	    <p class="lead">Descubra quem "countera" o seu champion preferido no LOL.</p>
+	    <div class="input-append">
+    		<input class="span5" id="search" type="text"  autocomplete="off" data-provide="typeahead" />
+    		<button class="btn" type="button" id="btn-search">Search</button>
+    	</div>
+	  </div>
+	  <hr>
+	</div>
+	<div id="parte-resultado" class="hide container">
+		<div  class="row-fluid marketing">
+			<div id="exibe-resultado"  class="span6"></div>
+		</div>
+		<hr>
+	</div>
+	<div class="container">
+		<div class="footer">
+	    	<p>&copy; Company 2013</p>
 		</div>
 	</div>
-	<div class="row-fluid">
-		<div class="span8">
-			<object type="application/x-shockwave-flash" height="500" width="100%" id="live_embed_player_flash" data="http://www.twitch.tv/widgets/live_embed_player.swf?channel=<?php echo $model->nickname?>" bgcolor="#000000">
-				<param name="allowFullScreen" value="false" />
-				<param name="allowScriptAccess" value="always" />
-				<param name="allowNetworking" value="all" />
-				<param name="movie" value="http://www.twitch.tv/widgets/live_embed_player.swf" />
-				<param name="flashvars" value="hostname=www.twitch.tv&channel=<?php echo $model->nickname?>&auto_play=true&start_volume=25" />
-			</object>
-		</div>
-		<div class="span4">
-			<iframe frameborder="0" scrolling="no" id="chat_embed" src="http://twitch.tv/chat/embed?channel=<?php echo $model->nickname?>&amp;popout_chat=true" height="500" width="100%"></iframe>
-		</div>
-	</div>
-</div>
+</body>
+<script>
+$(document).ready(function(){
+	var dataList = {
+		"Atrox" : {img:"http://media-leaguepedia.cursecdn.com/c/cc/AatroxSquare.png"},
+		"Ahri" : {img:"http://na.leagueoflegends.com/sites/default/files/game_data/1.0.0.136/content/champion/icons/103.jpg"},
+		"Akali" : {img:"http://na.leagueoflegends.com/sites/default/files/game_data/1.0.0.136/content/champion/icons/84.jpg"}
+	};
+	var counterList = {
+		"Atrox" : [
+		{img:"http://na.leagueoflegends.com/sites/default/files/game_data/1.0.0.136/content/champion/icons/103.jpg",name:"Ahri"},
+		{img:"http://na.leagueoflegends.com/sites/default/files/game_data/1.0.0.136/content/champion/icons/84.jpg",name:"Akali"}
+		],
+		"Ahri": [
+		{img:"http://na.leagueoflegends.com/sites/default/files/game_data/1.0.0.136/content/champion/icons/103.jpg",name:"Ahri"},
+		{img:"http://na.leagueoflegends.com/sites/default/files/game_data/1.0.0.136/content/champion/icons/84.jpg",name:"Akali"}
+		],
+		"Akali" : [
+		{img:"http://na.leagueoflegends.com/sites/default/files/game_data/1.0.0.136/content/champion/icons/103.jpg",name:"Ahri"},
+		{img:"http://na.leagueoflegends.com/sites/default/files/game_data/1.0.0.136/content/champion/icons/84.jpg",name:"Akali"}
+		]
+	};
+	$('#btn-search').on('click', function() {
+		var value = $('#search').val();	
+		if(value == "" ){
+			alert('ops! busque um campeao');
+		}else{
+			var conteudo = "",
+			arrResultado = counterList[value];
+			for(var i=0; i < arrResultado.length;i++){
+				conteudo+='<div class="media">';
+				conteudo+='<img class="media-object" alt="64x64" style="width: 64px; height: 64px;" src="'+arrResultado[i].img+'">';
+				conteudo+='<div class="media-body"><h4 class="media-heading">'+arrResultado[i].name+'</h4>resre asa sa s</div>';
+				conteudo+='</div>';
+        	}
+        	$('#parte-resultado').removeClass('hide');
+			$('#exibe-resultado').html(conteudo);
+
+
+		}
+	});
+	$('#search').typeahead({
+	    highlighter: function(item) {
+	        var parts = dataList[item],
+	        html = '<div class="typeahead item-search" data-name="'+item+'">';
+	        html += '<img src="'+parts.img+'" width="32" height="32" class="img-rounded">';
+	        html += '<p>'+item+'</p>';
+	        html += '</div>';
+	        return html;
+	    },
+	    updater: function(item) {
+	        return item;
+	    },
+		minLength: 0,
+		source: ["Atrox","Ahri","Akali"]
+	});
+});
+</script>
+</html>
