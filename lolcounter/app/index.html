@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <link rel="shortcut icon" href="images/logo/favicon.png">
+    <link rel="shortcut icon" href="images/logo/geeklifeclub16x16.png">
     <title>LOL Counter | Geek Life Club</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
@@ -62,9 +62,7 @@
 	</div>
 	<div id="parte-resultado" class="hide container">
 		<hr>
-		<div  class="row-fluid marketing">
-			<div id="exibe-resultado"  class="span6"></div>
-		</div>
+		<div id="exibe-resultado"></div>
 	</div>
 	<div class="navbar-fixed-bottom">
 	<div class="container">
@@ -89,15 +87,139 @@ $(document).ready(function(){
 			var conteudo = "",
 			championBad = "",
 			arrResultado = counterList[value];
+			conteudo+='<div class="row-fluid">';
+			conteudo+='<div class="span6">';
+			conteudo+='<h4>'+value+' é ruim contra:</h4>';
+			conteudo+='<hr>';
+			conteudo+='</div>';
+			conteudo+='<div class="span6">';
+			conteudo+='<h4>'+value+' é bom contra:</h4>';
+			conteudo+='<hr>';
+			conteudo+='</div>';
+			conteudo+='</div>';
 			for(var i=0; i < arrResultado.length;i++){
 				championBad = dataListByCode[arrResultado[i].id_champions_badagainst];
-				conteudo+='<div class="media">';
-				conteudo+='<img class="media-object" alt="64x64" style="width: 64px; height: 64px;" src="images/icons/'+dataList[championBad].code+'.jpg"/>';
-				conteudo+='<div class="media-body">';
-				conteudo+='<h4 class="media-heading">'+championBad+'</h4>';
-				conteudo+='<div class="progress"><div class="bar bar-danger" style="width: '+arrResultado[i].points+'%;"></div></div>';
+				conteudo+='<div class="row-fluid">';
+					conteudo+='<div class="span6">';
+						conteudo+='<div class="span6">';
+							conteudo+='<img class="media-object pull-left" alt="64x64" style="width: 64px; height: 64px;" src="images/icons/'+dataList[championBad].code+'.jpg"/>';
+							conteudo+='<img class="pull-left" alt="33x33" style="width: 33px; height: 33px;" src="images/spells/'+dataList[championBad].code+'-1.png"/>';
+							conteudo+='<img class="pull-left" alt="33x33" style="width: 33px; height: 33px;" src="images/spells/'+dataList[championBad].code+'-2.png"/>';
+							conteudo+='<img class="pull-left" alt="33x33" style="width: 33px; height: 33px;" src="images/spells/'+dataList[championBad].code+'-3.png"/>';
+							conteudo+='<img class="pull-left" alt="33x33" style="width: 33px; height: 33px;" src="images/spells/'+dataList[championBad].code+'-4.png"/>';
+							conteudo+='<img class="pull-left" alt="33x33" style="width: 33px; height: 33px;" src="images/spells/'+dataList[championBad].code+'-5.png"/>';
+							conteudo+='<div class="clearfix"></div>';
+							conteudo+='<h4 class="media-heading">'+championBad+'</h4>';
+							conteudo+='<p>'+dataList[championBad].excerpt+'</p>';
+							conteudo+='<ul>';
+							conteudo+='<li>Health Points: 	384 (+76 / per level)</li>';
+							conteudo+='Health Regen: 	4.5 (+0.55 / per level)</li>';
+							conteudo+='<li>Mana Points: 	250 (+50 / per level)</li>';
+							conteudo+='Mana Regen: 	6.9 (+0.6 / per level)</li>';
+							conteudo+='<li>Damage: 	48(+2.625 / per level)</li>';
+							conteudo+='Attack Speed: 	0.579 (+1.36 / per level)</li>';
+							conteudo+='<li>Attack Range: 	625</li>';
+							conteudo+='Movement Speed: 	310</li>';
+							conteudo+='<li>Armor: 	8.5 (+4/ per level)</li>';
+							conteudo+='Magic Resistance: 	30 (+0/ per level)</li>';
+							conteudo+='</ul>';
+						conteudo+='</div>';
+						conteudo+='<div class="span6">';
+							conteudo+='<div class="progress"><div class="bar bar-danger" style="width: '+arrResultado[i].points+'%;"></div></div>';
+							conteudo+='<span class="label label-important">'+arrResultado[i].points+'%</span>';
+						conteudo+='</div>';
+					conteudo+='</div>';
+					conteudo+='<div class="span6">';
+						conteudo+='<div class="span6">';
+							conteudo+='<img class="media-object pull-left" alt="64x64" style="width: 64px; height: 64px;" src="images/icons/'+dataList[championBad].code+'.jpg"/>';
+							conteudo+='<img class="pull-left" alt="33x33" style="width: 33px; height: 33px;" src="images/spells/'+dataList[championBad].code+'-1.png"/>';
+							conteudo+='<img class="pull-left" alt="33x33" style="width: 33px; height: 33px;" src="images/spells/'+dataList[championBad].code+'-2.png"/>';
+							conteudo+='<img class="pull-left" alt="33x33" style="width: 33px; height: 33px;" src="images/spells/'+dataList[championBad].code+'-3.png"/>';
+							conteudo+='<img class="pull-left" alt="33x33" style="width: 33px; height: 33px;" src="images/spells/'+dataList[championBad].code+'-4.png"/>';
+							conteudo+='<img class="pull-left" alt="33x33" style="width: 33px; height: 33px;" src="images/spells/'+dataList[championBad].code+'-5.png"/>';
+							conteudo+='<div class="clearfix"></div>';
+							conteudo+='<h4 class="media-heading">'+championBad+'</h4>';
+							conteudo+='<p>'+dataList[championBad].excerpt+'</p>';
+							conteudo+='<ul>';
+							conteudo+='<li>Health Points: 	384 (+76 / per level)</li>';
+							conteudo+='Health Regen: 	4.5 (+0.55 / per level)</li>';
+							conteudo+='<li>Mana Points: 	250 (+50 / per level)</li>';
+							conteudo+='Mana Regen: 	6.9 (+0.6 / per level)</li>';
+							conteudo+='<li>Damage: 	48(+2.625 / per level)</li>';
+							conteudo+='Attack Speed: 	0.579 (+1.36 / per level)</li>';
+							conteudo+='<li>Attack Range: 	625</li>';
+							conteudo+='Movement Speed: 	310</li>';
+							conteudo+='<li>Armor: 	8.5 (+4/ per level)</li>';
+							conteudo+='Magic Resistance: 	30 (+0/ per level)</li>';
+							conteudo+='</ul>';
+						conteudo+='</div>';
+						conteudo+='<div class="span6">';
+							conteudo+='<div class="progress"><div class="bar bar-danger" style="width: '+arrResultado[i].points+'%;"></div></div>';
+							conteudo+='<span class="label label-important">'+arrResultado[i].points+'%</span>';
+						conteudo+='</div>';
+					conteudo+='</div>';
 				conteudo+='</div>';
-				conteudo+='</div>';
+				conteudo+='<hr>';
+				conteudo+='<div class="row-fluid">';
+					conteudo+='<div class="span6">';
+						conteudo+='<div class="span6">';
+							conteudo+='<img class="media-object pull-left" alt="64x64" style="width: 64px; height: 64px;" src="images/icons/'+dataList[championBad].code+'.jpg"/>';
+							conteudo+='<img class="pull-left" alt="33x33" style="width: 33px; height: 33px;" src="images/spells/'+dataList[championBad].code+'-1.png"/>';
+							conteudo+='<img class="pull-left" alt="33x33" style="width: 33px; height: 33px;" src="images/spells/'+dataList[championBad].code+'-2.png"/>';
+							conteudo+='<img class="pull-left" alt="33x33" style="width: 33px; height: 33px;" src="images/spells/'+dataList[championBad].code+'-3.png"/>';
+							conteudo+='<img class="pull-left" alt="33x33" style="width: 33px; height: 33px;" src="images/spells/'+dataList[championBad].code+'-4.png"/>';
+							conteudo+='<img class="pull-left" alt="33x33" style="width: 33px; height: 33px;" src="images/spells/'+dataList[championBad].code+'-5.png"/>';
+							conteudo+='<div class="clearfix"></div>';
+							conteudo+='<h4 class="media-heading">'+championBad+'</h4>';
+							conteudo+='<p>'+dataList[championBad].excerpt+'</p>';
+							conteudo+='<ul>';
+							conteudo+='<li>Health Points: 	384 (+76 / per level)</li>';
+							conteudo+='Health Regen: 	4.5 (+0.55 / per level)</li>';
+							conteudo+='<li>Mana Points: 	250 (+50 / per level)</li>';
+							conteudo+='Mana Regen: 	6.9 (+0.6 / per level)</li>';
+							conteudo+='<li>Damage: 	48(+2.625 / per level)</li>';
+							conteudo+='Attack Speed: 	0.579 (+1.36 / per level)</li>';
+							conteudo+='<li>Attack Range: 	625</li>';
+							conteudo+='Movement Speed: 	310</li>';
+							conteudo+='<li>Armor: 	8.5 (+4/ per level)</li>';
+							conteudo+='Magic Resistance: 	30 (+0/ per level)</li>';
+							conteudo+='</ul>';
+						conteudo+='</div>';
+						conteudo+='<div class="span6">';
+							conteudo+='<div class="progress"><div class="bar bar-danger" style="width: '+arrResultado[i].points+'%;"></div></div>';
+							conteudo+='<span class="label label-important">'+arrResultado[i].points+'%</span>';
+						conteudo+='</div>';
+					conteudo+='</div>';
+					conteudo+='<div class="span6">';
+						conteudo+='<div class="span6">';
+							conteudo+='<img class="media-object pull-left" alt="64x64" style="width: 64px; height: 64px;" src="images/icons/'+dataList[championBad].code+'.jpg"/>';
+							conteudo+='<img class="pull-left" alt="33x33" style="width: 33px; height: 33px;" src="images/spells/'+dataList[championBad].code+'-1.png"/>';
+							conteudo+='<img class="pull-left" alt="33x33" style="width: 33px; height: 33px;" src="images/spells/'+dataList[championBad].code+'-2.png"/>';
+							conteudo+='<img class="pull-left" alt="33x33" style="width: 33px; height: 33px;" src="images/spells/'+dataList[championBad].code+'-3.png"/>';
+							conteudo+='<img class="pull-left" alt="33x33" style="width: 33px; height: 33px;" src="images/spells/'+dataList[championBad].code+'-4.png"/>';
+							conteudo+='<img class="pull-left" alt="33x33" style="width: 33px; height: 33px;" src="images/spells/'+dataList[championBad].code+'-5.png"/>';
+							conteudo+='<div class="clearfix"></div>';
+							conteudo+='<h4 class="media-heading">'+championBad+'</h4>';
+							conteudo+='<p>'+dataList[championBad].excerpt+'</p>';
+							conteudo+='<ul>';
+							conteudo+='<li>Health Points: 	384 (+76 / per level)</li>';
+							conteudo+='Health Regen: 	4.5 (+0.55 / per level)</li>';
+							conteudo+='<li>Mana Points: 	250 (+50 / per level)</li>';
+							conteudo+='Mana Regen: 	6.9 (+0.6 / per level)</li>';
+							conteudo+='<li>Damage: 	48(+2.625 / per level)</li>';
+							conteudo+='Attack Speed: 	0.579 (+1.36 / per level)</li>';
+							conteudo+='<li>Attack Range: 	625</li>';
+							conteudo+='Movement Speed: 	310</li>';
+							conteudo+='<li>Armor: 	8.5 (+4/ per level)</li>';
+							conteudo+='Magic Resistance: 	30 (+0/ per level)</li>';
+							conteudo+='</ul>';
+						conteudo+='</div>';
+						conteudo+='<div class="span6">';
+							conteudo+='<div class="progress"><div class="bar bar-danger" style="width: '+arrResultado[i].points+'%;"></div></div>';
+							conteudo+='<span class="label label-important">'+arrResultado[i].points+'%</span>';
+						conteudo+='</div>';
+					conteudo+='</div>';
+				conteudo+='</div>';				
         	}
         	$('#parte-resultado').removeClass('hide');
 			$('#exibe-resultado').html(conteudo);
