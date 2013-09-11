@@ -398,3 +398,15 @@ Stack trace:
 #5 {main}
 REQUEST_URI=/streamers/rtancman_lol
 ---
+2013/09/10 22:52:46 [warning] [application] Failed to set unsafe attribute "updateTime" of "Champions".
+in /var/www/apps.geeklifeclub/stream/app/protected/controllers/ChampionsController.php (71)
+in /var/www/apps.geeklifeclub/stream/app/index.php (13)
+2013/09/10 22:54:19 [warning] [application] Failed to set unsafe attribute "updateTime" of "Champions".
+in /var/www/apps.geeklifeclub/stream/app/protected/controllers/ChampionsController.php (71)
+in /var/www/apps.geeklifeclub/stream/app/index.php (13)
+2013/09/10 22:56:43 [warning] [application] Failed to set unsafe attribute "updateTime" of "Champions".
+in /var/www/apps.geeklifeclub/stream/app/protected/controllers/ChampionsController.php (71)
+in /var/www/apps.geeklifeclub/stream/app/index.php (13)
+2013/09/10 22:58:36 [warning] [application] Failed to set unsafe attribute "updateTime" of "ChampionsBadAgainst".
+in /var/www/apps.geeklifeclub/stream/app/protected/controllers/ChampionsBadAgainstController.php (71)
+in /var/www/apps.geeklifeclub/stream/app/index.php (13)

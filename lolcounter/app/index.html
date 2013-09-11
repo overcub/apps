@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
+    <script src="js/lolCounter.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
     <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
@@ -84,49 +85,35 @@
 </body>
 <script>
 $(document).ready(function(){
-	var dataList = {
-		"Atrox" : {img:"http://media-leaguepedia.cursecdn.com/c/cc/AatroxSquare.png"},
-		"Ahri" : {img:"http://na.leagueoflegends.com/sites/default/files/game_data/1.0.0.136/content/champion/icons/103.jpg"},
-		"Akali" : {img:"http://na.leagueoflegends.com/sites/default/files/game_data/1.0.0.136/content/champion/icons/84.jpg"}
-	};
-	var counterList = {
-		"Atrox" : [
-		{img:"http://na.leagueoflegends.com/sites/default/files/game_data/1.0.0.136/content/champion/icons/103.jpg",name:"Ahri"},
-		{img:"http://na.leagueoflegends.com/sites/default/files/game_data/1.0.0.136/content/champion/icons/84.jpg",name:"Akali"}
-		],
-		"Ahri": [
-		{img:"http://na.leagueoflegends.com/sites/default/files/game_data/1.0.0.136/content/champion/icons/103.jpg",name:"Ahri"},
-		{img:"http://na.leagueoflegends.com/sites/default/files/game_data/1.0.0.136/content/champion/icons/84.jpg",name:"Akali"}
-		],
-		"Akali" : [
-		{img:"http://na.leagueoflegends.com/sites/default/files/game_data/1.0.0.136/content/champion/icons/103.jpg",name:"Ahri"},
-		{img:"http://na.leagueoflegends.com/sites/default/files/game_data/1.0.0.136/content/champion/icons/84.jpg",name:"Akali"}
-		]
-	};
+	console.log(source);
+	console.log(counterList);
+	console.log(dataList);
 	$('#btn-search').on('click', function() {
 		var value = $('#search').val();	
 		if(value == "" ){
 			alert('ops! busque um campeao');
 		}else{
 			var conteudo = "",
+			championBad = "",
 			arrResultado = counterList[value];
 			for(var i=0; i < arrResultado.length;i++){
+				championBad = dataListByCode[arrResultado[i].id_champions_badagainst];
 				conteudo+='<div class="media">';
-				conteudo+='<img class="media-object" alt="64x64" style="width: 64px; height: 64px;" src="'+arrResultado[i].img+'">';
-				conteudo+='<div class="media-body"><h4 class="media-heading">'+arrResultado[i].name+'</h4>resre asa sa s</div>';
+				conteudo+='<img class="media-object" alt="64x64" style="width: 64px; height: 64px;" src="images/icons/'+dataList[championBad].code+'.jpg"/>';
+				conteudo+='<div class="media-body">';
+				conteudo+='<h4 class="media-heading">'+championBad+'</h4>';
+				conteudo+='<div class="progress"><div class="bar bar-danger" style="width: '+arrResultado[i].points+'%;"></div></div>';
+				conteudo+='</div>';
 				conteudo+='</div>';
         	}
         	$('#parte-resultado').removeClass('hide');
 			$('#exibe-resultado').html(conteudo);
-
-
 		}
 	});
 	$('#search').typeahead({
 	    highlighter: function(item) {
-	        var parts = dataList[item],
-	        html = '<div class="typeahead item-search" data-name="'+item+'">';
-	        html += '<img src="'+parts.img+'" width="32" height="32" class="img-rounded">';
+	        var html = '<div class="typeahead item-search" data-name="'+item+'">';
+	        html += '<img src="images/icons/'+dataList[item].code+'.jpg" width="32" height="32" class="img-rounded">';
 	        html += '<p>'+item+'</p>';
 	        html += '</div>';
 	        return html;
@@ -135,7 +122,7 @@ $(document).ready(function(){
 	        return item;
 	    },
 		minLength: 0,
-		source: ["Atrox","Ahri","Akali"]
+		source: source
 	});
 });
 </script>
