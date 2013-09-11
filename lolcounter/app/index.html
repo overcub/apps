@@ -2,7 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Template &middot; Bootstrap</title>
+    <link rel="shortcut icon" href="images/logo/favicon.png">
+    <title>LOL Counter | Geek Life Club</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -28,7 +29,6 @@
 
       /* Main marketing message and sign up button */
       .jumbotron {
-        margin: 60px 0;
         text-align: center;
       }
       .jumbotron h1 {
@@ -50,37 +50,30 @@
     </style>
   </head>
 <body>
-	<div class="container-narrow">
-	  <div class="masthead">
-	    <ul class="nav nav-pills pull-right">
-	      <li class="active"><a href="/">Home</a></li>
-	      <li><a href="/lista">Lista</a></li>
-	    </ul>
-	    <h3 class="muted">Geek Life Club</h3>
-	  </div>
-	  <hr>
-	</div>
 	<div class="container">
 	  <div class="jumbotron">
+	    <a class="brand" href="http://www.geeklifeclub.com.br"><img src="images/logo/geeklifeclub-logo.png" class="muted" title="Geek Life Club" alt="Geek Life Club" /></a>
 	    <h1>LOL Counter</h1>
-	    <p class="lead">Descubra quem "countera" o seu champion preferido no LOL.</p>
 	    <div class="input-append">
-    		<input class="span5" id="search" type="text"  autocomplete="off" data-provide="typeahead" />
+    		<input style="height:40px" class="span5" id="search" type="text"  autocomplete="off" data-provide="typeahead" />
     		<button class="btn" type="button" id="btn-search">Search</button>
     	</div>
 	  </div>
-	  <hr>
 	</div>
 	<div id="parte-resultado" class="hide container">
+		<hr>
 		<div  class="row-fluid marketing">
 			<div id="exibe-resultado"  class="span6"></div>
 		</div>
-		<hr>
 	</div>
+	<div class="navbar-fixed-bottom">
 	<div class="container">
+		<hr>
 		<div class="footer">
-	    	<p>&copy; Company 2013</p>
+			<p class="pull-right">Descubra quem "countera" o seu champion preferido no LOL.</p>
+	    	<p>&copy; Geek Life Club <script>document.write(new Date().getFullYear())</script></p>
 		</div>
+	</div>
 	</div>
 </body>
 <script>
