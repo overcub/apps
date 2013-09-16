@@ -27,7 +27,7 @@ class ChampionsController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('index','view','createChampionsByFile'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -186,6 +186,32 @@ class ChampionsController extends Controller
 		fclose($fp);
 		exit;
 
+	}
+
+	/**
+	 * Manages all models.
+	 */
+	public function actionCreateChampionsByFile()
+	{
+		
+		$docPath = realpath(Yii::app()->basePath . '/runtime/champions.js');
+		$champions = file_get_contents($docPath);
+		$champions = CJSON::decode($champions);
+		foreach ($champions['data'] as $key) {
+			$model=new Champions;
+			//$model->id 				= ####;
+			$model->name 			= $key['name'];
+			$model->code 			= $key['key'];
+			$model->excerpt 		= $key['title'];
+			$model->description 	= $key['blurb'];
+			$model->skills 			= "";
+			$model->abilities 		= '{"info":'.CJSON::encode($key['info']).',"partype" : '.CJSON::encode($key['partype']).',"stats" : '.CJSON::encode($key['stats']).',"type" : '.CJSON::encode($key['tags']).'}';
+			$model->skins 			= "";
+			$model->mixData 		= "";
+			$model->createTime 		= date('Y-m-d h:i:s');
+			$model->save();
+		}
+		exit;
 	}
 
 	/**

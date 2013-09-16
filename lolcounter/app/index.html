@@ -13,40 +13,56 @@
     <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-responsive.min.css" rel="stylesheet">
     <style type="text/css">
-      body {
-        padding-top: 20px;
-        padding-bottom: 40px;
-      }
+	body {
+		padding-top: 20px;
+		padding-bottom: 40px;
+	}
+	.jumbotron {
+		text-align: center;
+	}
+	  .jumbotron h1 {
+	    font-size: 72px;
+	    line-height: 1;
+	  }
+	  .jumbotron .btn {
+	    font-size: 21px;
+	    padding: 14px 24px;
+	  }
+	.navbar-fixed-bottom{
+		background: #fff;
+	}
+	.container ul.typeahead.dropdown-menu{
+		width: 33%;
+		min-width: 200px;
+		max-height: 150px;
+		overflow: scroll;
+		overflow-x: hidden;
+		overflow-y: auto;
+	}
+		.container ul.typeahead.dropdown-menu li .typeahead.item-search{
+			text-align: left;
+		}
+			.container ul.typeahead.dropdown-menu li .typeahead.item-search a{
+				padding: 2px 10px;
+			}
+			.container ul.typeahead.dropdown-menu li .typeahead.item-search img{
+				float: left;
+				margin-right: 5px;
+				width: 32px;
+				height: 32px;
+			}
+	.glc-champions{
+		
+	}
+		.glc-champions img{
+			margin-right: 5px;
+		}
 
-      /* Custom container */
-      .container-narrow {
-        margin: 0 auto;
-        max-width: 700px;
-      }
-      .container-narrow > hr {
-        margin: 30px 0;
-      }
-
-      /* Main marketing message and sign up button */
-      .jumbotron {
-        text-align: center;
-      }
-      .jumbotron h1 {
-        font-size: 72px;
-        line-height: 1;
-      }
-      .jumbotron .btn {
-        font-size: 21px;
-        padding: 14px 24px;
-      }
-
-      /* Supporting marketing content */
-      .marketing {
-        margin: 60px 0;
-      }
-      .marketing p + h4 {
-        margin-top: 28px;
-      }
+		.glc-champions .glc-champions-stats{
+			height: 30px;
+		    margin: 0;
+		    padding: 0;		
+	    }
     </style>
   </head>
 <body>
@@ -56,7 +72,7 @@
 	    <h1>LOL Counter</h1>
 	    <div class="input-append">
     		<input style="height:40px" class="span5" id="search" type="text"  autocomplete="off" data-provide="typeahead" />
-    		<button class="btn" type="button" id="btn-search">Search</button>
+    		<button class="btn" type="button" id="btn-search">Buscar</button>
     	</div>
 	  </div>
 	</div>
@@ -75,152 +91,97 @@
 	</div>
 </body>
 <script>
+var glcLoLCounter = {
+	getChampion : function(key_champion){
+		return dataList[key_champion];
+	},
+	getChampionsBadAgainst : function(key_champion){
+		return counterList[key_champion];
+	},
+	showResultBadAgainst : function(value){
+		var arrBadAgainst = this.getChampionsBadAgainst(value),
+		resultBadAganist = "",
+		badChampion = "";
+		resultBadAganist+='<div class="row-fluid">';
+		resultBadAganist+='<div class="span12">';
+		resultBadAganist+='<h4>É ruim contra:</h4>';
+		resultBadAganist+='<hr>';
+		resultBadAganist+='</div>';
+		for(var i=0; i < arrBadAgainst.length;i++){
+			badChampion = dataList[dataListByCode[arrBadAgainst[i].id_champions_badagainst]];
+			resultBadAganist+= this.viewBadAgainst(badChampion);
+    	}
+    	resultBadAganist+='</div>';
+    	return resultBadAganist;
+	},
+	showResultChampion : function(value){
+		var objChampion = this.getChampion(value);
+    	return this.viewChampion(objChampion);
+	},
+	viewChampionStats : function(objChampion){
+		var conteudo = "",
+		abilities = JSON.parse(objChampion.abilities);
+		conteudo+='<div class="glc-champions-stats">';
+			conteudo+='<table class="table table-hover">';
+			conteudo+='<tr><td class="span1"><span class="label label-important">Ataque:</span></td><td class="span5"><div class="progress progress-danger"><div class="bar" style="width: '+abilities.info.attack+'0%"></div></div></td></tr>';
+			conteudo+='<tr><td class="span1"><span class="label label-success">Defesa:</span></td><td class="span5"><div class="progress progress-success"><div class="bar" style="width: '+abilities.info.defense+'0%"></div></div></td></tr>';
+			conteudo+='<tr><td class="span1"><span class="label label-warning">Magica:</span></td><td class="span5"><div class="progress progress-warning"><div class="bar" style="width: '+abilities.info.magic+'0%"></div></div></td></tr>';
+			conteudo+='<tr><td class="span1"><span class="label label-info">Dificuldade:</span></td><td class="span5"><div class="progress progress-info"><div class="bar" style="width: '+abilities.info.difficulty+'0%"></div></div></td></tr>';
+			conteudo+='</table>';
+		conteudo+='</div>';
+		return conteudo;
+	},
+	viewChampion : function(objChampion){
+		console.log(objChampion.abilities);
+		var conteudo = "";
+		conteudo+='<div class="row-fluid glc-champions">';
+		conteudo+='<div class="span3">';
+			conteudo+='<img class="img-polaroid" src="images/portraits/'+objChampion.code+'.jpg"/>';
+		conteudo+='</div>';
+		conteudo+='<div class="span4">';
+			conteudo+='<h1>'+objChampion.name+'</h1>';
+			//conteudo+='<blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p></blockquote>';
+	    	conteudo+=this.viewChampionStats(objChampion);
+	    conteudo+='</div>';
+	    conteudo+='<div class="span5">';
+	    	conteudo+= glcLoLCounter.showResultBadAgainst(objChampion.name);
+	    conteudo+='</div>';
+	    conteudo+='<hr>';
+		conteudo+='</div>';
+		return conteudo;
+	},
+	viewBadAgainst : function(objChampion){
+		var conteudo = "";
+		//conteudo+='<div class="span12 glc-champions-bad-against">';
+			conteudo+='<div class="span6 glc-champions-bad-against">';
+				conteudo+='<img class="media-object pull-left" alt="64x64" style="width: 64px; height: 64px;" src="images/icons/'+objChampion.code+'.jpg"/>';
+				//conteudo+='<img class="pull-left" alt="33x33" style="width: 33px; height: 33px;" src="images/spells/'+objChampion.code+'-1.png"/>';
+				//conteudo+='<img class="pull-left" alt="33x33" style="width: 33px; height: 33px;" src="images/spells/'+objChampion.code+'-2.png"/>';
+				//conteudo+='<img class="pull-left" alt="33x33" style="width: 33px; height: 33px;" src="images/spells/'+objChampion.code+'-3.png"/>';
+				//conteudo+='<img class="pull-left" alt="33x33" style="width: 33px; height: 33px;" src="images/spells/'+objChampion.code+'-4.png"/>';
+				//conteudo+='<img class="pull-left" alt="33x33" style="width: 33px; height: 33px;" src="images/spells/'+objChampion.code+'-5.png"/>';
+				//conteudo+='<div class="clearfix"></div>';
+				conteudo+='<h4 class="media-heading">'+objChampion.name+'</h4>';
+				//conteudo+='<p>'+objChampion.excerpt+'</p>';
+			conteudo+='</div>';
+			//conteudo+='<div class="span6">';
+				//conteudo+='<div class="progress"><div class="bar bar-danger" style="width: '+arrResultado[i].points+'%;"></div></div>';
+				//conteudo+='<span class="label label-important">'+arrResultado[i].points+'%</span>';
+			//conteudo+='</div>';
+		//conteudo+='</div>';
+		return conteudo;
+	}
+
+};
 $(document).ready(function(){
-	console.log(source);
-	console.log(counterList);
-	console.log(dataList);
 	$('#btn-search').on('click', function() {
 		var value = $('#search').val();	
 		if(value == "" ){
 			alert('ops! busque um campeao');
 		}else{
-			var conteudo = "",
-			championBad = "",
-			arrResultado = counterList[value];
-			conteudo+='<div class="row-fluid">';
-			conteudo+='<div class="span6">';
-			conteudo+='<h4>'+value+' é ruim contra:</h4>';
-			conteudo+='<hr>';
-			conteudo+='</div>';
-			conteudo+='<div class="span6">';
-			conteudo+='<h4>'+value+' é bom contra:</h4>';
-			conteudo+='<hr>';
-			conteudo+='</div>';
-			conteudo+='</div>';
-			for(var i=0; i < arrResultado.length;i++){
-				championBad = dataListByCode[arrResultado[i].id_champions_badagainst];
-				conteudo+='<div class="row-fluid">';
-					conteudo+='<div class="span6">';
-						conteudo+='<div class="span6">';
-							conteudo+='<img class="media-object pull-left" alt="64x64" style="width: 64px; height: 64px;" src="images/icons/'+dataList[championBad].code+'.jpg"/>';
-							conteudo+='<img class="pull-left" alt="33x33" style="width: 33px; height: 33px;" src="images/spells/'+dataList[championBad].code+'-1.png"/>';
-							conteudo+='<img class="pull-left" alt="33x33" style="width: 33px; height: 33px;" src="images/spells/'+dataList[championBad].code+'-2.png"/>';
-							conteudo+='<img class="pull-left" alt="33x33" style="width: 33px; height: 33px;" src="images/spells/'+dataList[championBad].code+'-3.png"/>';
-							conteudo+='<img class="pull-left" alt="33x33" style="width: 33px; height: 33px;" src="images/spells/'+dataList[championBad].code+'-4.png"/>';
-							conteudo+='<img class="pull-left" alt="33x33" style="width: 33px; height: 33px;" src="images/spells/'+dataList[championBad].code+'-5.png"/>';
-							conteudo+='<div class="clearfix"></div>';
-							conteudo+='<h4 class="media-heading">'+championBad+'</h4>';
-							conteudo+='<p>'+dataList[championBad].excerpt+'</p>';
-							conteudo+='<ul>';
-							conteudo+='<li>Health Points: 	384 (+76 / per level)</li>';
-							conteudo+='Health Regen: 	4.5 (+0.55 / per level)</li>';
-							conteudo+='<li>Mana Points: 	250 (+50 / per level)</li>';
-							conteudo+='Mana Regen: 	6.9 (+0.6 / per level)</li>';
-							conteudo+='<li>Damage: 	48(+2.625 / per level)</li>';
-							conteudo+='Attack Speed: 	0.579 (+1.36 / per level)</li>';
-							conteudo+='<li>Attack Range: 	625</li>';
-							conteudo+='Movement Speed: 	310</li>';
-							conteudo+='<li>Armor: 	8.5 (+4/ per level)</li>';
-							conteudo+='Magic Resistance: 	30 (+0/ per level)</li>';
-							conteudo+='</ul>';
-						conteudo+='</div>';
-						conteudo+='<div class="span6">';
-							conteudo+='<div class="progress"><div class="bar bar-danger" style="width: '+arrResultado[i].points+'%;"></div></div>';
-							conteudo+='<span class="label label-important">'+arrResultado[i].points+'%</span>';
-						conteudo+='</div>';
-					conteudo+='</div>';
-					conteudo+='<div class="span6">';
-						conteudo+='<div class="span6">';
-							conteudo+='<img class="media-object pull-left" alt="64x64" style="width: 64px; height: 64px;" src="images/icons/'+dataList[championBad].code+'.jpg"/>';
-							conteudo+='<img class="pull-left" alt="33x33" style="width: 33px; height: 33px;" src="images/spells/'+dataList[championBad].code+'-1.png"/>';
-							conteudo+='<img class="pull-left" alt="33x33" style="width: 33px; height: 33px;" src="images/spells/'+dataList[championBad].code+'-2.png"/>';
-							conteudo+='<img class="pull-left" alt="33x33" style="width: 33px; height: 33px;" src="images/spells/'+dataList[championBad].code+'-3.png"/>';
-							conteudo+='<img class="pull-left" alt="33x33" style="width: 33px; height: 33px;" src="images/spells/'+dataList[championBad].code+'-4.png"/>';
-							conteudo+='<img class="pull-left" alt="33x33" style="width: 33px; height: 33px;" src="images/spells/'+dataList[championBad].code+'-5.png"/>';
-							conteudo+='<div class="clearfix"></div>';
-							conteudo+='<h4 class="media-heading">'+championBad+'</h4>';
-							conteudo+='<p>'+dataList[championBad].excerpt+'</p>';
-							conteudo+='<ul>';
-							conteudo+='<li>Health Points: 	384 (+76 / per level)</li>';
-							conteudo+='Health Regen: 	4.5 (+0.55 / per level)</li>';
-							conteudo+='<li>Mana Points: 	250 (+50 / per level)</li>';
-							conteudo+='Mana Regen: 	6.9 (+0.6 / per level)</li>';
-							conteudo+='<li>Damage: 	48(+2.625 / per level)</li>';
-							conteudo+='Attack Speed: 	0.579 (+1.36 / per level)</li>';
-							conteudo+='<li>Attack Range: 	625</li>';
-							conteudo+='Movement Speed: 	310</li>';
-							conteudo+='<li>Armor: 	8.5 (+4/ per level)</li>';
-							conteudo+='Magic Resistance: 	30 (+0/ per level)</li>';
-							conteudo+='</ul>';
-						conteudo+='</div>';
-						conteudo+='<div class="span6">';
-							conteudo+='<div class="progress"><div class="bar bar-danger" style="width: '+arrResultado[i].points+'%;"></div></div>';
-							conteudo+='<span class="label label-important">'+arrResultado[i].points+'%</span>';
-						conteudo+='</div>';
-					conteudo+='</div>';
-				conteudo+='</div>';
-				conteudo+='<hr>';
-				conteudo+='<div class="row-fluid">';
-					conteudo+='<div class="span6">';
-						conteudo+='<div class="span6">';
-							conteudo+='<img class="media-object pull-left" alt="64x64" style="width: 64px; height: 64px;" src="images/icons/'+dataList[championBad].code+'.jpg"/>';
-							conteudo+='<img class="pull-left" alt="33x33" style="width: 33px; height: 33px;" src="images/spells/'+dataList[championBad].code+'-1.png"/>';
-							conteudo+='<img class="pull-left" alt="33x33" style="width: 33px; height: 33px;" src="images/spells/'+dataList[championBad].code+'-2.png"/>';
-							conteudo+='<img class="pull-left" alt="33x33" style="width: 33px; height: 33px;" src="images/spells/'+dataList[championBad].code+'-3.png"/>';
-							conteudo+='<img class="pull-left" alt="33x33" style="width: 33px; height: 33px;" src="images/spells/'+dataList[championBad].code+'-4.png"/>';
-							conteudo+='<img class="pull-left" alt="33x33" style="width: 33px; height: 33px;" src="images/spells/'+dataList[championBad].code+'-5.png"/>';
-							conteudo+='<div class="clearfix"></div>';
-							conteudo+='<h4 class="media-heading">'+championBad+'</h4>';
-							conteudo+='<p>'+dataList[championBad].excerpt+'</p>';
-							conteudo+='<ul>';
-							conteudo+='<li>Health Points: 	384 (+76 / per level)</li>';
-							conteudo+='Health Regen: 	4.5 (+0.55 / per level)</li>';
-							conteudo+='<li>Mana Points: 	250 (+50 / per level)</li>';
-							conteudo+='Mana Regen: 	6.9 (+0.6 / per level)</li>';
-							conteudo+='<li>Damage: 	48(+2.625 / per level)</li>';
-							conteudo+='Attack Speed: 	0.579 (+1.36 / per level)</li>';
-							conteudo+='<li>Attack Range: 	625</li>';
-							conteudo+='Movement Speed: 	310</li>';
-							conteudo+='<li>Armor: 	8.5 (+4/ per level)</li>';
-							conteudo+='Magic Resistance: 	30 (+0/ per level)</li>';
-							conteudo+='</ul>';
-						conteudo+='</div>';
-						conteudo+='<div class="span6">';
-							conteudo+='<div class="progress"><div class="bar bar-danger" style="width: '+arrResultado[i].points+'%;"></div></div>';
-							conteudo+='<span class="label label-important">'+arrResultado[i].points+'%</span>';
-						conteudo+='</div>';
-					conteudo+='</div>';
-					conteudo+='<div class="span6">';
-						conteudo+='<div class="span6">';
-							conteudo+='<img class="media-object pull-left" alt="64x64" style="width: 64px; height: 64px;" src="images/icons/'+dataList[championBad].code+'.jpg"/>';
-							conteudo+='<img class="pull-left" alt="33x33" style="width: 33px; height: 33px;" src="images/spells/'+dataList[championBad].code+'-1.png"/>';
-							conteudo+='<img class="pull-left" alt="33x33" style="width: 33px; height: 33px;" src="images/spells/'+dataList[championBad].code+'-2.png"/>';
-							conteudo+='<img class="pull-left" alt="33x33" style="width: 33px; height: 33px;" src="images/spells/'+dataList[championBad].code+'-3.png"/>';
-							conteudo+='<img class="pull-left" alt="33x33" style="width: 33px; height: 33px;" src="images/spells/'+dataList[championBad].code+'-4.png"/>';
-							conteudo+='<img class="pull-left" alt="33x33" style="width: 33px; height: 33px;" src="images/spells/'+dataList[championBad].code+'-5.png"/>';
-							conteudo+='<div class="clearfix"></div>';
-							conteudo+='<h4 class="media-heading">'+championBad+'</h4>';
-							conteudo+='<p>'+dataList[championBad].excerpt+'</p>';
-							conteudo+='<ul>';
-							conteudo+='<li>Health Points: 	384 (+76 / per level)</li>';
-							conteudo+='Health Regen: 	4.5 (+0.55 / per level)</li>';
-							conteudo+='<li>Mana Points: 	250 (+50 / per level)</li>';
-							conteudo+='Mana Regen: 	6.9 (+0.6 / per level)</li>';
-							conteudo+='<li>Damage: 	48(+2.625 / per level)</li>';
-							conteudo+='Attack Speed: 	0.579 (+1.36 / per level)</li>';
-							conteudo+='<li>Attack Range: 	625</li>';
-							conteudo+='Movement Speed: 	310</li>';
-							conteudo+='<li>Armor: 	8.5 (+4/ per level)</li>';
-							conteudo+='Magic Resistance: 	30 (+0/ per level)</li>';
-							conteudo+='</ul>';
-						conteudo+='</div>';
-						conteudo+='<div class="span6">';
-							conteudo+='<div class="progress"><div class="bar bar-danger" style="width: '+arrResultado[i].points+'%;"></div></div>';
-							conteudo+='<span class="label label-important">'+arrResultado[i].points+'%</span>';
-						conteudo+='</div>';
-					conteudo+='</div>';
-				conteudo+='</div>';				
-        	}
+			var conteudo = "";
+			conteudo+= glcLoLCounter.showResultChampion(value);
+			//conteudo+= glcLoLCounter.showResultBadAgainst(value);
         	$('#parte-resultado').removeClass('hide');
 			$('#exibe-resultado').html(conteudo);
 		}
