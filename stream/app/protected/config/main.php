@@ -162,6 +162,7 @@ return array(
         'defaultIeVersion'=> 1,
         'customScriptDir'=>'tools',
 	    'encryptionKey'=>'997GLC97',
+	    'mashapeKey'=> array('LOL' =>'MWDMOJlVh625v8o0365WsPn9A3rVmf7J'),
 	    'version'=>'1',
 	),
 );

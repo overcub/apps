@@ -1,22 +1,16 @@
-var glcMashape = {
-	appKey : "MWDMOJlVh625v8o0365WsPn9A3rVmf7J",
-	returnData : null,
-	auth : function(){
+var glcLOLNexus = {
+	inGame : function(name,platform){
 		$.ajax({
-		    url: 'https://teemojson.p.mashape.com/player/br/yZero/ingame', // The URL to the API. You can get this by clicking on "Show CURL example" from an API profile
-		    type: 'POST', // The HTTP Method
-		    data: "rtancman", // Additional parameters here
-		    datatype: 'json',
+		    url: 'http://stream.geeklifeclub.com.br/players/findPlayeirsNexus', // The URL to the API. You can get this by clicking on "Show CURL example" from an API profile
+		    type: 'POST',
+			data : {
+				Players : {
+					name : name,
+					platform : platform
+				}
+			},
 		    success: function(data) { 
-		    	console.log(JSON.stringify(data)); 
-		    	glcMashape.authData = data;
-		    },
-		    error: function(err) { 
-		    	console.log('erro!!!'); 
-		    	console.log(JSON.stringify(err)); 
-		    },
-		    beforeSend: function(xhr) {
-				xhr.setRequestHeader("X-Mashape-Authorization", glcMashape.appKey); // Enter here your Mashape key
+		    	console.log(data);
 		    }
 		});
 	}
