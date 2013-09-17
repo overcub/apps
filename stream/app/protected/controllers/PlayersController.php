@@ -66,7 +66,7 @@ class PlayersController extends Controller
 		if( isset($_POST['Players']['name']) && isset($_POST['Players']['platform']) ){
 			$keyCache .= "::" . $_POST['Players']['name'] . "::" . $_POST['Players']['platform'];
 			$value=Yii::app()->cache->get($keyCache);
-			if($value===false) {
+			if(1){//$value===false) {
 				$url = "https://teemojson.p.mashape.com/player/" . $_POST['Players']['platform'] . "/" . $_POST['Players']['name'] . "/ingame";
 				$ch = curl_init();
 				curl_setopt($ch, CURLOPT_URL, $url);
@@ -77,7 +77,7 @@ class PlayersController extends Controller
 				curl_close ($ch);
 				if( $this->checkResponse( $responseCode, $response) ){
 					Yii::app()->cache->set($keyCache, $response, (60*10));
-					echo $response;
+					//echo $response;
 				}else{
 					echo $error;
 				}
@@ -87,6 +87,7 @@ class PlayersController extends Controller
 		}else{
 			echo $error;
 		}
+		Yii::app()->end();
 		exit;
 	}
 
