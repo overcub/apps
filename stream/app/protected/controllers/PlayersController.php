@@ -62,7 +62,7 @@ class PlayersController extends Controller
 	public function actionFindPlayeirsNexus()
 	{
 		$keyCache = __METHOD__;
-		$error = '{ "Error" : true}';
+		$error = '';
 		if( isset($_POST['Players']['name']) && isset($_POST['Players']['platform']) ){
 			$keyCache .= "::" . $_POST['Players']['name'] . "::" . $_POST['Players']['platform'];
 			$value=Yii::app()->cache->get($keyCache);
@@ -87,7 +87,6 @@ class PlayersController extends Controller
 		}else{
 			echo $error;
 		}
-		Yii::app()->end();
 		exit;
 	}
 
