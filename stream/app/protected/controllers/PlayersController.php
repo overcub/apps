@@ -63,7 +63,6 @@ class PlayersController extends Controller
 	{
 		$keyCache = __METHOD__;
 		$error = '{ "Error" : true}';
-		header('Content-Type: application/json; charset="UTF-8"');
 		if( isset($_POST['Players']['name']) && isset($_POST['Players']['platform']) ){
 			$keyCache .= "::" . $_POST['Players']['name'] . "::" . $_POST['Players']['platform'];
 			$value=Yii::app()->cache->get($keyCache);
@@ -76,7 +75,7 @@ class PlayersController extends Controller
 				$response = curl_exec($ch);
 				$responseCode = curl_getinfo($ch,CURLINFO_HTTP_CODE);
 				curl_close ($ch);
-				if( 1 ){//$this->checkResponse( $responseCode, $response) ){
+				if( $this->checkResponse( $responseCode, $response) ){
 					Yii::app()->cache->set($keyCache, $response, (60*10));
 					echo $response;
 				}else{
