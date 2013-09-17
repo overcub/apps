@@ -16,13 +16,4 @@ var glcLOLNexus = {
 		    }
 		});
 	}
-},
-glcLolNexus = {};
-$(document).ready(function(){
-	
-	$('#btn-search').on('click', function() {
-		var value = $('#search').val();	
-	});
-	
-});
-//https://www.mashape.com/meepo/League-of-Legends/misc/summoner-name/na/54353
+};
