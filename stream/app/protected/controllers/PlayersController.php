@@ -61,23 +61,32 @@ class PlayersController extends Controller
 
 	public function actionFindPlayeirsNexus()
 	{
+		header('Content-Type: application/json; charset="UTF-8"');
 		$keyCache = __METHOD__;
-		$error = '';
+		$error = '{"success":false}';
 		if( isset($_POST['Players']['name']) && isset($_POST['Players']['platform']) ){
 			$keyCache .= "::" . $_POST['Players']['name'] . "::" . $_POST['Players']['platform'];
 			$value=Yii::app()->cache->get($keyCache);
-			if(1){//$value===false) {
-				$url = "https://teemojson.p.mashape.com/player/" . $_POST['Players']['platform'] . "/" . $_POST['Players']['name'] . "/ingame";
+			$name = strtolower(str_replace(" ", "", $_POST['Players']['name']));
+			if($value===false) {
+				$url = "https://teemojson.p.mashape.com/player/" . $_POST['Players']['platform'] . "/" . $name . "/ingame";
 				$ch = curl_init();
 				curl_setopt($ch, CURLOPT_URL, $url);
+				curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+				curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);			
 				curl_setopt($ch, CURLOPT_HTTPHEADER, array('X-Mashape-Authorization: '.Yii::app()->params->mashapeKey['LOL']));
 				curl_setopt($ch, CURLOPT_TIMEOUT, 30);
 				$response = curl_exec($ch);
 				$responseCode = curl_getinfo($ch,CURLINFO_HTTP_CODE);
 				curl_close ($ch);
 				if( $this->checkResponse( $responseCode, $response) ){
-					Yii::app()->cache->set($keyCache, $response, (60*10));
-					//echo $response;
+					$arr = CJSON::decode($response);	
+					$time = 30;
+					if($arr['success'] == true){
+						$time = (60*10);
+					}
+					Yii::app()->cache->set($keyCache, $response, $time);
+					echo $response;
 				}else{
 					echo $error;
 				}
