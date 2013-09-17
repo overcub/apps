@@ -12,7 +12,7 @@ var glcLOLNexus = {
 					platform : platform
 				}
 			},
-		    success: function(data) { 
+		    success: function(data) {
 		    	glcLOLNexus.showResultPlayersInGame(data);
 		    }
 		});
