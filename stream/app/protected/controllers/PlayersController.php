@@ -27,7 +27,7 @@ class PlayersController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('index','view','findPlayeirsNexus'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -42,6 +42,54 @@ class PlayersController extends Controller
 				'users'=>array('*'),
 			),
 		);
+	}
+
+	public function checkResponse($responseCode,$response)
+	{
+		if ($responseCode == 401){
+			return false;
+		}elseif ($responseCode == 500 || $responseCode == 503){
+			return false;
+		}elseif ($responseCode != 200){
+			return false;
+		}elseif (!$response){
+			return false;
+		}else{
+			return true;
+		}
+	}
+
+	public function actionFindPlayeirsNexus()
+	{
+		$keyCache = __METHOD__;
+		$error = '{ "Error" : true}';
+		header('Content-Type: application/json; charset="UTF-8"');
+		if( isset($_POST['Players']['name']) && isset($_POST['Players']['platform']) ){
+			$keyCache .= "::" . $_POST['Players']['name'] . "::" . $_POST['Players']['platform'];
+			$value=Yii::app()->cache->get($keyCache);
+			if($value===false) {
+				$url = "https://teemojson.p.mashape.com/player/" . $_POST['Players']['platform'] . "/" . $_POST['Players']['name'] . "/ingame";
+				$ch = curl_init();
+				curl_setopt($ch, CURLOPT_URL, $url);
+				curl_setopt($ch, CURLOPT_HTTPHEADER, array('X-Mashape-Authorization: '.Yii::app()->params->mashapeKey['LOL']));
+				curl_setopt($ch, CURLOPT_TIMEOUT, 30);
+				$response = curl_exec($ch);
+				$responseCode = curl_getinfo($ch,CURLINFO_HTTP_CODE);
+				curl_close ($ch);
+				if( 1 ){//$this->checkResponse( $responseCode, $response) ){
+					Yii::app()->cache->set($keyCache, $response, (60*10));
+					echo $response;
+				}else{
+					echo $error;
+				}
+			}else{
+				echo $value;
+			}
+		}else{
+			echo $error;
+		}
+		Yii::app()->end();
+		exit;
 	}
 
 	/**

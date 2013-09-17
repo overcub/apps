@@ -3,24 +3,63 @@
   <head>
     <meta charset="utf-8">
     <link rel="shortcut icon" href="images/logo/geeklifeclub16x16.png">
-    <title>LOL Counter | Geek Life Club</title>
+    <title>LOL Nexus | Geek Life Club</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="js/lolNexus.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
     <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <style type="text/css">
+	body {
+		padding-top: 20px;
+		padding-bottom: 40px;
+	}
+	.jumbotron {
+		text-align: center;
+	}
+	  .jumbotron h1 {
+	    font-size: 72px;
+	    line-height: 1;
+	  }
+	  .jumbotron .btn {
+	    font-size: 21px;
+	    padding: 14px 24px;
+	  }
+	.navbar-fixed-bottom{
+		background: #fff;
+	}
+	.glc-platform{
+		margin-bottom: 20px;
+	}
+	
+    </style>
   </head>
 <body>
 	<div class="container">
 	  <div class="jumbotron">
 	    <a class="brand" href="http://www.geeklifeclub.com.br"><img src="images/logo/geeklifeclub-logo.png" class="muted" title="Geek Life Club" alt="Geek Life Club" /></a>
-	    <h1>LOL Counter</h1>
-	    <div class="input-append">
-    		<input style="height:40px" class="span5" id="search" type="text"  autocomplete="off" data-provide="typeahead" />
-    		<button class="btn" type="button" id="btn-search">Search</button>
+	    <h1>LOL Nexus  <span class="label">beta</span></h1>
+	    <div class="row glc-platform">
+	    	<div id="btn-platform" class="btn-group" data-toggle="buttons-radio">
+			    <button type="button" data-value="na" class="btn btn-small">NA</button>
+			    <button type="button" data-value="euw" class="btn btn-small">EUW</button>
+			    <button type="button" data-value="eune" class="btn btn-small">EUNE</button>
+			    <button type="button" data-value="br" class="btn btn-small">BR</button>
+			    <button type="button" data-value="tr" class="btn btn-small">TR</button>
+			    <button type="button" data-value="ru" class="btn btn-small">RU</button>
+			    <button type="button" data-value="lan" class="btn btn-small">LAN</button>
+			    <button type="button" data-value="las" class="btn btn-small">LAS</button>
+			    <button type="button" data-value="oce" class="btn btn-small">OCE</button>
+			</div>	    
+		</div>
+    	<div class="row glc-search">		
+		    <div class="input-append">
+	    		<input style="height:40px" class="span5" id="search" type="text"  autocomplete="off" data-provide="typeahead" />
+	    		<button class="btn" type="button" id="btn-search">Buscar</button>
+	    	</div>
     	</div>
 	  </div>
 	</div>
@@ -32,10 +71,37 @@
 	<div class="container">
 		<hr>
 		<div class="footer">
-			<p class="pull-right">Descubra quem "countera" o seu champion preferido no LOL.</p>
-	    	<p>&copy; Geek Life Club <script>document.write(new Date().getFullYear())</script></p>
+			<p class="pull-right">Descubra quem esta jogando com você ou seus amigos.</p>
+	    	<p>&copy; Geek Life Club | LoL Nexus <span class="label">beta 1.0</span> <script>document.write(new Date().getFullYear())</script></p>
 		</div>
 	</div>
 	</div>
 </body>
+<script type="text/javascript">
+$(document).ready(function(){
+	$('#btn-search').on('click', function() {
+		var name = $('#search').val(),
+		platform = $('#btn-platform .btn.active').attr('data-value');	
+		if(name == "" || platform == ""){
+			alert('ops! busque um campeao');
+		}else{
+			glcLOLNexus.inGame(name,platform);
+		}
+	});
+	$('#search').typeahead({
+	    highlighter: function(item) {
+	        var html = '<div class="typeahead item-search" data-name="'+item+'">';
+	        html += '<img src="images/icons/'+dataList[item].code+'.jpg" width="32" height="32" class="img-rounded">';
+	        html += '<p>'+item+'</p>';
+	        html += '</div>';
+	        return html;
+	    },
+	    updater: function(item) {
+	        return item;
+	    },
+		minLength: 0,
+		source: source
+	});
+});
+</script>
 </html>

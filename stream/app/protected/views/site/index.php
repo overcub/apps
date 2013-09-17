@@ -4,7 +4,7 @@
 $this->pageTitle=Yii::app()->name;
 ?>
 
-<h1>Welcome to <i><?php echo CHtml::encode(Yii::app()->name); ?></i></h1>
+<h1>Welcome to AAAAAAAAA<i><?php echo CHtml::encode(Yii::app()->name); ?></i></h1>
 
 <p>Congratulations! You have successfully created your Yii application.</p>
 
@@ -18,3 +18,33 @@ $this->pageTitle=Yii::app()->name;
 the <a href="http://www.yiiframework.com/doc/">documentation</a>.
 Feel free to ask in the <a href="http://www.yiiframework.com/forum/">forum</a>,
 should you have any questions.</p>
+
+
+<script type="text/javascript">
+var glcLOLNexus = {
+	inGame : function(){
+		$.ajax({
+		    url: '/players/findPlayeirsNexus', // The URL to the API. You can get this by clicking on "Show CURL example" from an API profile
+		    type: 'POST',
+			data : {
+				Players : {
+					name : 'Lipsom',
+					platform : 'br'
+				}
+			},
+		    success: function(data) { 
+		    	console.log(data);
+		    }
+		});
+	}
+},
+glcLolNexus = {};
+$(document).ready(function(){
+	
+	$('#btn-search').on('click', function() {
+		var value = $('#search').val();	
+	});
+	
+});
+//https://www.mashape.com/meepo/League-of-Legends/misc/summoner-name/na/54353
+</script>
