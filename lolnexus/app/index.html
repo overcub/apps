@@ -88,20 +88,6 @@ $(document).ready(function(){
 			glcLOLNexus.inGame(name,platform);
 		}
 	});
-	$('#search').typeahead({
-	    highlighter: function(item) {
-	        var html = '<div class="typeahead item-search" data-name="'+item+'">';
-	        html += '<img src="images/icons/'+dataList[item].code+'.jpg" width="32" height="32" class="img-rounded">';
-	        html += '<p>'+item+'</p>';
-	        html += '</div>';
-	        return html;
-	    },
-	    updater: function(item) {
-	        return item;
-	    },
-		minLength: 0,
-		source: source
-	});
 });
 </script>
 </html>
