@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
+    <script src="js/lolCounter.js"></script>
     <script src="js/lolNexus.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
@@ -81,9 +82,11 @@
 $(document).ready(function(){
 	$('#btn-search').on('click', function() {
 		var name = $('#search').val(),
-		platform = $('#btn-platform .btn.active').attr('data-value');	
+		platform = $('#btn-platform .btn.active').attr('data-value'),
+		resultPlayers = "",	
+		conteudo = "";	
 		if(name == "" || platform == ""){
-			alert('ops! busque um campeao');
+			alert('ops! faltou incluir o nome do invocador e o server.');
 		}else{
 			glcLOLNexus.inGame(name,platform);
 		}
