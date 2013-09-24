@@ -54,22 +54,59 @@
     background-image: linear-gradient(#F9FAFA, #FFFFFF 50%, #FFFFFF);
     border-top: 1px solid #D9D9D9;
     box-shadow: 0 1px white inset, 0 -1px white inset;
-    margin-top: 60px;
-    padding: 40px 0;
-    text-align: center;
 }
+	.bl-destaque.bl-destaque-conteudo {
+		margin-top: 60px;
+	    padding: 40px 0;
+	    text-align: center;
+	}
 .bl-conteudo{
 	margin-top: 60px;
 }
+	.bl-conteudo .bl-destaque{
+		background-image: linear-gradient(#F9FAFA, #FFFFFF 50%, #F9FAFA);
+	    border-bottom: 1px solid #D9D9D9;
+		padding: 15px 8px;
+		-webkit-border-radius: 10px;
+		-moz-border-radius: 10px;
+		border-radius: 10px;
+	}
 .bl-info{
 	margin-top: 60px;
 	text-align: center;
 }
 .bl-bar{
-    background-image: linear-gradient(#F9FAFA, #FFFFFF 50%, #FFFFFF);
-    border-top: 1px solid #D9D9D9;
-    box-shadow: 0 1px white inset, 0 -1px white inset;
+	padding: 8px 0 0;
 }
 	.bl-bar .breadcrumb{
 		background:transparent;
-	}      
+		margin: 0;
+		padding: 0 15px;
+	}
+	
+/* Publicidade */
+.glc-publicidade{
+	padding: 30px 0;
+}
+	.glc-publicidade p.glc-pub-info {
+	    color: #9C9C9C;
+	    font-size: 0.75em;
+	    height: 14px;
+	    line-height: 1.5;
+	    overflow: hidden;
+	    text-transform: uppercase;
+	}
+	.glc-publicidade .container{
+		padding: 30px 0;
+	}
+		.glc-publicidade.glc-superbanner-top .container{
+			padding: 30px 0 0;
+		}
+	.glc-publicidade .bl-pub-superbanner{
+		margin: 0 auto;
+	    text-align: center;
+	    width: 728px;
+	}
+		.glc-publicidade .bl-pub-superbanner p.glc-pub-info{
+			text-align: left;
+		}

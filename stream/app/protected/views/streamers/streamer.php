@@ -9,11 +9,11 @@
 </section>
 <section class="glc-body-streamer">
 <div class="container">
-	<div class="row-fluid bl-bar">
+	<div class="row-fluid bl-bar bl-destaque">
 		<div class="span9">
 			<?php $this->widget('bootstrap.widgets.TbBreadcrumbs', array(
 				'links'=>array( 
-					'Streamer' => '/streamer'
+					'Streamer'
 				)
 			)); ?>
 		</div>
