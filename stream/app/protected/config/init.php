@@ -6,7 +6,7 @@ $CONFIG = array();
 $ambient = AMBIENT_AIR;
 
 switch($ambient){
-    case AMBIENT_LOCAL:
+    case AMBIENT_AIR:
         $CONFIG['database'][1]['connectionString'] = 'mysql:host=192.241.128.122;dbname=apps.geeklifeclub';
         $CONFIG['database'][1]['username'] = 'geeklifeclub';
         $CONFIG['database'][1]['password'] = 'geeklifeclubaabc33163356';

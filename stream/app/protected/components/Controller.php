@@ -29,7 +29,7 @@ class Controller extends CController{
 		Yii::app()->getClientScript()->registerScriptFile('http://sawpf.com/1.0.js',CClientScript::POS_END);
 		Yii::app()->getClientScript()->registerCssFile($this->assetsBase.'/css/global.css');
 		Yii::app()->getClientScript()->registerCssFile('http://fonts.googleapis.com/css?family=Open+Sans:300,700');
-		Yii::app()->getClientScript()->registerScriptFile('//ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js');
+		//Yii::app()->getClientScript()->registerScriptFile('//ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js');
 	}
 
 	public function getAssetsBase()
