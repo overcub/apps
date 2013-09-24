@@ -97,7 +97,8 @@ return array(
 				'gii/<controller:\w+>'=>'gii/<controller>',
 				'gii/<controller:\w+>/<action:\w+>'=>'gii/<controller>/<action>',
 
-				'streamer'=>'Streamers/index',
+				'sobre'=>'Site/about',
+				'streamer/'=>'Streamers/streamer',
 				'streamer/<nickname>'=>'Streamers/streaming',
 				
 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',

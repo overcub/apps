@@ -3,12 +3,6 @@
 class StreamersController extends Controller
 {
 	/**
-	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
-	 * using two-column layout. See 'protected/views/layouts/column2.php'.
-	 */
-	public $layout='//layouts/column2';
-
-	/**
 	 * @return array action filters
 	 */
 	public function filters()
@@ -27,15 +21,15 @@ class StreamersController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','streaming'),
+				'actions'=>array('streaming','streamer'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('updateStreamer'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
+				'actions'=>array('admin','delete','create','update','view','index'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -48,13 +42,14 @@ class StreamersController extends Controller
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
 	 */
-	public function actionView($id)
+	public function actionStreamer()
 	{
-		$this->render('view',array(
-			'model'=>$this->loadModel($id),
+		$this->layout='//layouts/default';
+		$this->render('streamer',array(
+			'model'=>null,
 		));
 	}
-
+	
 	/**
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
@@ -66,7 +61,44 @@ class StreamersController extends Controller
 			'model'=>Streamers::model()->findByNickname($nickname),
 		));
 	}
+	
+	/**
+	 * Updates a particular model.
+	 * If update is successful, the browser will be redirected to the 'view' page.
+	 * @param integer $id the ID of the model to be updated
+	 */
+	public function actionUpdateStreamer($id)
+	{
+		$model=$this->loadModel($id);
+	
+		// Uncomment the following line if AJAX validation is needed
+		// $this->performAjaxValidation($model);
+	
+		if(isset($_POST['Streamers']))
+		{
+			$model->attributes=$_POST['Streamers'];
+			if($model->save())
+				$this->redirect(array('view','id'=>$model->id));
+		}
+	
+		$this->render('update',array(
+				'model'=>$model,
+		));
+	}
+		
+	/**Admin actions**/
 
+	/**
+	 * Displays a particular model.
+	 * @param integer $id the ID of the model to be displayed
+	 */
+	public function actionView($id)
+	{
+		$this->render('view',array(
+				'model'=>$this->loadModel($id),
+		));
+	}
+	
 	/**
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.

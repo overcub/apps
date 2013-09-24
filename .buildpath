@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<buildpath>
+	<buildpathentry kind="src" path="stream/app"/>
+	<buildpathentry kind="src" path="stream/yii-1.1.14/demos/blog"/>
+	<buildpathentry kind="src" path="stream/yii-1.1.14/demos/hangman"/>
+	<buildpathentry kind="src" path="stream/yii-1.1.14/demos/helloworld"/>
+	<buildpathentry kind="src" path="stream/yii-1.1.14/demos/phonebook"/>
+	<buildpathentry kind="src" path="stream/yii-1.1.14/framework"/>
+	<buildpathentry kind="src" path="stream/yii-1.1.14/requirements"/>
+	<buildpathentry kind="con" path="org.eclipse.php.core.LANGUAGE"/>
+</buildpath>
