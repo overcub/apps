@@ -47,6 +47,7 @@
 					<param name="movie" value="http://www.twitch.tv/widgets/live_embed_player.swf" />
 					<param name="flashvars" value="hostname=www.twitch.tv&channel=<?php echo $model->nickname?>&auto_play=true&start_volume=25" />
 				</object>
+				<a href="http://www.twitch.tv/<?php echo $model->nickname?>" class="trk" style="padding:2px 0px 4px; display:block; width:345px; font-weight:normal; font-size:10px; text-decoration:underline; text-align:center;">Watch live video from <?php echo $model->nickname?> on www.twitch.tv</a>
 			</div>
 			<div class="span4">
 				<iframe frameborder="0" scrolling="no" id="chat_embed" src="http://twitch.tv/chat/embed?channel=<?php echo $model->nickname?>&amp;popout_chat=true" height="500" width="100%"></iframe>
