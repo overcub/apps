@@ -9,7 +9,7 @@
 </section>
 <section class="glc-bar">
 	<div class="container">
-		<div class="row-fluid bl-bar">
+		<div class="row-fluid bl-bar bl-destaque">
 			<div class="span9">
 				<?php $this->widget('bootstrap.widgets.TbBreadcrumbs', array(
 					'links'=>array( 
@@ -41,7 +41,7 @@
 </section>
 <section class="glc-body-streamer bl-conteudo">
 	<div class="container">	
-		<div class="row-fluid">
+		<div class="row-fluid bl-destaque">
 			<div class="span12">
 				<div class="form">
 					<?php $form=$this->beginWidget('CActiveForm', array(
