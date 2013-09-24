@@ -1,0 +1,39 @@
+## generic files to ignore
+*~
+*.lock
+*.DS_Store
+*.swp
+*.out
+*.log
+*_log.*
+*.svn
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+*.bz
+*.bz2
+*.tbz
+*.tbz2
+*.tar.gz
+*.tar.bz
+*.tar.bz2
+apps.geeklifeclub/stream/app/protected/runtime
+apps.geeklifeclub/stream/app/protected/runtime/*
+apps.geeklifeclub/stream/app/assets/*
+
+#eclipse files
+.buildpath
+.project
+.settings/
+
+#dbconfigs
+apps.geeklifeclub/stream/app/protected/config/init.php
+
+#logs Yii
+apps.geeklifeclub/stream/app/error_log.txt
+apps.geeklifeclub/stream/app/protected/runtime/application.log
