@@ -10,7 +10,7 @@ Yii::setPathOfAlias('bootstrap', dirname(__FILE__).'/../extensions/bootstrap');
 return array(
 	'theme'=>'bootstrap',
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
-	'name'=>'My Web Application',
+	'name'=>'Stream | Geek Life Club',
 
 	'sourceLanguage'    =>'en-us',
 	'language'          =>'pt-br',
@@ -141,7 +141,7 @@ return array(
 			),
 		),
 	   'bootstrap'=>array(
-            'class'=>'bootstrap.components.Bootstrap',
+            'class'=>'bootstrap.components.Bootstrap'
         ),
 		'yii-sharre'=>array(
 				'class'=>'ext.yii-sharrre.components.Sharrre',

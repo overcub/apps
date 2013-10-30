@@ -1,14 +1,10 @@
-<section class="glc-header-streamer bl-conteudo">
+<section class="glc-header-streamer">
 	<div class="container">
 		<div class="row-fluid">
 			<div class="span12">
 				<h1>Streamer - <?php echo $model->nickname; ?></h1>
 			</div>
 		</div>
-	</div>
-</section>
-<section class="glc-bar">
-	<div class="container">
 		<div class="row-fluid bl-bar bl-destaque">
 			<div class="span9">
 				<?php $this->widget('bootstrap.widgets.TbBreadcrumbs', array(
@@ -40,22 +36,9 @@
 		</div>
 	</div>
 </section>
-<section class="glc-publicidade glc-superbanner-top">
-	<div class="container">
-		<div class="bl-pub-superbanner">
-			<p class="glc-pub-info">publicidade</p>
-			<!-- superbanner_728x90 -->
-			<div id='div-gpt-ad-1379991864403-3'>
-				<script type='text/javascript'>
-				googletag.cmd.push(function() { googletag.display('div-gpt-ad-1379991864403-3'); });
-				</script>
-			</div>
-		</div>
-	</div>
-</section>
 <section class="glc-body-streamer bl-conteudo">
 	<div class="container">		
-		<div class="row-fluid bl-destaque">
+		<div class="row-fluid">
 			<div class="span8">
 				<object type="application/x-shockwave-flash" height="500" width="100%" id="live_embed_player_flash" data="http://www.twitch.tv/widgets/live_embed_player.swf?channel=<?php echo $model->nickname?>" bgcolor="#000000">
 					<param name="allowFullScreen" value="false" />
@@ -66,7 +49,14 @@
 				</object>
 			</div>
 			<div class="span4">
-				<iframe frameborder="0" scrolling="no" id="chat_embed" src="http://twitch.tv/chat/embed?channel=<?php echo $model->nickname?>&amp;popout_chat=true" height="500" width="100%"></iframe>
+				<div class="glc-publicidade glc-publicidade-margin-bottom glc-retangulofino">
+					<div class="bl-pub-retangulofino">
+						<p class="glc-pub-info">publicidade</p>
+						<!-- retangulofino_300x50 -->
+						<div style="width: 300px; height: 50px; background: #000000;"></div>
+					</div>
+				</div>
+				<iframe frameborder="0" scrolling="no" id="chat_embed" src="http://twitch.tv/chat/embed?channel=<?php echo $model->nickname?>&amp;popout_chat=true" height="400" width="100%"></iframe>				
 			</div>
 		</div>
 	</div>
