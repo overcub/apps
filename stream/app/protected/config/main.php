@@ -30,7 +30,14 @@ return array(
 		'application.models.*',
 		'application.components.*',
 	),
-
+		
+	'aliases' => array(
+			//If you used composer your path should be
+			//'xupload' => 'ext.vendor.asgaroth.xupload'
+			//If you manually installed it
+			'xupload' => 'ext.xupload'
+	),
+	
 	'modules'=>array(
 		// uncomment the following to enable the Gii tool
 		'gii'=>array(
@@ -47,7 +54,7 @@ return array(
 	'components'=>array(
 		'user'=>array(
 			//'allowAutoLogin'=>true,
-			//'loginUrl'=>array('loginYii'),
+			'loginUrl'=>'/login',
 		),
 		'clientScript' => array (
 			'packages' => array (
@@ -97,9 +104,13 @@ return array(
 				'gii/<controller:\w+>'=>'gii/<controller>',
 				'gii/<controller:\w+>/<action:\w+>'=>'gii/<controller>/<action>',
 
+				'login'=>'Site/login',
+				'logout'=>'Site/logout',
 				'sobre'=>'Site/about',
+				'usuario/editar'=>'Players/edit',
+				'usuario/imagem-capa-upload'=>'Players/ajaxUploadImageCover',
 				'streamer/'=>'Streamers/streamer',
-				'streamer/<nickname>'=>'Streamers/streaming',
+				'stream/<username>'=>'Players/stream',
 				
 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
 				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
@@ -148,6 +159,10 @@ return array(
 				'coreCss'=>true,
 		),
 		'assetManager' => $CONFIG['params']['assetManager'],
+		'imagemod' => array(
+				//alias to dir, where you unpacked extension
+				'class' => 'application.extensions.imagemodifier.CImageModifier',
+		),
 	),
 
 	// application-level parameters that can be accessed
@@ -163,6 +178,7 @@ return array(
         'defaultIeVersion'=> 1,
         'customScriptDir'=>'tools',
 	    'encryptionKey'=>'997GLC97',
+	    'salt'=>'g33KL1f3Clu3123',
 	    'mashapeKey'=> array('LOL' =>'MWDMOJlVh625v8o0365WsPn9A3rVmf7J'),
 	    'version'=>'1',
 	),

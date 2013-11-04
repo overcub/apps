@@ -18,24 +18,19 @@ class PlayersController extends Controller
 		);
 	}
 
-	/**
-	 * Specifies the access control rules.
-	 * This method is used by the 'accessControl' filter.
-	 * @return array access control rules
-	 */
 	public function accessRules()
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','findPlayeirsNexus'),
+				'actions'=>array('list','view','findPlayeirsNexus','stream'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('register','edit','ajaxUploadImageCover'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
+				'actions'=>array('index','admin','delete','create','update'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -100,6 +95,97 @@ class PlayersController extends Controller
 		exit;
 	}
 
+	public function actionEdit()
+	{
+		$this->layout='//layouts/default';
+		$model=$this->loadModel(Yii::app()->user->getId());
+		// Uncomment the following line if AJAX validation is needed
+		// $this->performAjaxValidation($model);
+		$message = "";
+		if(isset($_POST['Players']))
+		{
+			$model->attributes=$_POST['Players'];
+			if($model->save()){
+				$message = "Edição Realizada com sucesso!";
+			}else{
+				$message = "Ocorreu um erro";
+			}
+		}
+
+		$this->render('edit',array(
+				'model'=>$model,
+				'message' => $message,
+				'image' => Players::model()->getImageCover()
+		));
+	}
+	
+	/**
+	 * Displays a particular model.
+	 * @param integer $id the ID of the model to be displayed
+	 */
+	public function actionStream($username)
+	{
+		if( ($streamer = Players::model()->findByUsername($username)) ){
+			$this->layout='//layouts/default';
+			$this->render('stream',array(
+				'model'=>$streamer,
+			));
+		}else{
+			throw new CHttpException(404,'The requested page does not exist.');
+		}
+	}
+	
+	private function parseImageData($upload = false){
+		return array(
+				'name' => $upload['name']['file'],
+				'type' => $upload['type']['file'],
+				'tmp_name' => $upload['tmp_name']['file'],
+				'error' => 0,
+				'size' => $upload['size']['file']
+		);
+	}
+	
+	public function actionAjaxUploadImageCover()
+	{
+		if(isset($_FILES['Players'])){
+			$img = Yii::app()->imagemod->load($this->parseImageData($_FILES['Players']));
+			if($img->file_src_name_ext != 'jpg'){
+				echo 'error : Formato de imagem não suportado. Somente .jpg';
+				Yii::app()->end();
+				exit;
+			}
+			$nameImg = md5(Yii::app()->user->data['email']);
+			$path = "/images/uploads/players/covers";
+			$publicPath =Yii::app()->getBasePath() . "/.." . $path;
+			if ($img->uploaded) {
+				$img->file_new_name_body = $nameImg;
+				unlink($publicPath.'/'.$nameImg.'.jpg');
+				$img->process($publicPath);
+				if ($img->processed) {
+					$info = array();
+					$file['name'] = $nameImg.'.'.$img->file_src_name_ext;
+					$file['size'] = intval($img->file_src_size);
+					$file['type'] = $img->file_src_mime;
+					$file['thumbnail_url'] = $path.'/'.$nameImg.'.'.$img->file_src_name_ext.'?dateMod='.date('YmdHs');
+					$file['url'] = $path.'/'.$nameImg.'.'.$img->file_src_name_ext.'?dateMod='.date('YmdHs');
+					$info[] = $file;
+					$json = json_encode($info);
+					header('Content-type: application/json');
+					echo $json;
+					$img->clean();
+				} else {
+					echo 'error : ' . $img->error;
+				}
+				exit;
+			}
+		}
+	}
+	
+	/**************************************************************************************
+	* Admin actions
+	* 
+	* */
+	
 	/**
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
@@ -133,7 +219,7 @@ class PlayersController extends Controller
 			'model'=>$model,
 		));
 	}
-
+	
 	/**
 	 * Updates a particular model.
 	 * If update is successful, the browser will be redirected to the 'view' page.
@@ -211,7 +297,7 @@ class PlayersController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=Players::model()->findByPk($id);
+		$model=Players::model()->findById($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
