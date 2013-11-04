@@ -35,9 +35,9 @@
 </head>
 <body <?php echo (!empty($this->sessionClass))?'class="'.$this->sessionClass.'"':'' ?>>
 	<div id="glc-doc">
-		<?php $this->widget('application.widgets.WHeader');?>
+		<?php $this->widget('application.widgets.WHeader', array('superbanner' => $this->ads['superbanner']));?>
 		<?php echo $content; ?>
-		<?php $this->widget('application.widgets.WFooter');?>
+		<?php $this->widget('application.widgets.WFooter', array('superbanner' => $this->ads['superbannerFooter']));?>
 	</div>
 </body>
 </html>

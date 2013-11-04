@@ -22,11 +22,11 @@ class PlayersController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('list','view','findPlayeirsNexus','stream'),
+				'actions'=>array('list','view','findPlayeirsNexus','register','stream','streaming'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('register','edit','ajaxUploadImageCover'),
+				'actions'=>array('edit','ajaxUploadImageCover'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -115,17 +115,43 @@ class PlayersController extends Controller
 		$this->render('edit',array(
 				'model'=>$model,
 				'message' => $message,
-				'image' => Players::model()->getImageCover()
+				'image' => $model()->getImageCover()
+		));
+	}
+
+	public function actionRegister()
+	{
+		$this->ads['superbanner'] = false;
+		$this->ads['superbannerFooter'] = false;
+		$this->layout='//layouts/default';
+		$model=new Players;
+		if(isset($_POST['Players']))
+		{
+			$model->attributes=$_POST['Players'];
+			if($model->save())
+				$this->redirect(array('view','id'=>$model->id));
+		}
+
+		$this->render('register',array(
+			'model'=>$model,
 		));
 	}
 	
-	/**
-	 * Displays a particular model.
-	 * @param integer $id the ID of the model to be displayed
-	 */
-	public function actionStream($username)
+	public function actionStreaming($username)
 	{
 		if( ($streamer = Players::model()->findByUsername($username)) ){
+			$this->layout='//layouts/default';
+			$this->render('streaming',array(
+				'model'=>$streamer,
+			));
+		}else{
+			throw new CHttpException(404,'The requested page does not exist.');
+		}
+	}
+
+	public function actionStream()
+	{
+		if( ($streamer = Players::model()->findByUsername('rtancman')) ){
 			$this->layout='//layouts/default';
 			$this->render('stream',array(
 				'model'=>$streamer,
@@ -176,8 +202,11 @@ class PlayersController extends Controller
 				} else {
 					echo 'error : ' . $img->error;
 				}
+				Yii::app()->end();
 				exit;
 			}
+		}else{
+			throw new CHttpException(404,'The requested page does not exist.');
 		}
 	}
 	

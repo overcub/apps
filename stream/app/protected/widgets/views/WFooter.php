@@ -1,16 +1,18 @@
-<section class="glc-publicidade glc-superbanner-footer">
-	<div class="container">
-		<div class="bl-pub-superbanner">
-			<p class="glc-pub-info">publicidade</p>
-			<!-- superbanner_footer_728x90 -->
-			<div id='div-gpt-ad-1379991864403-4'>
-				<script type='text/javascript'>
-				googletag.cmd.push(function() { googletag.display('div-gpt-ad-1379991864403-4'); });
-				</script>
+<?php if( $this->superbanner ) :?>
+	<section class="glc-publicidade glc-superbanner-footer">
+		<div class="container">
+			<div class="bl-pub-superbanner">
+				<p class="glc-pub-info">publicidade</p>
+				<!-- superbanner_footer_728x90 -->
+				<div id='div-gpt-ad-1379991864403-4'>
+					<script type='text/javascript'>
+					googletag.cmd.push(function() { googletag.display('div-gpt-ad-1379991864403-4'); });
+					</script>
+				</div>
 			</div>
 		</div>
-	</div>
-</section>
+	</section>
+<?php endif; ?>
 <section class="glc-beneficios bl-destaque bl-destaque-conteudo">
 	<div class="container">
 		<div class="row-fluid">

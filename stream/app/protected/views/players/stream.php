@@ -1,11 +1,15 @@
 <section class="glc-header-streamer">
 	<div class="container">
+		<div class="row-fluid">
+			<div class="span12">
+				<h1>Streamer</h1>
+			</div>
+		</div>
 		<div class="row-fluid bl-bar bl-destaque">
 			<div class="span9">
 				<?php $this->widget('bootstrap.widgets.TbBreadcrumbs', array(
 					'links'=>array( 
-						'Streamer' => '/streamer',
-						$model->username
+						'Stream'
 					)
 				)); ?>
 			</div>
@@ -29,34 +33,128 @@
 				</div>
 			</div>
 		</div>
-		<div class="row-fluid" style="height: 300px; background: url(<?php echo $model->getImageCover();?>) repeat center center;">
-			<div class="span12">
-				<h1>Streamer - <?php echo $model->username; ?></h1>
-			</div>
-		</div>
 	</div>
 </section>
-<section class="glc-body-streamer bl-conteudo">
-	<div class="container">		
+<section class="glc-body-streamer">
+	<div class="container">
+		<div class="glc-carousel glc-box">
+		    <div id="myCarousel" class="carousel slide glc-carousel-info">
+			    <!-- Carousel items -->
+			    <div class="carousel-inner">
+				    <div class="active item">
+				    	<span class="glc-box-game-icon"><img src="/images/style/icon/game/icon-lol-40x40.gif" width="40" height="40"/></span>
+				    	<img style="width: 1170px; height: 300px;" src="/images/logo/geeklifeclub250x250-250x220.jpg">
+					    <div class="carousel-caption">
+	                      <h4>Second Thumbnail label</h4>
+	                      <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+	                    </div>
+				    </div>
+				    <div class="item">
+				    	<span class="glc-box-game-icon"><img src="/images/style/icon/game/icon-wow-40x40.png" width="40" height="40"/></span>
+				    	<img style="width: 1170px; height: 300px;" src="/images/logo/geeklifeclub250x250-250x220.jpg">
+				    	<div class="carousel-caption">
+	                      <h4>Second Thumbnail label</h4>
+	                      <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+	                    </div>
+				    </div>
+				    <div class="item">
+				    	<span class="glc-box-game-icon"><img src="/images/style/icon/game/icon-lol-40x40.gif" width="40" height="40"/></span>
+				    	<img style="width: 1170px; height: 300px;" src="/images/logo/geeklifeclub250x250-250x220.jpg">
+				    	<div class="carousel-caption">
+	                      <h4>Second Thumbnail label</h4>
+	                      <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+	                    </div>
+				    </div>
+		    	</div>
+		    	<ol class="carousel-indicators">
+				    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+				    <li data-target="#myCarousel" data-slide-to="1"></li>
+				    <li data-target="#myCarousel" data-slide-to="2"></li>
+			    </ol>
+			    <!-- Carousel nav -->
+			    <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+			    <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+		    </div>
+		</div>
+	</div>
+	<div class="container bl-rows">
 		<div class="row-fluid">
-			<div class="span8">
-				<object type="application/x-shockwave-flash" height="500" width="100%" id="live_embed_player_flash" data="http://www.twitch.tv/widgets/live_embed_player.swf?channel=<?php echo $model->getExtraData('twichtv')?>" bgcolor="#000000">
-					<param name="allowFullScreen" value="false" />
-					<param name="allowScriptAccess" value="always" />
-					<param name="allowNetworking" value="all" />
-					<param name="movie" value="http://www.twitch.tv/widgets/live_embed_player.swf" />
-					<param name="flashvars" value="hostname=www.twitch.tv&channel=<?php echo $model->getExtraData('twichtv')?>&auto_play=true&start_volume=25" />
-				</object>
+			<div class="span4">
+				<article class="glc-box glc-box-icon">
+					<span class="glc-box-game-icon"><img src="/images/style/icon/game/icon-wow-40x40.png" width="40" height="40"/></span>
+					<a href="#">
+						<div class="glc-box-image">
+							<img style="width: 380px" src="/images/logo/geeklifeclub250x250-250x220.jpg">
+						</div>
+						<div class="glc-box-caption">
+	                      <h4>Second Thumbnail label</h4>
+	                      <p>Cras justo odio, dapibus ac facilisis in ...</p>
+	                    </div>
+                    </a>
+				</article>
 			</div>
 			<div class="span4">
-				<div class="glc-publicidade glc-publicidade-margin-bottom glc-retangulofino">
-					<div class="bl-pub-retangulofino">
-						<p class="glc-pub-info">publicidade</p>
-						<!-- retangulofino_300x50 -->
-						<div style="width: 300px; height: 50px; background: #000000;"></div>
-					</div>
-				</div>
-				<iframe frameborder="0" scrolling="no" id="chat_embed" src="http://twitch.tv/chat/embed?channel=<?php echo $model->getExtraData('twichtv')?>&amp;popout_chat=true" height="400" width="100%"></iframe>				
+				<article class="glc-box glc-box-icon">
+					<span class="glc-box-game-icon"><img src="/images/style/icon/game/icon-lol-40x40.gif" width="40" height="40"/></span>
+					<a href="#">
+						<div class="glc-box-image">
+							<img style="width: 380px" src="/images/logo/geeklifeclub250x250-250x220.jpg">
+						</div>
+						<div class="glc-box-caption">
+	                      <h4>Second Thumbnail label</h4>
+	                      <p>Cras justo odio, dapibus ac facilisis in ...</p>
+	                    </div>
+                    </a>
+				</article>
+			</div>
+			<div class="span4">
+				<article class="glc-box glc-box-icon">
+					<span class="glc-box-game-icon"><img src="/images/style/icon/game/icon-lol-40x40.gif" width="40" height="40"/></span>
+					<a href="#">
+						<div class="glc-box-image">
+							<img style="width: 380px" src="/images/logo/geeklifeclub250x250-250x220.jpg">
+						</div>
+						<div class="glc-box-caption">
+	                      <h4>Second Thumbnail label</h4>
+	                      <p>Cras justo odio, dapibus ac facilisis in ...</p>
+	                    </div>
+                    </a>
+				</article>
+			</div>
+		</div>
+		<div class="row-fluid">
+			<div class="span4">
+				<article class="glc-box glc-box-icon">
+					<span class="glc-box-game-icon"><img src="/images/style/icon/game/icon-lol-40x40.gif" width="40" height="40"/></span>
+					<a href="#">
+						<div class="glc-box-caption glc-box-caption-text-right">
+	                      <h4>Second Thumbnail label</h4>
+	                      <p>Cras justo odio, dapibus ac facilisis in ...</p>
+	                    </div>
+                    </a>
+				</article>
+			</div>
+			<div class="span4">
+				<article class="glc-box glc-box-icon">
+					<span class="glc-box-game-icon"><img src="/images/style/icon/game/icon-lol-40x40.gif" width="40" height="40"/></span>
+					<a href="#">
+						<div class="glc-box-caption glc-box-caption-text-right">
+	                      <h4>Second Thumbnail label</h4>
+	                      <p>Cras justo odio, dapibus ac facilisis in ...</p>
+	                    </div>
+                    </a>
+				</article>
+			</div>
+			<div class="span4">
+				<article class="glc-box glc-box-icon">
+					<span class="glc-box-game-icon"><img src="/images/style/icon/game/icon-wow-40x40.png" width="40" height="40"/></span>
+					<a href="#">
+						<div class="glc-box-caption glc-box-caption-text-right">
+	                      <h4>Second Thumbnail label</h4>
+	                      <p>Cras justo odio, dapibus ac facilisis in ...</p>
+	                    </div>
+                    </a>
+				</article>
 			</div>
 		</div>
 	</div>

@@ -109,8 +109,9 @@ return array(
 				'sobre'=>'Site/about',
 				'usuario/editar'=>'Players/edit',
 				'usuario/imagem-capa-upload'=>'Players/ajaxUploadImageCover',
-				'streamer/'=>'Streamers/streamer',
-				'stream/<username>'=>'Players/stream',
+				'cadastro/'=>'Players/register',
+				'stream'=>'Players/stream',
+				'stream/<username>'=>'Players/streaming',
 				
 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
 				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
@@ -180,6 +181,6 @@ return array(
 	    'encryptionKey'=>'997GLC97',
 	    'salt'=>'g33KL1f3Clu3123',
 	    'mashapeKey'=> array('LOL' =>'MWDMOJlVh625v8o0365WsPn9A3rVmf7J'),
-	    'version'=>'1',
+	    'version'=>'1'
 	),
 );

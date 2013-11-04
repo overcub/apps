@@ -22,6 +22,7 @@ class UserIdentity extends CUserIdentity
 			$this->_id=$record->id;
 			$this->username = $record->username;
 			$this->_group = $record->group;
+			$this->setState('img', "http://en.gravatar.com/avatar/".md5($record->email)."?d=mm");
 			$this->setState('data', $record->attributes);
 			$this->errorCode=self::ERROR_NONE;
 		}

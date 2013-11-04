@@ -74,12 +74,12 @@ class Players extends CActiveRecord
 			'id' => 'ID',
 			'id_user' => 'Id User',
 			'email' => 'Email',
-			'password' => 'Password',
+			'password' => 'Senha',
 			'username' => 'Username',
-			'name' => 'Name',
+			'name' => 'Nome',
 			'group' => 'Group',
-			'gender' => 'Gender',
-			'birthdate' => 'Birthdate',
+			'gender' => 'Sexo',
+			'birthdate' => 'Data de nascimento',
 			'extra' => 'Extra',
 			'updateTime' => 'Update Time',
 			'createTime' => 'Create Time',
@@ -137,7 +137,7 @@ class Players extends CActiveRecord
 	{
 		//if (!empty($this->password))
 			//$this->password=crypt($this->password,Yii::app()->params->salt);
-		
+		$this->updateTime = null;
 		if (!empty($_POST['extra']))
 			$this->extra=CJSON::encode($_POST['extra']);
 		
