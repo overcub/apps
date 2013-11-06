@@ -22,9 +22,9 @@
 *.tar.gz
 *.tar.bz
 *.tar.bz2
-apps.geeklifeclub/stream/app/protected/runtime
-apps.geeklifeclub/stream/app/protected/runtime/*
-apps.geeklifeclub/stream/app/assets/*
+stream/app/protected/runtime
+stream/app/protected/runtime/*
+stream/app/assets/*
 
 #eclipse files
 .buildpath
@@ -32,8 +32,8 @@ apps.geeklifeclub/stream/app/assets/*
 .settings/
 
 #dbconfigs
-apps.geeklifeclub/stream/app/protected/config/init.php
+stream/app/protected/config/init.php
 
 #logs Yii
-apps.geeklifeclub/stream/app/error_log.txt
-apps.geeklifeclub/stream/app/protected/runtime/application.log
+stream/app/error_log.txt
+stream/app/protected/runtime/application.log
