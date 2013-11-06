@@ -56,10 +56,14 @@ class StreamersController extends Controller
 	 */
 	public function actionStreaming($nickname)
 	{
-		$this->layout='//layouts/default';
-		$this->render('streaming',array(
-			'model'=>Streamers::model()->findByNickname($nickname),
-		));
+		if( ($streamer = Streamers::model()->findByNickname($nickname)) ){
+			$this->layout='//layouts/default';
+			$this->render('streaming',array(
+				'model'=>Streamers::model()->findByNickname($nickname),
+			));
+		}else{
+			throw new CHttpException(404,'The requested page does not exist.');
+		}
 	}
 	
 	/**

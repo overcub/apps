@@ -8,6 +8,10 @@ class Controller extends CController{
 	private $_assetsBase;
 	public $layout='//layouts/column1';
 	public $sessionClass = "";
+	public $ads = array(
+    	'superbanner' => true,
+    	'superbannerFooter' => true,
+    );
 	public $oGet;
 	
 	/**

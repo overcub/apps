@@ -1,36 +1,38 @@
-<section class="glc-publicidade glc-superbanner-footer">
-	<div class="container">
-		<div class="bl-pub-superbanner">
-			<p class="glc-pub-info">publicidade</p>
-			<!-- superbanner_footer_728x90 -->
-			<div id='div-gpt-ad-1379991864403-4'>
-				<script type='text/javascript'>
-				googletag.cmd.push(function() { googletag.display('div-gpt-ad-1379991864403-4'); });
-				</script>
+<?php if( $this->superbanner ) :?>
+	<section class="glc-publicidade glc-superbanner-footer">
+		<div class="container">
+			<div class="bl-pub-superbanner">
+				<p class="glc-pub-info">publicidade</p>
+				<!-- superbanner_footer_728x90 -->
+				<div id='div-gpt-ad-1379991864403-4'>
+					<script type='text/javascript'>
+					googletag.cmd.push(function() { googletag.display('div-gpt-ad-1379991864403-4'); });
+					</script>
+				</div>
 			</div>
 		</div>
-	</div>
-</section>
+	</section>
+<?php endif; ?>
 <section class="glc-beneficios bl-destaque bl-destaque-conteudo">
 	<div class="container">
 		<div class="row-fluid">
 			<div class="span4">
-				<img src="/images/logo/geeklifeclub250x250-250x220.jpg" width="140" height="140" class="img-circle" />
-				<h2>Heading</h2>
-				<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-				<p><a href="#" class="btn">View details »</a></p>
+				<article>
+					<h1>Streaming</h1>
+					<p>Mostre aos seus amigos como se joga</p>
+				</article>
 			</div>
 			<div class="span4">
-				<img src="/images/logo/geeklifeclub250x250-250x220.jpg" width="140" height="140" class="img-circle" />
-				<h2>Heading</h2>
-				<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-				<p><a href="#" class="btn">View details »</a></p>
+				<article>
+					<h1>Assista</h1>
+					<p>Assista aos melhores jogos da atualidade</p>
+				</article>
 			</div>
 			<div class="span4">
-				<img src="/images/logo/geeklifeclub250x250-250x220.jpg" width="140" height="140" class="img-circle" />
-				<h2>Heading</h2>
-				<p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p>
-				<p><a href="#" class="btn">View details »</a></p>
+				<article>
+					<h1>Divulgue</h1>
+					<p>Divulgue o seu streaming e ganhe vantagens</p>
+				</article>
 			</div>
 		</div>
 	</div>
