@@ -115,7 +115,7 @@ class PlayersController extends Controller
 		$this->render('edit',array(
 				'model'=>$model,
 				'message' => $message,
-				'image' => $model()->getImageCover()
+				'image' => $model->getImageCover()
 		));
 	}
 
