@@ -25,6 +25,7 @@
 stream/app/protected/runtime
 stream/app/protected/runtime/*
 stream/app/assets/*
+stream/app/images/uploads/players/covers/*
 
 #eclipse files
 .buildpath
