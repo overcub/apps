@@ -28,6 +28,15 @@ class UserIdentity extends CUserIdentity
 		}
 		return !$this->errorCode;
 	}
+
+	public function authenticateBeforeRegister($player)
+	{
+		$this->_id=$player->id;
+		$this->username = $player->username;
+		$this->_group = $player->group;
+		$this->setState('img', "http://en.gravatar.com/avatar/".md5($player->email)."?d=mm");
+		$this->setState('data', $player->attributes);
+	}
 	
 	public function getId()
 	{

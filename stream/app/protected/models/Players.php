@@ -142,7 +142,7 @@ class Players extends CActiveRecord
 			$this->extra=CJSON::encode($_POST['extra']);
 		
 		if (isset($_POST['Players']['newPassword']))
-			$this->cryptNewPassword();
+			$this->cryptNewPassword($_POST['Players']['newPassword']);
 		
 		if (!empty($this->username))
 			$this->username=trim($this->username);
@@ -153,10 +153,10 @@ class Players extends CActiveRecord
 		return true;
 	}
 
-	public function cryptNewPassword()
+	public function cryptNewPassword( $newPassword )
 	{
-		if( !empty($_POST['Players']['newPassword']) ){
-			$this->password=crypt($_POST['Players']['newPassword'],Yii::app()->params->salt);
+		if( !empty($newPassword) ){
+			$this->password=crypt($newPassword,Yii::app()->params->salt);
 		}
 	}
 

@@ -128,8 +128,14 @@ class PlayersController extends Controller
 		if(isset($_POST['Players']))
 		{
 			$model->attributes=$_POST['Players'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+			$model->cryptNewPassword($_POST['Players']['password']);
+			$model->createTime = date('Y-m-d h:i:s');
+			if($model->save()){
+				$userIdentity=new UserIdentity($model->email,$model->password);
+				$userIdentity->authenticateBeforeRegister($model);
+				Yii::app()->user->login($userIdentity,0);
+				$this->redirect('/');
+			}
 		}
 
 		$this->render('register',array(
