@@ -191,7 +191,9 @@ class PlayersController extends Controller
 			$publicPath =Yii::app()->getBasePath() . "/.." . $path;
 			if ($img->uploaded) {
 				$img->file_new_name_body = $nameImg;
-				unlink($publicPath.'/'.$nameImg.'.jpg');
+				if( file_exists($publicPath.'/'.$nameImg.'.jpg') == true ){
+					unlink($publicPath.'/'.$nameImg.'.jpg');
+				}
 				$img->process($publicPath);
 				if ($img->processed) {
 					$info = array();
