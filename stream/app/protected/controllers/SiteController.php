@@ -34,6 +34,8 @@ class SiteController extends Controller
 	public function actionIndex()
 	{
 		$this->ads['superbanner'] = false;
+		$this->ads['superbannerFooter'] = false;
+		$this->sessionClass = 'glc-home';
 		$this->render('index');
 	}
 	
