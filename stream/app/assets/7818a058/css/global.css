@@ -61,7 +61,7 @@
 }
 	.glc-header .glc-header-logo{
     	min-height: 80px;
-    	background: url("/images/style/default/header-stream.jpg") repeat scroll 0 130px;
+    	/*background: url("/images/style/default/header-stream.jpg") repeat scroll 0 130px;*/
 	}
 	.glc-header .glc-header-inner{
     	background-color: #000000;
@@ -223,3 +223,22 @@
 		.glc-publicidade .bl-pub-superbanner p.glc-pub-info{
 			text-align: left;
 		}
+
+/*****************************************************************************
+* Paginas
+****/
+/*Home*/
+.glc-home{
+}
+	.glc-home #glc-doc .glc-home-stream {
+	    background: url(/images/style/default/bg-stream.jpg);
+	    color: #fff;
+	    text-shadow: 2px 2px 2px #000000;
+	    padding: 60px 0;
+	}
+	.glc-home #glc-doc .bl-destaque.bl-destaque-conteudo{
+		 margin-top: 0;
+	}
+	.glc-home #glc-doc .glc-header{
+		 margin-bottom: 0;
+	}

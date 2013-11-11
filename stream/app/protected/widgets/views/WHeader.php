@@ -1,16 +1,9 @@
 <header class="glc-header">
-	<div class="glc-header-logo">
-		<div class="container">
-			<div class="glc-logo">
-				<a title="Página Inicial" href="/">Stream</a>
-			</div>
-		</div>
-	</div>	
 	<div class="glc-header-inner">           
 		<div class="container">  
 			<?php $this->widget('bootstrap.widgets.TbNavbar', array(
 			    'type'=>'inverse',
-			    'brand'=>false,
+			    'brand'=>'Stream',
 			    'brandUrl'=>'/',
 				'fixed' => false,
 			    'collapse'=>true, // requires bootstrap-responsive.css
