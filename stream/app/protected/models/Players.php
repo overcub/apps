@@ -193,6 +193,11 @@ class Players extends CActiveRecord
 		}
 	}
 	
+	public function getImageProfile($size = 160)
+	{
+		return "http://www.gravatar.com/avatar/".md5($this->email)."?s=$size";
+	}
+	
 	public function findByEmail($email)
 	{
 		$dependency = new CDbCacheDependency("SELECT MAX(updateTime) FROM ".$this->tableName()." WHERE email = '".$email."'" );

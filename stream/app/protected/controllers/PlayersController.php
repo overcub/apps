@@ -146,6 +146,7 @@ class PlayersController extends Controller
 	public function actionStreaming($username)
 	{
 		if( ($streamer = Players::model()->findByUsername($username)) ){
+			$this->sessionClass = 'glc-streaming';
 			$this->layout='//layouts/default';
 			$this->render('streaming',array(
 				'model'=>$streamer,

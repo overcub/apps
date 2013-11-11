@@ -7,5 +7,3 @@
 		</div>
 	</div>
 </section>
-<style type="text/css">
-</style>

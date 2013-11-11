@@ -1,6 +1,28 @@
-<section class="glc-header-streamer">
+<style>
+.glc-streaming{
+}
+	.glc-streaming #glc-doc .glc-streaming-content .glc-header {
+	    color: #fff;
+	    text-align: center;
+	    text-shadow: 2px 2px 2px #000000;
+	    padding: 60px 0;
+	    height: 160px;
+	}
+	.glc-streaming #glc-doc .bl-destaque.bl-destaque-conteudo{
+		 margin-top: 0;
+	}
+	.glc-streaming #glc-doc .glc-header{
+		 margin-bottom: 0;
+	}
+</style>
+<section class="glc-streaming-content">
+<div class="glc-header" style="background: url(<?php echo $model->getImageCover();?>) repeat center center;">
+	<img border="0" class="img-circle" src="<?php echo $model->getImageProfile() ?>" alt="<?php echo $model->name ?>"/>
+	<h1><?php echo $model->username; ?></h1>
+</div>
+<div class="glc-bredcrumbs">
 	<div class="container">
-		<div class="row-fluid bl-bar bl-destaque">
+		<div class="row-fluid bl-bar">
 			<div class="span9">
 				<?php $this->widget('bootstrap.widgets.TbBreadcrumbs', array(
 					'links'=>array( 
@@ -29,14 +51,22 @@
 				</div>
 			</div>
 		</div>
-		<div class="row-fluid" style="height: 300px; background: url(<?php echo $model->getImageCover();?>) repeat center center;">
-			<div class="span12">
-				<h1>Streamer - <?php echo $model->username; ?></h1>
+	</div>
+</div>
+<div class="glc-publicidade glc-superbanner-top">
+	<div class="container">
+		<div class="bl-pub-superbanner">
+			<p class="glc-pub-info">publicidade</p>
+			<!-- superbanner_728x90 -->
+			<div id='div-gpt-ad-1379991864403-3'>
+				<script type='text/javascript'>
+				googletag.cmd.push(function() { googletag.display('div-gpt-ad-1379991864403-3'); });
+				</script>
 			</div>
 		</div>
 	</div>
-</section>
-<section class="glc-body-streamer bl-conteudo">
+</div>
+<div class="glc-body-streamer bl-conteudo">
 	<div class="container">		
 		<div class="row-fluid">
 			<div class="span8">
@@ -60,4 +90,5 @@
 			</div>
 		</div>
 	</div>
+</div>
 </section>

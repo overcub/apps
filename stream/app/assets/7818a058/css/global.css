@@ -1,9 +1,17 @@
 /* icon */
 
 /* components */
-.glc-logo{	
+#glc-doc .glc-bredcrumbs{
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#FFFFFF), color-stop(0.5, #F9FAFA), to(#F9FAFA));
+	background-image: -webkit-linear-gradient(#FFFFFF, #F9FAFA 50%, #F9FAFA);
+	background-image: -moz-linear-gradient(#FFFFFF, #F9FAFA 50%, #F9FAFA);
+	background-image: -o-linear-gradient(#FFFFFF, #F9FAFA 50%, #F9FAFA);
+	background-image: linear-gradient(#FFFFFF, #F9FAFA 50%, #F9FAFA);
+    border-bottom: 1px solid #D9D9D9;
 }
-.glc-box{
+#glc-doc .glc-logo{	
+}
+#glc-doc .glc-box{
 	background: none repeat scroll 0 0 #3F3D3D;
     border-bottom: 3px solid #3F3D3D;
     border-top: 3px solid #3F3D3D;
@@ -11,80 +19,80 @@
 	-moz-box-shadow:   0 0 6px 0 #3F3D3D;
 	box-shadow:   0 0 6px 0 #3F3D3D;
 }
-	.glc-box-icon{
+	#glc-doc .glc-box-icon{
 		position: relative;
 	}
-	.glc-box .glc-box-game-icon{
+	#glc-doc .glc-box .glc-box-game-icon{
 		position: absolute;
 		top: 5px;
 		left: 5px;
 		z-index: 50;
 	}
-	.glc-box .glc-box-image{
+	#glc-doc .glc-box .glc-box-image{
 		max-width: 370px; 
 		max-height: 130px; 
 		overflow: hidden;
 	}
-	.glc-box a:hover, .glc-box a:focus {
+	#glc-doc .glc-box a:hover, #glc-doc .glc-box a:focus {
 	    color: #FFFFFF;
 	    opacity: 0.9;
 	    text-decoration: none;
 	}
-	.glc-box .glc-box-caption{
+	#glc-doc .glc-box .glc-box-caption{
 		background: none repeat scroll 0 0 rgba(0, 0, 0, 0.75);
 		color: #FFFFFF;
 		line-height: 20px;
 		padding: 15px;
 	}
-		.glc-box .glc-box-caption.glc-box-caption-text-right{
+		#glc-doc .glc-box .glc-box-caption.glc-box-caption-text-right{
 			text-align: right;	
 		}
 	
-.glc-carousel{
+#glc-doc .glc-carousel{
     margin: 40px 0;
 }
-	.glc-carousel .carousel{ 
+	#glc-doc .glc-carousel .carousel{ 
 		margin-bottom: 0;
 	}
-	.glc-carousel .carousel.glc-carousel-info .carousel-inner .item {
+	#glc-doc .glc-carousel .carousel.glc-carousel-info .carousel-inner .item {
     	text-align: left;
 	}
-	.glc-carousel .carousel .carousel-indicators li {
+	#glc-doc .glc-carousel .carousel .carousel-indicators li {
     	border: 1px solid #000000;
 	}
-		.glc-carousel .carousel .carousel-indicators li.active {
+		#glc-doc .glc-carousel .carousel .carousel-indicators li.active {
 	    	background: #000000;
 		}
 /* navbar */
-.glc-header{
+#glc-doc .glc-header{
 	margin-bottom: 20px;
 }
-	.glc-header .glc-header-logo{
+	#glc-doc .glc-header .glc-header-logo{
     	min-height: 80px;
     	/*background: url("/images/style/default/header-stream.jpg") repeat scroll 0 130px;*/
 	}
-	.glc-header .glc-header-inner{
+	#glc-doc .glc-header .glc-header-inner{
     	background-color: #000000;
 	}
-		.glc-header .glc-header-inner .navbar-inverse .navbar-inner {
+		#glc-doc .glc-header .glc-header-inner .navbar-inverse .navbar-inner {
 			background-image: none;
 			background-color: #000000;
 			background-repeat: inherit;
 			border-color: transparent;
 		}
-	.glc-header .navbar .brand{
+	#glc-doc .glc-header .navbar .brand{
 		padding: 0;
 	}
-	.glc-header .navbar {
+	#glc-doc .glc-header .navbar {
     	margin-bottom: 0;
 	}
-		.glc-header .navbar .navbar-inner{
+		#glc-doc .glc-header .navbar .navbar-inner{
 		    -webkit-border-radius: 0;
 			-moz-border-radius: 0;
 			border-radius: 0;
 		}
 /* Footer */	
-.glc-footer{
+#glc-doc .glc-footer{
 	background:#000000;
 	padding: 40px 0 20px;
 	color: #FFFFFF;
@@ -143,34 +151,34 @@
 	    box-sizing: border-box;
 	}
 /* carousel */      
-.carousel .glc-carousel-info{	
+#glc-doc .carousel .glc-carousel-info{	
 }
-	.carousel.glc-carousel-info .carousel-inner .item{
+	#glc-doc .carousel.glc-carousel-info .carousel-inner .item{
 		text-align: center;
 	}
-		.carousel.glc-carousel-info .carousel-inner .item img{
+		#glc-doc .carousel.glc-carousel-info .carousel-inner .item img{
 			display: inline;
 		}
 
 /* blocos */ 
-.bl-rows .row-fluid,
-.bl-rows .row{
+#glc-doc .bl-rows .row-fluid,
+#glc-doc .bl-rows .row{
 	margin-bottom: 30px;
 }
-.bl-destaque {
+#glc-doc .bl-destaque {
     background-image: linear-gradient(#F9FAFA, #FFFFFF 50%, #FFFFFF);
     border-top: 1px solid #D9D9D9;
     box-shadow: 0 1px white inset, 0 -1px white inset;
 }
-	.bl-destaque.bl-destaque-conteudo {
+	#glc-doc .bl-destaque.bl-destaque-conteudo {
 		margin-top: 40px;
 	    padding: 40px 0;
 	    text-align: center;
 	}
-.bl-conteudo{
+#glc-doc .bl-conteudo{
 	margin-top: 40px;
 }
-	.bl-conteudo .bl-conteudo-destaque{
+	#glc-doc .bl-conteudo .bl-conteudo-destaque{
 		background-image: linear-gradient(#F9FAFA, #FFFFFF 50%, #F9FAFA);
 	    border: 1px solid #D9D9D9;
 		padding: 15px 8px;
@@ -179,32 +187,32 @@
 		border-radius: 10px;
 		 margin: 40px 0;
 	}
-.bl-info{
+#glc-doc .bl-info{
 	margin-top: 60px;
 	text-align: center;
 }
-.bl-bar{
+#glc-doc .bl-bar{
 	padding: 8px 0 0;
 }
-	.bl-bar .breadcrumb{
+	#glc-doc .bl-bar .breadcrumb{
 		background:transparent;
 		margin: 0;
 		padding: 0 15px;
 	}
 	
 /* Publicidade */
-.glc-publicidade{
+#glc-doc .glc-publicidade{
 	margin: 40px 0;
 }
-	.glc-publicidade.glc-publicidade-margin-bottom{
+	#glc-doc .glc-publicidade.glc-publicidade-margin-bottom{
 		margin-top: 0;
 		margin-bottom: 40px;
 	}
-	.glc-publicidade.glc-publicidade-margin-top{
+	#glc-doc .glc-publicidade.glc-publicidade-margin-top{
 		margin-top: 40px;
 		margin-bottom: 0;
 	}
-	.glc-publicidade p.glc-pub-info {
+	#glc-doc .glc-publicidade p.glc-pub-info {
 	    color: #9C9C9C;
 	    font-size: 0.75em;
 	    height: 14px;
@@ -212,15 +220,15 @@
 	    overflow: hidden;
 	    text-transform: uppercase;
 	}
-	.glc-publicidade .bl-pub-superbanner{
+	#glc-doc .glc-publicidade .bl-pub-superbanner{
 		margin: 0 auto;
 	    text-align: center;
 	    width: 728px;
 	}
-		.glc-publicidade .bl-pub-superbanner div{
+		#glc-doc .glc-publicidade .bl-pub-superbanner div{
 		    min-height: 90px;
 		}
-		.glc-publicidade .bl-pub-superbanner p.glc-pub-info{
+		#glc-doc .glc-publicidade .bl-pub-superbanner p.glc-pub-info{
 			text-align: left;
 		}
 
@@ -242,3 +250,19 @@
 	.glc-home #glc-doc .glc-header{
 		 margin-bottom: 0;
 	}
+
+/*Streaming*/
+.glc-streaming{
+}
+	.glc-streaming #glc-doc .glc-home-stream {
+	    background: url(/images/style/default/bg-stream.jpg);
+	    color: #fff;
+	    text-shadow: 2px 2px 2px #000000;
+	    padding: 60px 0;
+	}
+	.glc-streaming #glc-doc .bl-destaque.bl-destaque-conteudo{
+		 margin-top: 0;
+	}
+	.glc-streaming #glc-doc .glc-header{
+		 margin-bottom: 0;
+	}	
