@@ -3,13 +3,12 @@
 }
 	.glc-streaming #glc-doc .glc-streaming-content .glc-header {
 	    color: #fff;
-	    text-align: center;
 	    text-shadow: 2px 2px 2px #000000;
 	    padding: 60px 0;
 	    height: 160px;
 	}
-	.glc-streaming #glc-doc .bl-destaque.bl-destaque-conteudo{
-		 margin-top: 0;
+	.glc-streaming #glc-doc .glc-streaming-content .glc-header .img-circle.glc-image-profile.pull-left{
+		margin-right: 15px;
 	}
 	.glc-streaming #glc-doc .glc-header{
 		 margin-bottom: 0;
@@ -17,8 +16,21 @@
 </style>
 <section class="glc-streaming-content">
 <div class="glc-header" style="background: url(<?php echo $model->getImageCover();?>) repeat center center;">
-	<img border="0" class="img-circle" src="<?php echo $model->getImageProfile() ?>" alt="<?php echo $model->name ?>"/>
-	<h1><?php echo $model->username; ?></h1>
+	<div class="container">
+		<div class="row-fluid">
+			<div class="span5">
+            	<img border="0" class="img-circle glc-image-profile pull-left" src="<?php echo $model->getImageProfile(80) ?>" alt="<?php echo $model->name ?>"/>
+                <h1><?php echo $model->username; ?></h1>
+                <h5><?php echo $model->name; ?></h5>
+                <hr>
+                <span class="label"><img width="20" height="20" src="/images/style/icon/game/icon-lol-40x40.gif"></span>
+                <span class="label"><img width="20" height="20" src="/images/style/icon/game/icon-wow-40x40.png"></span>
+		    </div>
+		    <div class="span2 offset5">
+		    	<img border="0" class="img-polaroid" src="<?php echo $model->getImageProfile(80) ?>" alt="<?php echo $model->name ?>"/>
+		    </div>	
+	    </div>
+    </div>
 </div>
 <div class="glc-bredcrumbs">
 	<div class="container">
