@@ -1,19 +1,3 @@
-<style>
-.glc-streaming{
-}
-	.glc-streaming #glc-doc .glc-streaming-content .glc-header {
-	    color: #fff;
-	    text-shadow: 2px 2px 2px #000000;
-	    padding: 60px 0;
-	    height: 160px;
-	}
-	.glc-streaming #glc-doc .glc-streaming-content .glc-header .img-circle.glc-image-profile.pull-left{
-		margin-right: 15px;
-	}
-	.glc-streaming #glc-doc .glc-header{
-		 margin-bottom: 0;
-	}
-</style>
 <section class="glc-streaming-content">
 <div class="glc-header" style="background: url(<?php echo $model->getImageCover();?>) repeat center center;">
 	<div class="container">

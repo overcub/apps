@@ -254,12 +254,34 @@
 /*Streaming*/
 .glc-streaming{
 }
-	.glc-streaming #glc-doc .glc-home-stream {
-	    background: url(/images/style/default/bg-stream.jpg);
+	.glc-streaming #glc-doc .glc-streaming-content .glc-header {
 	    color: #fff;
 	    text-shadow: 2px 2px 2px #000000;
 	    padding: 60px 0;
+	    height: 160px;
+	}
+	.glc-streaming #glc-doc .glc-streaming-content .glc-header .img-circle.glc-image-profile.pull-left{
+		margin-right: 15px;
 	}
 	.glc-streaming #glc-doc .glc-header{
 		 margin-bottom: 0;
-	}	
+	}
+
+/* usuario editar*/
+.glc-user-edit{
+}
+	.glc-user-edit #glc-doc .glc-user-edit-content .glc-header {
+	    color: #fff;
+	    text-shadow: 2px 2px 2px #000000;
+	    padding: 60px 0;
+	    height: 160px;
+	}
+	.glc-user-edit #glc-doc .glc-user-edit-content .glc-user-edit-form {
+	    margin: 60px 0;
+	}
+	.glc-user-edit #glc-doc .glc-user-edit-content .glc-header .img-circle.glc-image-profile.pull-left{
+		margin-right: 15px;
+	}
+	.glc-user-edit #glc-doc .glc-header{
+		 margin-bottom: 0;
+	}

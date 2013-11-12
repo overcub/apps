@@ -97,6 +97,9 @@ class PlayersController extends Controller
 
 	public function actionEdit()
 	{
+		$this->ads['superbanner'] = false;
+		$this->ads['superbannerFooter'] = false;
+		$this->sessionClass = 'glc-user-edit';
 		$this->layout='//layouts/default';
 		$model=$this->loadModel(Yii::app()->user->getId());
 		// Uncomment the following line if AJAX validation is needed
