@@ -13,12 +13,13 @@ class UserIdentity extends CUserIdentity
 	public function authenticate()
 	{
 		$record=Players::model()->findByEmail($this->username);
-		if($record===null)
+		if($record===null){
 			$this->errorCode=self::ERROR_USERNAME_INVALID;
-		else if($record->password!==crypt($this->password,Yii::app()->params->salt))
+		}else if(isset($this->password)){
 			$this->errorCode=self::ERROR_PASSWORD_INVALID;
-		else
-		{
+		}else if($record->password!==crypt($this->password,Yii::app()->params->salt)){
+			$this->errorCode=self::ERROR_PASSWORD_INVALID;
+		}else{
 			$this->_id=$record->id;
 			$this->username = $record->username;
 			$this->_group = $record->group;
