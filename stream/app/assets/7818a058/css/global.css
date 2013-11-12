@@ -1,6 +1,7 @@
 /* icon */
 
 /* components */
+
 #glc-doc .glc-bredcrumbs{
 	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#FFFFFF), color-stop(0.5, #F9FAFA), to(#F9FAFA));
 	background-image: -webkit-linear-gradient(#FFFFFF, #F9FAFA 50%, #F9FAFA);
@@ -65,27 +66,46 @@
 		}
 /* navbar */
 #glc-doc .glc-header{
-	margin-bottom: 20px;
+	margin-bottom: 0;
+	border-bottom: 5px solid #2c2e36;
 }
 	#glc-doc .glc-header .glc-header-logo{
     	min-height: 80px;
     	/*background: url("/images/style/default/header-stream.jpg") repeat scroll 0 130px;*/
 	}
 	#glc-doc .glc-header .glc-header-inner{
-    	background-color: #000000;
+    	background-color: #40434e;
 	}
 		#glc-doc .glc-header .glc-header-inner .navbar-inverse .navbar-inner {
 			background-image: none;
-			background-color: #000000;
+			background-color: transparent;
 			background-repeat: inherit;
 			border-color: transparent;
+			box-shadow: none;
 		}
 	#glc-doc .glc-header .navbar .brand{
 		padding: 0;
+		margin-top: 5px;
+		margin-bottom: 7px;
+	}
+	#glc-doc .glc-header .nav {
+
 	}
 	#glc-doc .glc-header .navbar {
     	margin-bottom: 0;
 	}
+	#glc-doc .glc-header .navbar .nav {
+		margin-top: 15px;
+	}
+	#glc-doc .glc-header .navbar-inverse .brand, #glc-doc .glc-header .navbar-inverse .nav > li > a {
+		text-transform: uppercase;
+		font-size: 12px;
+		color: #9fa1a6;
+	}
+		#glc-doc .glc-header .navbar-inverse .nav > li > a:hover {
+			color: #fff;
+			font-weight: 800;
+		}
 		#glc-doc .glc-header .navbar .navbar-inner{
 		    -webkit-border-radius: 0;
 			-moz-border-radius: 0;
@@ -93,7 +113,8 @@
 		}
 /* Footer */	
 #glc-doc .glc-footer{
-	background:#000000;
+	border-top: 5px solid #2C2E36;
+	background: #40434E;
 	padding: 40px 0 20px;
 	color: #FFFFFF;
 }
@@ -259,9 +280,6 @@
 	    color: #fff;
 	    text-shadow: 2px 2px 2px #000000;
 	    padding: 10px 0;
-	}
-	.glc-stream #glc-doc .glc-header{
-		 margin-bottom: 0;
 	}
 
 /*Streaming*/

@@ -3,7 +3,7 @@
 		<div class="container">  
 			<?php $this->widget('bootstrap.widgets.TbNavbar', array(
 			    'type'=>'inverse',
-			    'brand'=>'Stream',
+			    'brand'=>'<img src="/images/logo/logo-navbar.png" alt="tvee - by Geek Life Club">',
 			    'brandUrl'=>'/',
 				'fixed' => false,
 			    'collapse'=>true, // requires bootstrap-responsive.css
