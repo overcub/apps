@@ -15,7 +15,7 @@ class UserIdentity extends CUserIdentity
 		$record=Players::model()->findByEmail($this->username);
 		if($record===null){
 			$this->errorCode=self::ERROR_USERNAME_INVALID;
-		}else if(isset($this->password)){
+		}else if(!isset($this->password)){
 			$this->errorCode=self::ERROR_PASSWORD_INVALID;
 		}else if($record->password!==crypt($this->password,Yii::app()->params->salt)){
 			$this->errorCode=self::ERROR_PASSWORD_INVALID;
