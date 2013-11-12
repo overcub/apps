@@ -118,7 +118,8 @@ class PlayersController extends Controller
 		$this->render('edit',array(
 				'model'=>$model,
 				'message' => $message,
-				'image' => $model->getImageCover()
+				'image' => $model->getImageCover(),
+				'listGame' => $model->listGame()
 		));
 	}
 
@@ -153,6 +154,7 @@ class PlayersController extends Controller
 			$this->layout='//layouts/default';
 			$this->render('streaming',array(
 				'model'=>$streamer,
+				'listGame' => $streamer->listGame()
 			));
 		}else{
 			throw new CHttpException(404,'The requested page does not exist.');

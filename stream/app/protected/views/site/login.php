@@ -1,8 +1,8 @@
 <section class="glc-login">
 <div class="container">
     <div class="row-fluid" style="text-align: center;">
+      <h1 class="text-center login-title">Faça login para continuar a utilizar nossa ferramenta :)</h1>
         <div class="span3 glc-bl-center">
-            <h1 class="text-center login-title">Faça login para continuar a utilizar nossa ferramenta :)</h1>
             <div class="account-wall">
                 <img class="img-circle" src="/images/style/icon/profile.png" alt="Perfil" />
                 <?php $form=$this->beginWidget('CActiveForm', array(
@@ -20,8 +20,8 @@
 	                <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
                 <?php $this->endWidget(); ?>
             </div>
-            <a href="/cadastro" class="text-center new-account">Não possui uma conta? Clique aqui e crie a sua</a>
         </div>
+       <a href="/cadastro" class="text-center new-account">Não possui uma conta? Clique aqui e crie a sua</a>
     </div>
 </div>
 </section>
@@ -41,12 +41,12 @@
 			width: 100%;
 		}
 			#glc-doc .glc-login .form-signin input[type="text"] {
-			    margin-bottom: -1px;
+			    margin-bottom: 2px;
 			    border-bottom-left-radius: 0;
 			    border-bottom-right-radius: 0;
 			}
 			#glc-doc .glc-login .form-signin input[type="password"] {
-			    
+			    margin-bottom: 2px;
 			    border-top-left-radius: 0;
 			    border-top-right-radius: 0;
 			    margin-top: 10px;

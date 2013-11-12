@@ -197,6 +197,46 @@ class Players extends CActiveRecord
 	{
 		return "http://www.gravatar.com/avatar/".md5($this->email)."?s=$size";
 	}
+
+	public function listGame()
+	{	
+		$arr = array();
+		if($games = $this->getExtraData('games')){
+			foreach (explode(',', $games) as $key){
+				if( is_array($arrGame = $this->getGame($key)) ){
+					array_push($arr, $arrGame);
+				}
+			}
+		}
+		return $arr;
+	}
+
+	public function getGame($id_game)
+	{
+		$return = false;
+		$arrayName = array(
+			array('id'=>1,'code'=>'lol','name'=>'League of Legends'),
+			array('id'=>2,'code'=>'dota2','name'=>'Dota 2'),
+			array('id'=>3,'code'=>'calloffduty','name'=>'Call of Duty: Ghosts'),
+			array('id'=>4,'code'=>'wow','name'=>'World of Warcraft: Mists of Pandaria'),
+			array('id'=>5,'code'=>'hearthstone','name'=>'Hearthstone: Heroes of Warcraft'),
+			array('id'=>6,'code'=>'starCraft','name'=>'StarCraft II: Heart of the Swarm'),
+			array('id'=>7,'code'=>'xcom','name'=>'XCOM: Enemy Within'),
+			array('id'=>8,'code'=>'minecraft','name'=>'Minecraft'),
+			array('id'=>9,'code'=>'battlefield','name'=>'Battlefield'),
+			array('id'=>10,'code'=>'zelda','name'=>'The Legend of Zelda'),
+			array('id'=>11,'code'=>'cs','name'=>'Counter-Strike'),
+			array('id'=>12,'code'=>'pathofexile','name'=>'Path of Exile'),
+			array('id'=>13,'code'=>'smite','name'=>'Smite'),
+			array('id'=>14,'code'=>'magic','name'=>'Magic: The Gathering')
+		);
+		foreach($arrayName as $key){
+			if($key['id'] == $id_game){
+				$return = $key;
+			}
+		}
+		return $return;
+	}
 	
 	public function findByEmail($email)
 	{
