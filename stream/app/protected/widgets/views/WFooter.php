@@ -42,8 +42,9 @@
 </section>
 <footer class="glc-footer">
 	<div class="container">
-		Copyright &copy; <?php echo date('Y'); ?> by My Company.<br/>
+		<p clas="about">
+		Copyright &copy; <?php echo date('Y'); ?> by Geek Life Club.<br/>
 		All Rights Reserved.<br/>
-		<?php echo Yii::powered(); ?>
+		</p>
 	</div>	
 </footer>
