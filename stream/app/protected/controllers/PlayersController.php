@@ -161,10 +161,11 @@ class PlayersController extends Controller
 
 	public function actionStream()
 	{
-		if( ($streamer = Players::model()->findByUsername('rtancman')) ){
+		if( 1 ) {//($streamer = Players::model()->findByUsername('rtancman')) ){
+			$this->sessionClass = 'glc-stream';
 			$this->layout='//layouts/default';
 			$this->render('stream',array(
-				'model'=>$streamer,
+				'model'=>false,
 			));
 		}else{
 			throw new CHttpException(404,'The requested page does not exist.');

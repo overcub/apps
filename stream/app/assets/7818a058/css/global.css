@@ -251,6 +251,19 @@
 		 margin-bottom: 0;
 	}
 
+/*Stream*/
+.glc-stream{
+}
+	.glc-stream #glc-doc .glc-stream-content .glc-header {
+	    background: url(/images/style/default/bg-stream.jpg);
+	    color: #fff;
+	    text-shadow: 2px 2px 2px #000000;
+	    padding: 10px 0;
+	}
+	.glc-stream #glc-doc .glc-header{
+		 margin-bottom: 0;
+	}
+
 /*Streaming*/
 .glc-streaming{
 }
