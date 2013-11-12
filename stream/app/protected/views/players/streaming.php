@@ -65,25 +65,34 @@
 <div class="glc-body-streamer bl-conteudo">
 	<div class="container">		
 		<div class="row-fluid">
-			<div class="span8">
-				<object type="application/x-shockwave-flash" height="500" width="100%" id="live_embed_player_flash" data="http://www.twitch.tv/widgets/live_embed_player.swf?channel=<?php echo $model->getExtraData('twichtv')?>" bgcolor="#000000">
-					<param name="allowFullScreen" value="false" />
-					<param name="allowScriptAccess" value="always" />
-					<param name="allowNetworking" value="all" />
-					<param name="movie" value="http://www.twitch.tv/widgets/live_embed_player.swf" />
-					<param name="flashvars" value="hostname=www.twitch.tv&channel=<?php echo $model->getExtraData('twichtv')?>&auto_play=true&start_volume=25" />
-				</object>
-			</div>
-			<div class="span4">
-				<div class="glc-publicidade glc-publicidade-margin-bottom glc-retangulofino">
-					<div class="bl-pub-retangulofino">
-						<p class="glc-pub-info">publicidade</p>
-						<!-- retangulofino_300x50 -->
-						<div style="width: 300px; height: 50px; background: #000000;"></div>
-					</div>
+			<?php if($model->getExtraData('twichtv')): ?>
+				<div class="span8">
+					<object type="application/x-shockwave-flash" height="500" width="100%" id="live_embed_player_flash" data="http://www.twitch.tv/widgets/live_embed_player.swf?channel=<?php echo $model->getExtraData('twichtv')?>" bgcolor="#000000">
+						<param name="allowFullScreen" value="false" />
+						<param name="allowScriptAccess" value="always" />
+						<param name="allowNetworking" value="all" />
+						<param name="movie" value="http://www.twitch.tv/widgets/live_embed_player.swf" />
+						<param name="flashvars" value="hostname=www.twitch.tv&channel=<?php echo $model->getExtraData('twichtv')?>&auto_play=true&start_volume=25" />
+					</object>
 				</div>
-				<iframe frameborder="0" scrolling="no" id="chat_embed" src="http://twitch.tv/chat/embed?channel=<?php echo $model->getExtraData('twichtv')?>&amp;popout_chat=true" height="400" width="100%"></iframe>				
-			</div>
+				<div class="span4">
+					<div class="glc-publicidade glc-publicidade-margin-bottom glc-retangulofino">
+						<div class="bl-pub-retangulofino">
+							<p class="glc-pub-info">publicidade</p>
+							<!-- retangulofino_300x50 -->
+							<div style="width: 300px; height: 50px; background: #000000;"></div>
+						</div>
+					</div>
+					<iframe frameborder="0" scrolling="no" id="chat_embed" src="http://twitch.tv/chat/embed?channel=<?php echo $model->getExtraData('twichtv')?>&amp;popout_chat=true" height="400" width="100%"></iframe>				
+				</div>
+			<?php else: ?>
+				<div class="span12">
+				    <div class="alert alert-block">
+				    	<h4>Ops!</h4>
+				    	O usuário <?php echo $model->username; ?> ainda não informou o seu canal de stream.
+				    </div>
+				</div>
+			<?php endif;?>
 		</div>
 	</div>
 </div>
