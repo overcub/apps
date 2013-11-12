@@ -48,9 +48,10 @@
 	<div class="clear"></div>
 
 	<div id="footer">
-		Copyright &copy; <?php echo date('Y'); ?> by My Company.<br/>
-		All Rights Reserved.<br/>
-		<?php echo Yii::powered(); ?>
+		<p class="about">
+			Copyright &copy; <?php echo date('Y'); ?> by Geek Life Club.<br/>
+			All Rights Reserved.
+		</p>
 	</div><!-- footer -->
 
 </div><!-- page -->

@@ -2,7 +2,7 @@
 <div class="container">
     <div class="row-fluid" style="text-align: center;">
         <div class="span3 glc-bl-center">
-            <h1 class="text-center login-title">Se logue e continue no Stream</h1>
+            <h1 class="text-center login-title">Faça login para continuar a utilizar nossa ferramenta :)</h1>
             <div class="account-wall">
                 <img class="img-circle" src="/images/style/icon/profile.png" alt="Perfil" />
                 <?php $form=$this->beginWidget('CActiveForm', array(
@@ -17,10 +17,10 @@
 	                <?php echo $form->error($model,'username'); ?>
 	                <input id="LoginForm_password" name="LoginForm[password]" type="password" class="form-control" placeholder="Password" required>
 	                <?php echo $form->error($model,'password'); ?>
-	                <button class="btn btn-lg btn-primary btn-block" type="submit">login</button>
+	                <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
                 <?php $this->endWidget(); ?>
             </div>
-            <a href="/cadastro" class="text-center new-account">Crie sua conta</a>
+            <a href="/cadastro" class="text-center new-account">Não possui uma conta? Clique aqui e crie a sua</a>
         </div>
     </div>
 </div>
@@ -40,15 +40,19 @@
 		#glc-doc .glc-login .form-signin input{
 			width: 100%;
 		}
-			#glc-doc .glc-login .form-signin input[type="text"]{
+			#glc-doc .glc-login .form-signin input[type="text"] {
 			    margin-bottom: -1px;
 			    border-bottom-left-radius: 0;
 			    border-bottom-right-radius: 0;
 			}
-			#glc-doc .glc-login .form-signin input[type="password"]{
-			    margin-bottom: 10px;
+			#glc-doc .glc-login .form-signin input[type="password"] {
+			    
 			    border-top-left-radius: 0;
 			    border-top-right-radius: 0;
+			    margin-top: 10px;
+			}
+			#glc-doc .glc-login .form-signin button[type="submit"] {
+				margin-top: 10px;
 			}
 	#glc-doc .glc-login .account-wall{
 	    margin-top: 20px;

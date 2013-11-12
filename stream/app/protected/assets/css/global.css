@@ -329,3 +329,8 @@
 	.glc-user-edit #glc-doc .glc-header{
 		 margin-bottom: 0;
 	}
+
+#glc-doc #footer .about {
+	font-size: 12px;
+	color: #9FA1A6;
+}
