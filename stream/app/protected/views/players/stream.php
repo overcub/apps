@@ -12,8 +12,7 @@
 			<div class="row-fluid bl-bar">
 				<div class="span9">
 					<?php $this->widget('bootstrap.widgets.TbBreadcrumbs', array(
-						'links'=>array( 
-							'home' => '/',
+						'links'=>array(
 							'Stream'
 						)
 					)); ?>
@@ -36,6 +35,19 @@
 							),
 						)); ?>
 					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="glc-publicidade glc-superbanner-top">
+		<div class="container">
+			<div class="bl-pub-superbanner">
+				<p class="glc-pub-info">publicidade</p>
+				<!-- superbanner_728x90 -->
+				<div id='div-gpt-ad-1379991864403-3'>
+					<script type='text/javascript'>
+					googletag.cmd.push(function() { googletag.display('div-gpt-ad-1379991864403-3'); });
+					</script>
 				</div>
 			</div>
 		</div>

@@ -45,7 +45,7 @@ class SiteController extends Controller
 	 */
 	public function actionAbout()
 	{
-		$this->ads['superbanner'] = false;
+		$this->sessionClass = 'glc-about';
 		$this->render('about');
 	}
 
