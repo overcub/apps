@@ -18,18 +18,21 @@
 		<div class="row-fluid">
 			<div class="span4">
 				<article>
+					<img src="/images/style/icon/ico-streaming.png" alt="Mostre aos seus amigos!">
 					<h1>Streaming</h1>
 					<p>Mostre aos seus amigos como se joga</p>
 				</article>
 			</div>
 			<div class="span4">
 				<article>
+					<img src="/images/style/icon/ico-assista.png" alt="Assista aos melhores jogos!">
 					<h1>Assista</h1>
 					<p>Assista aos melhores jogos da atualidade</p>
 				</article>
 			</div>
 			<div class="span4">
 				<article>
+					<img src="/images/style/icon/ico-divulgue.png" alt="Ganhe prêmios e recompensas por suas streams!">
 					<h1>Divulgue</h1>
 					<p>Divulgue o seu streaming e ganhe vantagens</p>
 				</article>
