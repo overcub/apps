@@ -5,7 +5,7 @@
 			<div class="span5">
             	<img border="0" class="img-circle glc-image-profile pull-left" src="<?php echo $model->getImageProfile(80) ?>" alt="<?php echo $model->name ?>"/>
                 <h1><?php echo $model->username; ?></h1>
-                <h5><?php echo $model->name; ?></h5>
+                <p><?php echo $model->getExtraData('descriptionStream')?></p>
                 <hr>
             	<?php if(!empty($listGame)): ?>
 				    <?php foreach ($listGame as $key): ?>

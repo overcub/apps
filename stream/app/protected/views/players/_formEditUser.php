@@ -36,6 +36,13 @@
 			<input type="text" value="" id="Players_newPassword" name="Players[newPassword]" maxlength="500" class="span5" autocomplete="off" />
 		</div>
 	</div>
+	
+	<div class="control-group">
+		<label for="Players_descriptionStream" class="control-label required">descrição</label>
+		<div class="controls">
+			<textarea rows="3" value="<?php echo $model->getExtraData('descriptionStream')?>" id="Players_descriptionStream" name="extra[descriptionStream]" maxlength="500" class="span5" autocomplete="off" placeholder="Descrição do seu stream"><?php echo $model->getExtraData('descriptionStream')?></textarea>
+		</div>
+	</div>
 
 	<div class="control-group">
 		<label for="Players_twichtv_username" class="control-label required">twichtv</label>
@@ -48,7 +55,7 @@
 	</div>
 
 	<div class="control-group">
-		<label for="Players_twichtv_username" class="control-label required">games</label>
+		<label for="Players_games" class="control-label required">games</label>
 		<div class="controls">
 			<input class="span5" name="extra[games]" autocomplete="off" id="glc-games" type="text" placeholder="seu game" data-role="tagsinput" value="<?php echo $model->getExtraData('games')?>"/>
 			<p>
