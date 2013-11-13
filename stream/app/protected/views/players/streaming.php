@@ -86,7 +86,7 @@
 							<div style="width: 300px; height: 50px; background: #000000;"></div>
 						</div>
 					</div>
-					<iframe frameborder="0" scrolling="no" id="chat_embed" src="http://twitch.tv/chat/embed?channel=<?php echo $model->getExtraData('twichtv')?>&amp;popout_chat=true" height="400" width="100%"></iframe>				
+					<!-- iframe frameborder="0" scrolling="no" id="chat_embed" src="http://twitch.tv/chat/embed?channel=<?php echo $model->getExtraData('twichtv')?>&amp;popout_chat=true" height="400" width="100%"></iframe-->				
 				</div>
 			<?php else: ?>
 				<div class="span12">
@@ -96,6 +96,24 @@
 				    </div>
 				</div>
 			<?php endif;?>
+		</div>
+		<div class="row-fluid">
+		 	<div id="disqus_thread"></div>
+		    <script type="text/javascript">
+		        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+		        var disqus_shortname = '<?php echo ((Yii::app()->user->isGuest)?"convidado":Yii::app()->user->name) ?>'; // required: replace example with your forum shortname
+		        var disqus_url = '<?php echo Yii::app()->params->domain."stream/".$model->username ?>';
+		        var disqus_identifier = '<?php echo "/stream/".$model->username ?>';
+    			var disqus_title = '<?php echo "tvee | ".$model->username ?>';
+		        /* * * DON'T EDIT BELOW THIS LINE * * */
+		        (function() {
+		            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+		            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		        })();
+		    </script>
+		    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+		    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 		</div>
 	</div>
 </div>
