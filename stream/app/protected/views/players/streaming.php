@@ -101,7 +101,7 @@
 		 	<div id="disqus_thread"></div>
 		    <script type="text/javascript">
 		        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-		        var disqus_shortname = '<?php echo ((Yii::app()->user->isGuest)?"convidado":Yii::app()->user->name) ?>'; // required: replace example with your forum shortname
+		        var disqus_shortname = 'geeklifeclub'; // required: replace example with your forum shortname
 		        var disqus_url = '<?php echo Yii::app()->params->domain."stream/".$model->username ?>';
 		        var disqus_identifier = '<?php echo "/stream/".$model->username ?>';
     			var disqus_title = '<?php echo "tvee | ".$model->username ?>';
