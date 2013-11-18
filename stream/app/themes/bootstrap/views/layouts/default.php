@@ -5,7 +5,19 @@
 	<meta name="language" content="en" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/styles.css" />
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
+	
 	<?php Yii::app()->bootstrap->register(); ?>
+	
+	<script type='text/javascript'>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', '<?php echo Yii::app()->params->googleAnalyticsId ?>', '<?php echo Yii::app()->params->googleAnalyticsDomain ?>');
+	  ga('send', 'pageview');
+	</script>
+
 	<script type='text/javascript'>
 	var googletag = googletag || {};
 	googletag.cmd = googletag.cmd || [];
@@ -28,6 +40,7 @@
 	googletag.defineSlot('/137203934/superbanner_1_728x90', [728, 90], 'div-gpt-ad-1379991864403-2').addService(googletag.pubads());
 	googletag.defineSlot('/137203934/superbanner_728x90', [728, 90], 'div-gpt-ad-1379991864403-3').addService(googletag.pubads());
 	googletag.defineSlot('/137203934/superbanner_footer_728x90', [728, 90], 'div-gpt-ad-1379991864403-4').addService(googletag.pubads());
+	googletag.defineSlot('/137203934/cabecalho_300x50', [300, 50], 'div-gpt-ad-1379991864403-5').addService(googletag.pubads());
 	googletag.pubads().enableSingleRequest();
 	googletag.enableServices();
 	});

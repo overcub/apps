@@ -110,7 +110,7 @@ return array(
 				'usuario/editar'=>'Players/edit',
 				'usuario/imagem-capa-upload'=>'Players/ajaxUploadImageCover',
 				'cadastro/'=>'Players/register',
-				'stream'=>'Players/stream',
+				//'stream'=>'Players/stream',
 				'stream/<username>'=>'Players/streaming',
 				
 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',

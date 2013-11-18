@@ -82,11 +82,15 @@
 					<div class="glc-publicidade glc-publicidade-margin-bottom glc-retangulofino">
 						<div class="bl-pub-retangulofino">
 							<p class="glc-pub-info">publicidade</p>
-							<!-- retangulofino_300x50 -->
-							<div style="width: 300px; height: 50px; background: #000000;"></div>
+							<!-- cabecalho_300x50 -->
+							<div id='div-gpt-ad-1379991864403-5'>
+								<script type='text/javascript'>
+								googletag.cmd.push(function() { googletag.display('div-gpt-ad-1379991864403-5'); });
+								</script>
+							</div>
 						</div>
 					</div>
-					<!-- iframe frameborder="0" scrolling="no" id="chat_embed" src="http://twitch.tv/chat/embed?channel=<?php echo $model->getExtraData('twichtv')?>&amp;popout_chat=true" height="400" width="100%"></iframe-->				
+					<iframe frameborder="0" scrolling="no" id="chat_embed" src="http://twitch.tv/chat/embed?channel=<?php echo $model->getExtraData('twichtv')?>&amp;popout_chat=true" height="400" width="100%"></iframe>				
 				</div>
 			<?php else: ?>
 				<div class="span12">
