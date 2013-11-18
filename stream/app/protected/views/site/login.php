@@ -21,7 +21,9 @@
                 <?php $this->endWidget(); ?>
             </div>
         </div>
+       <?php /*
        <a href="/cadastro" class="text-center new-account">Não possui uma conta? Clique aqui e crie a sua</a>
+       */ ?>
     </div>
 </div>
 </section>
