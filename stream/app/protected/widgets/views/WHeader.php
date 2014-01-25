@@ -12,8 +12,8 @@
 			            'class'=>'bootstrap.widgets.TbMenu',
 			            'items'=>array(
 			                array('label'=>'Home', 'url'=>'/'),
-			                array('label'=>'Stream', 'url'=>array('/stream')),
-			                array('label'=>'Sobre', 'url'=>array('/sobre')),
+			                //array('label'=>'Stream', 'url'=>array('/stream')),
+			                //array('label'=>'Sobre', 'url'=>array('/sobre')),
 			            ),
 			        ),
 			    	//'<ul class="nav pull-right"><li><a href="http://geeklifeclub.com.br">by <img src="/images/logo/geeklifeclub50x50.png" width="40px" height="40px" alt="Geek Life Club" class="img-circle"/></a></li></ul>'
@@ -23,7 +23,7 @@
 		    				'htmlOptions'=>array('class'=>'pull-right'),
 		    				'items'=>array(
 		    						array('label'=>'Login', 'icon'=>'user white', 'url'=>array('/login'), 'visible'=>Yii::app()->user->isGuest),
-		    						array('label'=>'Cadastro', 'icon'=>'plus white', 'url'=>array('/cadastro'), 'visible'=>Yii::app()->user->isGuest),
+		    						//array('label'=>'Cadastro', 'icon'=>'plus white', 'url'=>array('/cadastro'), 'visible'=>Yii::app()->user->isGuest),
 		    						array('label'=>'<img border="0" align="absmiddle" src="'.( (isset(Yii::app()->user->img) )? Yii::app()->user->img : "00000000" ).'&s=25" alt="'.Yii::app()->user->name.'"> '.Yii::app()->user->name, 'url'=>'#perfil', 'visible'=>!Yii::app()->user->isGuest, 'items'=>array(
 		    								array('label'=>'Stream', 'icon'=>'home', 'url'=>'/stream'),
 		    								array('label'=>'Meu Stream', 'icon'=>'film', 'url'=>'/stream/'.Yii::app()->user->name),

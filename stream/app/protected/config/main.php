@@ -110,7 +110,7 @@ return array(
 				'usuario/editar'=>'Players/edit',
 				'usuario/imagem-capa-upload'=>'Players/ajaxUploadImageCover',
 				'cadastro/'=>'Players/register',
-				'stream'=>'Players/stream',
+				//'stream'=>'Players/stream',
 				'stream/<username>'=>'Players/streaming',
 				
 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
@@ -181,6 +181,7 @@ return array(
 	    'encryptionKey'=>'997GLC97',
 	    'salt'=>'g33KL1f3Clu3123',
 	    'mashapeKey'=> array('LOL' =>'MWDMOJlVh625v8o0365WsPn9A3rVmf7J'),
-	    'version'=>'1'
+	    'version'=>'1',
+	    'domain'=>'http://stream.geeklifeclub.com.br/'
 	),
 );

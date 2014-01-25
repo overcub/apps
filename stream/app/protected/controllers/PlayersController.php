@@ -114,11 +114,12 @@ class PlayersController extends Controller
 				$message = "Ocorreu um erro";
 			}
 		}
-
+		$this->setHeaderMetas(array('title'=>"tvee | ".$model->username,'description'=>$model->getExtraData('descriptionStream'),'keyword'=>$model->username.',tvee, strea, geek life club'));
 		$this->render('edit',array(
 				'model'=>$model,
 				'message' => $message,
-				'image' => $model->getImageCover()
+				'image' => $model->getImageCover(),
+				'listGame' => $model->listGame()
 		));
 	}
 
@@ -151,8 +152,10 @@ class PlayersController extends Controller
 		if( ($streamer = Players::model()->findByUsername($username)) ){
 			$this->sessionClass = 'glc-streaming';
 			$this->layout='//layouts/default';
+			$this->setHeaderMetas(array('title'=>"tvee | $username",'description'=>$streamer->getExtraData('descriptionStream'),'keyword'=>$username.',tvee, strea, geek life club'));
 			$this->render('streaming',array(
 				'model'=>$streamer,
+				'listGame' => $streamer->listGame()
 			));
 		}else{
 			throw new CHttpException(404,'The requested page does not exist.');

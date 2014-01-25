@@ -22,7 +22,7 @@
 						<?php $this->widget('yii-sharrre.widgets.WSocialShare', array(
 								'htmlOptions' => array('id' => 'social-top-container','class'=>'demo5 pull-left'),
 								'elementId' => 'social-top',
-								'dataUrl' => '/sobre',
+								'dataUrl' => $this->createAbsoluteUrl('/sobre'),
 								'socials' => array(
 								'facebook' => true,
 								'googlePlus' => true,
