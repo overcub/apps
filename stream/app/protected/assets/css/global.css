@@ -113,12 +113,15 @@
 		}
 /* Footer */	
 #glc-doc .glc-footer{
-	border-top: 5px solid #2C2E36;
-	background: #40434E;
-	padding: 40px 0 20px;
-	color: #FFFFFF;
+	background-color: #D9D9D9;
+    border-top: 1px solid #B9B9B9;
+    color: #FFFFFF;
+    padding: 40px 0 20px;
+      text-shadow: 0 1px 1px rgba(0,0,0,.4);
 }
-
+	#glc-doc .glc-footer .about {
+		max-width: 300px;
+	}
 /* login */
 #glc-doc .container .row-fluid .glc-bl-center {
     float: none;
@@ -196,6 +199,10 @@
 	    padding: 40px 0;
 	    text-align: center;
 	}
+		#glc-doc .bl-destaque.bl-destaque-conteudo h1 {
+			font-size: 32px;
+			text-transform: lowercase;
+		}
 #glc-doc .bl-conteudo{
 	margin-top: 40px;
 }
