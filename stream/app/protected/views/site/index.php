@@ -105,7 +105,7 @@
 
     .carousel-caption {
 	    background: none repeat scroll 0 0 rgba(122, 98, 155, 0.7);
-	    margin-top: 180px;
+	    margin-top: 150px;
 	    max-width: 570px;
 	    padding: 10px 20px 25px;
 	    position: static;
@@ -118,10 +118,14 @@
       text-shadow: 0 1px 1px rgba(0,0,0,.4);
     }
     	.carousel-caption .lead {
-    		margin: 10px 0 10px 0;
+    		margin-top: 10px;
     	}
+        .carousel-caption .lead strong {
+          margin-top: 5px;
+          display: block;
+        }
     .carousel-caption .btn {
-      margin-top: 10px;
+      margin-top: 5px;
     }
 
 
@@ -314,7 +318,7 @@ background-color: #e5e5e5 !important;
           <div class="container">
             <div class="carousel-caption">
               <h1>Ganhe dinheiro streamando!</h1>
-              <p class="lead">Passe a divulgar sua jogatina e ganhe com isso! Nós idealizamos uma ferramenta colaborativa onde você, streamer, divulga o seu jogo e nós procuramos monetizar os seus views. <br>Ficou Curioso?</p>
+              <p class="lead">Passe a divulgar sua jogatina e ganhe com isso! Nós idealizamos uma ferramenta colaborativa onde você, streamer, divulga o seu jogo e nós procuramos monetizar os seus views. <strong>Ficou Curioso?</strong></p>
               <a class="btn btn-large btn-primary" href="#">Descubra!</a>
             </div>
           </div>
