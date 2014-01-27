@@ -45,7 +45,7 @@
 </section>
 <footer class="glc-footer">
 	<div class="container">
-		<p clas="about pull-left">
+		<p class="about pull-left">
 		Copyright &copy; <?php echo date('Y'); ?> by <?php echo Yii::app()->name ?>.<br/>
 		All Rights Reserved.<br/>
 		</p>
