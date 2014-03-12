@@ -6,7 +6,7 @@
 				<div class="span9">
 					<?php $this->widget('bootstrap.widgets.TbBreadcrumbs', array(
 						'links'=>array( 
-							'Stream' => 'stream',
+							'Stream' => '/',
 							$model->username
 						)
 					)); ?>
