@@ -10,7 +10,7 @@ Yii::setPathOfAlias('bootstrap', dirname(__FILE__).'/../extensions/bootstrap');
 return array(
 	'theme'=>'bootstrap',
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
-	'name'=>'Stream | Geek Life Club',
+	'name'=>'manete.tv | Geek Life Club',
 
 	'sourceLanguage'    =>'en-us',
 	'language'          =>'pt-br',

@@ -49,7 +49,7 @@
 
 	<div id="footer">
 		<p class="about">
-			Copyright &copy; <?php echo date('Y'); ?> by Geek Life Club.<br/>
+			Copyright &copy; <?php echo date('Y'); ?> manete.tv - by Geek Life Club.<br/>
 			All Rights Reserved.
 		</p>
 	</div><!-- footer -->

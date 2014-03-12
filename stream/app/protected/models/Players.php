@@ -189,7 +189,7 @@ class Players extends CActiveRecord
 		if( file_exists($publicPath.'/'.$nameImg.'.jpg') == true ){
 			return $path.'/'.$nameImg.'.jpg';
 		}else{
-			return $path.'/default.jpg';
+			return "/images/style/default/slide-lol-01.jpg";
 		}
 	}
 	

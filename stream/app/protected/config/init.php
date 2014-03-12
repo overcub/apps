@@ -29,10 +29,10 @@ switch($ambient){
     break;
 
     case AMBIENT_LOCAL:
-        $CONFIG['database'][1]['connectionString'] = 'mysql:host=mysql.localhost;dbname=apps.geeklifeclub';
+        $CONFIG['database'][1]['connectionString'] = 'mysql:host=192.168.1.109;dbname=apps.geeklifeclub';
         $CONFIG['database'][1]['username'] = 'geeklifeclub';
         $CONFIG['database'][1]['password'] = 'geeklifeclubaabc33163356';
-        $CONFIG['database'][2]['connectionString'] = 'mysql:host=mysql.localhost;dbname=apps.geeklifeclub';
+        $CONFIG['database'][2]['connectionString'] = 'mysql:host=192.168.1.109;dbname=apps.geeklifeclub';
         $CONFIG['database'][2]['username'] = 'geeklifeclub';
         $CONFIG['database'][2]['password'] = 'geeklifeclubaabc33163356';
         
@@ -40,8 +40,8 @@ switch($ambient){
         
         $CONFIG['params']['googleAnalyticsId'] = '';
         $CONFIG['params']['googleAnalyticsDomain'] = '';
-        $CONFIG['params']['cdnUrl'] = 'http://local.stream.geeklifeclub.com.br';
-        $CONFIG['params']['defaultUrl'] = 'http://local.stream.geeklifeclub.com.br';
+        $CONFIG['params']['cdnUrl'] = 'http://local.manete.tv';
+        $CONFIG['params']['defaultUrl'] = 'http://local.manete.tv';
 
         $CONFIG['params']['assetManager'] = array(
                 'class' => 'ext.version-asset-manager.VersionAssetManager',
