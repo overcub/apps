@@ -149,7 +149,7 @@
 </section>
 <div id="glc-feedback-stream">
 	<button id="glc-btn-close-feedback-stream" aria-hidden="true" class="close" type="button">×</button>
-	<p>O manete.tv esta em fases de teste. Por este motivo gostariamos de ouvir você gamer! Nos diga o que você gostaria de ter disponivel ao assistir o stream do seu game favorito? Mande um email para <a href="mailto:geeklifeclub@gmail.com">geeklifeclub@gmail.com</a> e responda a nossa <a href="#">pesquisa</a> é super rádipo ;)</p>
+	<p>O manete.tv esta em fases de teste. Por este motivo gostariamos de ouvir você gamer! Nos diga o que você gostaria de ter disponivel ao assistir o stream do seu game favorito? Mande um email para <a href="mailto:geeklifeclub@gmail.com">geeklifeclub@gmail.com</a> e responda a nossa <a href="#">pesquisa</a> é super rápido ;)</p>
 </div>
 <script>
   $("#glc-feedback-stream").ready(function() {
