@@ -114,7 +114,7 @@ class PlayersController extends Controller
 				$message = "Ocorreu um erro";
 			}
 		}
-		$this->setHeaderMetas(array('title'=>"tvee | ".$model->username,'description'=>$model->getExtraData('descriptionStream'),'keyword'=>$model->username.',tvee, strea, geek life club'));
+		$this->setHeaderMetas(array('title'=>"$username | manete.tv",'description'=>$streamer->getExtraData('descriptionStream'),'keyword'=>$username.',manete.tv, stream, geek life club'));
 		$this->render('edit',array(
 				'model'=>$model,
 				'message' => $message,
