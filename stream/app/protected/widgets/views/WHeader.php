@@ -13,24 +13,26 @@
         <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
         <div class="nav-collapse collapse">
           <ul class="nav">
-            <li><a href="/">Home</a></li>
             <?php /*
+            <li><a href="/">Home</a></li>
             <li><a href="/sobre">Sobre</a></li>
             */ ?>
+           </ul>
+           <ul class="nav pull-right">
             <?php if( !Yii::app()->user->isGuest ): ?>
             	<!-- Read about Bootstrap dropdowns at http://twbs.github.com/bootstrap/javascript.html#dropdowns -->
                 <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img border="0" align="absmiddle" src="<?php echo (isset(Yii::app()->user->img) )?Yii::app()->user->img:"00000000" ?>&s=25" alt="<?php echo Yii::app()->user->name ?>" /> <b class="caret"></b></a>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img border="0" align="absmiddle" src="<?php echo (isset(Yii::app()->user->img) )?Yii::app()->user->img:"00000000" ?>&s=25" alt="<?php echo Yii::app()->user->name ?>" /> <?php echo Yii::app()->user->name ?> <b class="caret"></b></a>
                   <ul class="dropdown-menu">
-                    <li><a href="/usuario/editar">Editar</a></li>
-                    <li><a href="/stream/<?php echo Yii::app()->user->name ?>">Meu Stream</a></li>
+                    <li><a href="/usuario/editar"><i class="icon-cog"></i> Editar</a></li>
+                    <li><a href="/stream/<?php echo Yii::app()->user->name ?>"><i class="icon-facetime-video"></i> Meu Stream</a></li>
                     <li class="divider"></li>
-                    <li><a href="/logout">Sair</a></li>
+                    <li><a href="/logout"><i class="icon-off"></i> Sair</a></li>
                   </ul>
                 </li>
         	<?php else: ?>
         		<?php /*
-        		<li><a href="/login">Login</a></li>
+        		<li><a href="/login">  icon-user Login</a></li>
         		<li><a href="/cadastro">Cadastro</a></li>
         		*/ ?>
             <?php endif; ?>
@@ -40,3 +42,4 @@
     </div><!-- /.navbar -->
   </div> <!-- /.container -->
 </div>
+<div class="glc-header-bg"></div>

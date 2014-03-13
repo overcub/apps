@@ -366,6 +366,14 @@ background-color: #e5e5e5 !important;
 	    	background: #000000;
 		}
 /* navbar */
+#glc-doc .glc-header-bg{
+	color: #fff;
+    text-shadow: 2px 2px 2px #000000;
+    height: 130px;
+    position: relative;
+    margin-bottom: 20px;
+    background: url('/images/style/default/slide-lol-01.jpg') repeat center center;
+}
 #glc-doc .glc-header{
 	margin-bottom: 0;
 	border-bottom: 5px solid #2c2e36;
@@ -566,6 +574,9 @@ background-color: #e5e5e5 !important;
 /*Home*/
 .glc-home{
 }
+	.glc-home #glc-doc .glc-header-bg{
+		display: none;
+	}
 	.glc-home #glc-doc .glc-home-stream {
 	    background: url(/images/style/default/bg-stream.jpg);
 	    color: #fff;
@@ -608,6 +619,9 @@ background-color: #e5e5e5 !important;
 /*Streaming*/
 .glc-streaming{
 }
+	.glc-streaming #glc-doc .glc-header-bg{
+		display: none;
+	}
 	.glc-streaming #glc-doc .glc-streaming-content .glc-header{
 	    color: #fff;
 	    text-shadow: 2px 2px 2px #000000;

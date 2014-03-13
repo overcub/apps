@@ -5,17 +5,25 @@
 	<meta name="language" content="en" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/styles.css" />
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
-	
+	<link rel="icon" type="image/png" href="<?php echo Yii::app()->params->cdnUrl ?>/images/logo/manetetv-icon.png" />
 	<?php Yii::app()->bootstrap->register(); ?>
 	
-	<script type='text/javascript'>
-	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-	  ga('create', '<?php echo Yii::app()->params->googleAnalyticsId ?>', '<?php echo Yii::app()->params->googleAnalyticsDomain ?>');
-	  ga('send', 'pageview');
+	<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(
+		['_setAccount', '<?php echo Yii::app()->params->googleAnalyticsId ?>'],
+		['_setDomainName', '<?php echo Yii::app()->params->googleAnalyticsDomain ?>'],
+		['_trackPageview'],
+		['b._setAccount', '<?php echo Yii::app()->params->googleAnalyticsGroupId ?>'],
+		['b._setDomainName', '<?php echo Yii::app()->params->googleAnalyticsDomain ?>'],
+		['b._trackPageview']
+	);
+    	
+	(function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+	})();
 	</script>
 
 	<script type='text/javascript'>
@@ -32,7 +40,6 @@
 	node.parentNode.insertBefore(gads, node);
 	})();
 	</script>
-	
 	<script type='text/javascript'>
 	googletag.cmd.push(function() {
 	googletag.defineSlot('/137203934/square_250x250', [250, 250], 'div-gpt-ad-1379991864403-0').addService(googletag.pubads());
@@ -41,6 +48,7 @@
 	googletag.defineSlot('/137203934/superbanner_728x90', [728, 90], 'div-gpt-ad-1379991864403-3').addService(googletag.pubads());
 	googletag.defineSlot('/137203934/superbanner_footer_728x90', [728, 90], 'div-gpt-ad-1379991864403-4').addService(googletag.pubads());
 	googletag.defineSlot('/137203934/cabecalho_300x50', [300, 50], 'div-gpt-ad-1379991864403-5').addService(googletag.pubads());
+	googletag.pubads().setTargeting('canal', '<?php echo $this->adsChannel ?>);
 	googletag.pubads().enableSingleRequest();
 	googletag.enableServices();
 	});
