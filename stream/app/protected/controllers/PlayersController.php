@@ -114,7 +114,7 @@ class PlayersController extends Controller
 				$message = "Ocorreu um erro";
 			}
 		}
-		$this->setHeaderMetas(array('title'=>"tvee | ".$model->username,'description'=>$model->getExtraData('descriptionStream'),'keyword'=>$model->username.',tvee, strea, geek life club'));
+		$this->setHeaderMetas(array('title'=>$model->username . " | manete.tv",'description'=>$model->getExtraData('descriptionStream'),'keyword'=>$model->username.',manete.tv, stream, geek life club'));
 		$this->render('edit',array(
 				'model'=>$model,
 				'message' => $message,
@@ -152,7 +152,8 @@ class PlayersController extends Controller
 		if( ($streamer = Players::model()->findByUsername($username)) ){
 			$this->sessionClass = 'glc-streaming';
 			$this->layout='//layouts/default';
-			$this->setHeaderMetas(array('title'=>"tvee | $username",'description'=>$streamer->getExtraData('descriptionStream'),'keyword'=>$username.',tvee, strea, geek life club'));
+			$this->adsChannel=$username;
+			$this->setHeaderMetas(array('title'=>"$username | manete.tv",'description'=>$streamer->getExtraData('descriptionStream'),'keyword'=>$username.',manete.tv, stream, geek life club'));
 			$this->render('streaming',array(
 				'model'=>$streamer,
 				'listGame' => $streamer->listGame()

@@ -36,6 +36,7 @@ class SiteController extends Controller
 		$this->ads['superbanner'] = false;
 		$this->ads['superbannerFooter'] = false;
 		$this->sessionClass = 'glc-home';
+		$this->setHeaderMetas(array('title'=>"manete.tv | Ganhe dinheiro streamando!",'description'=>'Passe a divulgar sua jogatina e ganhe com isso!','keyword'=>'manete.tv, stream, geek life club'));
 		$this->render('index');
 	}
 	

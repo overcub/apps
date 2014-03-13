@@ -8,6 +8,7 @@ class Controller extends CController{
 	private $_assetsBase;
 	public $layout='//layouts/column1';
 	public $sessionClass = "";
+	public $adsChannel = "manete.tv";
 	public $ads = array(
     	'superbanner' => true,
     	'superbannerFooter' => true,

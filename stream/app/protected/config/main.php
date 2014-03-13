@@ -10,7 +10,7 @@ Yii::setPathOfAlias('bootstrap', dirname(__FILE__).'/../extensions/bootstrap');
 return array(
 	'theme'=>'bootstrap',
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
-	'name'=>'Stream | Geek Life Club',
+	'name'=>'manete.tv',
 
 	'sourceLanguage'    =>'en-us',
 	'language'          =>'pt-br',
@@ -169,6 +169,7 @@ return array(
 	// application-level parameters that can be accessed
 	// using Yii::app()->params['paramName']
 	'params'=>array(
+		'googleAnalyticsGroupId'=>$CONFIG['params']['googleAnalyticsGroupId'],
 		'googleAnalyticsId'=>$CONFIG['params']['googleAnalyticsId'],
 		'googleAnalyticsDomain'=>$CONFIG['params']['googleAnalyticsDomain'],
 		'contactEmail'=>'atendimento@geeklifeclub.com.br',
