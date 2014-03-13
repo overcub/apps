@@ -46,7 +46,7 @@ class Players extends CActiveRecord
 			array('name', 'length', 'max'=>255),
 			array('group', 'length', 'max'=>50),
 			array('gender', 'length', 'max'=>1),
-			array('birthdate, extra, createTime', 'safe'),
+			array('birthdate', 'type', 'type' => 'date', 'message' => '{attribute} incorreta.', 'dateFormat' => 'yyyy-MM-dd'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, id_user, email, password, username, name, group, gender, birthdate, extra, updateTime, createTime', 'safe', 'on'=>'search'),
