@@ -125,15 +125,14 @@
 						)); ?>
 					</div>
 				</div>
+				<?php /*
 				<div class="row-fluid">
 				 	<div id="disqus_thread"></div>
 				    <script type="text/javascript">
-				        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
 				        var disqus_shortname = 'geeklifeclub'; // required: replace example with your forum shortname
 				        var disqus_url = '<?php echo Yii::app()->params->domain."stream/".$model->username ?>';
 				        var disqus_identifier = '<?php echo "/stream/".$model->username ?>';
 		    			var disqus_title = '<?php echo "tvee | ".$model->username ?>';
-				        /* * * DON'T EDIT BELOW THIS LINE * * */
 				        (function() {
 				            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
 				            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
@@ -142,8 +141,48 @@
 				    </script>
 				    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 				    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-				</div>				
+				</div>	
+				*/ ?>			
 		    </div>
 	    </div>
 	</div>
 </section>
+<div id="glc-feedback-stream">
+	<button id="glc-btn-close-feedback-stream" aria-hidden="true" class="close" type="button">×</button>
+	<p>O manete.tv esta em fases de teste. Por este motivo gostariamos de ouvir você gamer! Nos diga o que você gostaria de ter disponivel ao assistir o stream do seu game favorito? Mande um email para <a href="mailto:geeklifeclub@gmail.com">geeklifeclub@gmail.com</a> e responda a nossa <a href="#">pesquisa</a> é super rápido ;)</p>
+</div>
+<script>
+  $("#glc-feedback-stream").ready(function() {
+  	$( "#glc-btn-close-feedback-stream" ).on( "click", function(){
+  		$('#glc-feedback-stream').removeClass('up');
+	});
+    setTimeout ( " $('#glc-feedback-stream').addClass('up'); ",3000 );
+  });
+</script>
+<style type="text/css">
+#glc-feedback-stream { background-color: #fff;border:1px solid;border-left-color:#f0f0f0;border-top-color:#f0f0f0;border-right-color:#d9d9d9;border-bottom-color:#d9d9d9;-webkit-box-shadow:2px 2px 8px 0 #ececec;-moz-box-shadow:2px 2px 8px 0 #ececec;-o-box-shadow:2px 2px 8px 0 #ececec;box-shadow:2px 2px 8px 0 #ececec;padding:20px 25px;border-radius:10px 10px 0 0;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-o-box-sizing:border-box;box-sizing:border-box}
+
+#glc-feedback-stream p {
+  margin-top: 10px;
+}
+.glc-streaming-content{
+	z-index: 50;
+}
+#glc-feedback-stream {
+	right: 50%;
+	margin-right: -370px;
+	max-width: 800px;
+	position: fixed;
+	bottom: -162px;
+	transition:all 2s ease-in-out;
+		-webkit-transition:all 2s ease-in-out;
+			-moz-transition:all 2s ease-in-out;
+				-o-transition:all 2s ease-in-out;
+	z-index: 1000;
+} 
+
+#glc-feedback-stream.up {
+	bottom: 0;
+}
+</style>
+

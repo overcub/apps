@@ -18,7 +18,7 @@
 <fieldset>
     <legend>Seus dados <small>Campos obrigatórios <span class="required">*</span></small></legend>
 	
-	<?php echo $form->errorSummary($model); ?>
+	<?php echo $form->errorSummary($model,"Ocorreu um erro ao tentar salvar seus dados."); ?>
 	
 	<?php echo $form->textFieldRow($model,'name',array('class'=>'span5','placeholder'=>'Seu nome')); ?>
 
@@ -53,7 +53,7 @@
             </p>
 		</div>
 	</div>
-
+	<?php /*
 	<div class="control-group">
 		<label for="Players_games" class="control-label required">games</label>
 		<div class="controls">
@@ -63,6 +63,8 @@
             </p>
 		</div>
 	</div>
+	*/
+	?>
 	<div class="control-group">
 		<label for="Players_gender_option" class="control-label required">Sexo</label>
 		<div class="controls">
@@ -90,11 +92,10 @@
 			    // additional javascript options for the date picker plugin
 			    'options'=>array(
 			        'showAnim'=>'fold',
-					'dateFormat' => 'yy-mm-dd',
+					'dateFormat' => 'yyyy-mm-dd',
 			    ),
 			    'htmlOptions'=>array(
 			        'style'=>'height:20px;',
-			
 			    ),
 			));
 			?>
@@ -111,6 +112,7 @@
 </fieldset>
 <?php $this->endWidget(); ?>
 <script type="text/javascript">
+
 	$(document).ready(function(){
 		$('#btn-players-form-newpassword').on('click', function() {
 			$('#players-link-newpassword').removeClass('in').addClass('hide');
@@ -122,18 +124,5 @@
 			$('#players-form-newpassword').removeClass('in').addClass('hide');
 			$('#Players_newPassword').attr('value','');
 		});
-
-	    $('input#glc-games').tagsinput({
-	    	itemValue: 'id',
-	    	itemText: 'name',
-		    typeahead: {
-		   	 source: gameList
-		    }
-	    });
-	    <?php if(!empty($listGame)): ?>
-		    <?php foreach ($listGame as $key): ?>
-		    	$('input#glc-games').tagsinput('add', <?php echo CJSON::encode($key) ?> );
-		    <?php endforeach; ?>
-	    <?php endif; ?>
 	});
 </script>
