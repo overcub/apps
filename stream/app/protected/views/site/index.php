@@ -4,9 +4,8 @@
           <img src="/images/style/default/slide-lol-01.jpg" alt="League of Legends no manete.tv!">
           <div class="container">
             <div class="carousel-caption">
-              <h1>Ganhe dinheiro streamando!</h1>
-              <p class="lead">Passe a divulgar sua jogatina e ganhe com isso! Nós idealizamos uma ferramenta colaborativa onde você, streamer, divulga o seu jogo e nós procuramos monetizar os seus views. <strong>Ficou Curioso?</strong></p>
-              <a class="btn btn-large btn-primary" href="mailto:geeklifeclub@gmail.com">Descubra!</a>
+              <h1>Ganhe dinheiro jogando!</h1>
+              <p class="lead">Passe a divulgar sua jogatina e ganhe com isso! Nós idealizamos uma ferramenta colaborativa onde você, streamer, divulga o seu jogo e nós procuramos monetizar os seus views. <strong>Em breve!</strong></p>
             </div>
           </div>
         </div>
