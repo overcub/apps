@@ -154,7 +154,7 @@
 <script>
   $("#glc-feedback-stream").ready(function() {
   	$( "#glc-btn-close-feedback-stream" ).on( "click", function(){
-  		setTimeout ( " $('#glc-feedback-stream').removeClass('up'); ",3000 );
+  		$('#glc-feedback-stream').removeClass('up');
 	});
     setTimeout ( " $('#glc-feedback-stream').addClass('up'); ",3000 );
   });
