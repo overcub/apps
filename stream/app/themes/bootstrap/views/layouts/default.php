@@ -48,7 +48,7 @@
 	googletag.defineSlot('/137203934/superbanner_728x90', [728, 90], 'div-gpt-ad-1379991864403-3').addService(googletag.pubads());
 	googletag.defineSlot('/137203934/superbanner_footer_728x90', [728, 90], 'div-gpt-ad-1379991864403-4').addService(googletag.pubads());
 	googletag.defineSlot('/137203934/cabecalho_300x50', [300, 50], 'div-gpt-ad-1379991864403-5').addService(googletag.pubads());
-	googletag.pubads().setTargeting('canal', '<?php echo $this->adsChannel ?>);
+	googletag.pubads().setTargeting('canal', '<?php echo $this->adsChannel ?>');
 	googletag.pubads().enableSingleRequest();
 	googletag.enableServices();
 	});
