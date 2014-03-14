@@ -70,14 +70,21 @@
 					</div>
 				<?php endif;?>
 				<div class="span4">
-					<div class="glc-publicidade glc-publicidade-margin-bottom">
+					<div id="glc-pub-square-refresh" class="glc-publicidade glc-publicidade-margin-bottom">
 						<div class="bl-pub-square">
 							<button aria-hidden="true" class="close glc-btn-close-pub" type="button">×</button>
 							<p class="glc-pub-info">publicidade</p>
 							<div id='div-gpt-ad-1379991864403-1'>
 								<script type='text/javascript'>
-								googletag.cmd.push(function() { googletag.display('div-gpt-ad-1379991864403-1'); });
-								</script>
+						        googletag.cmd.push(function() {
+						        var slot1 = googletag.defineSlot('/137203934/square_300x250', [300, 250], 'div-gpt-ad-1379991864403-1').addService(googletag.pubads());
+						        googletag.display("div-gpt-ad-1379991864403-1");
+						        setInterval(function(){
+						        	$('#glc-pub-square-refresh').removeClass('hide');
+						        	googletag.pubads().refresh([slot1]);
+						        }, 30000);
+						        });
+							    </script>
 							</div>
 						</div>
 					</div>

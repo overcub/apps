@@ -43,7 +43,7 @@
 	<script type='text/javascript'>
 	googletag.cmd.push(function() {
 	googletag.defineSlot('/137203934/square_250x250', [250, 250], 'div-gpt-ad-1379991864403-0').addService(googletag.pubads());
-	googletag.defineSlot('/137203934/square_300x250', [300, 250], 'div-gpt-ad-1379991864403-1').addService(googletag.pubads());
+	//googletag.defineSlot('/137203934/square_300x250', [300, 250], 'div-gpt-ad-1379991864403-1').addService(googletag.pubads());
 	googletag.defineSlot('/137203934/superbanner_1_728x90', [728, 90], 'div-gpt-ad-1379991864403-2').addService(googletag.pubads());
 	googletag.defineSlot('/137203934/superbanner_728x90', [728, 90], 'div-gpt-ad-1379991864403-3').addService(googletag.pubads());
 	googletag.defineSlot('/137203934/superbanner_footer_728x90', [728, 90], 'div-gpt-ad-1379991864403-4').addService(googletag.pubads());
