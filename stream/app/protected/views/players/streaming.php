@@ -61,27 +61,28 @@
 							<param name="flashvars" value="hostname=www.twitch.tv&channel=<?php echo $model->getExtraData('twichtv')?>&auto_play=true&start_volume=25" />
 						</object>
 					</div>
-					<div class="span4">
-						<div class="glc-publicidade glc-publicidade-margin-bottom">
-							<div class="bl-pub-square">
-								<p class="glc-pub-info">publicidade</p>
-								<div id='div-gpt-ad-1379991864403-1'>
-									<script type='text/javascript'>
-									googletag.cmd.push(function() { googletag.display('div-gpt-ad-1379991864403-1'); });
-									</script>
-								</div>
-							</div>
-						</div>
-						<iframe frameborder="0" scrolling="no" id="chat_embed" src="http://twitch.tv/chat/embed?channel=<?php echo $model->getExtraData('twichtv')?>&amp;popout_chat=true" height="400" width="100%"></iframe>
-					</div>
 				<?php else: ?>
-					<div class="span12">
+					<div class="span8">
 					    <div class="alert alert-block">
 					    	<h4>Ops!</h4>
 					    	O usuário <?php echo $model->username; ?> ainda não informou o seu canal de stream.
 					    </div>
 					</div>
 				<?php endif;?>
+				<div class="span4">
+					<div class="glc-publicidade glc-publicidade-margin-bottom">
+						<div class="bl-pub-square">
+							<button aria-hidden="true" class="close glc-btn-close-pub" type="button">×</button>
+							<p class="glc-pub-info">publicidade</p>
+							<div id='div-gpt-ad-1379991864403-1'>
+								<script type='text/javascript'>
+								googletag.cmd.push(function() { googletag.display('div-gpt-ad-1379991864403-1'); });
+								</script>
+							</div>
+						</div>
+					</div>
+					<iframe frameborder="0" scrolling="no" id="chat_embed" src="http://twitch.tv/chat/embed?channel=<?php echo $model->getExtraData('twichtv')?>&amp;popout_chat=true" height="400" width="100%"></iframe>
+				</div>
 			</div>
 		</div>
 		<?php /*

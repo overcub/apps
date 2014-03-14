@@ -625,6 +625,13 @@ background-color: #e5e5e5 !important;
 .glc-streaming{
 	background: #202020;
 }
+	.glc-streaming #glc-doc .glc-btn-close-pub{
+		background: #FFF;
+		border: 1px solid #d4d4d4;
+		-webkit-border-radius: 4px;
+		-moz-border-radius: 4px;
+		border-radius: 4px;
+	}
 	.glc-streaming #glc-doc .glc-header-bg{
 		display: none;
 	}
@@ -658,6 +665,8 @@ background-color: #e5e5e5 !important;
 		.glc-streaming #glc-doc .glc-streaming-content .glc-streaming-player-data .glc-box {
 			background: none repeat scroll 0 0 #FFFFFF;
 		    border-radius: 3px;
+			-webkit-border-radius: 3px;
+			-moz-border-radius: 3px;
 		    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2) inset;
 		    display: inline-block;
 		    font-size: 0.9em;
@@ -724,7 +733,9 @@ background-color: #e5e5e5 !important;
   margin-bottom: 10px;
   color: #555;
   vertical-align: middle;
-  border-radius: 4px;
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
   line-height: 22px;
 }
 	.glc-user-edit #glc-doc .glc-user-edit-content .glc-user-edit-form .bootstrap-tagsinput {
@@ -936,6 +947,8 @@ background-color: #e5e5e5 !important;
       }
       .navbar-inner {
         border-radius: 0;
+		-webkit-border-radius: 0;
+		-moz-border-radius: 0;
         margin: -20px 0;
       }
 
