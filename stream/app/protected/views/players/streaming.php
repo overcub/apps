@@ -33,6 +33,7 @@
 			</div>
 		</div>
 	</div>
+	<?php /*
 	<div class="glc-publicidade glc-superbanner-top">
 		<div class="container">
 			<div class="bl-pub-superbanner">
@@ -46,6 +47,7 @@
 			</div>
 		</div>
 	</div>
+	*/ ?>
 	<div class="glc-body-streamer bl-conteudo">
 		<div class="container">		
 			<div class="row-fluid">
@@ -60,18 +62,17 @@
 						</object>
 					</div>
 					<div class="span4">
-						<iframe frameborder="0" scrolling="no" id="chat_embed" src="http://twitch.tv/chat/embed?channel=<?php echo $model->getExtraData('twichtv')?>&amp;popout_chat=true" height="400" width="100%"></iframe>
-						<div class="glc-publicidade glc-publicidade-margin-bottom glc-retangulofino">
-							<div class="bl-pub-retangulofino">
+						<div class="glc-publicidade glc-publicidade-margin-bottom">
+							<div class="bl-pub-square">
 								<p class="glc-pub-info">publicidade</p>
-								<!-- cabecalho_300x50 -->
-								<div id='div-gpt-ad-1379991864403-5'>
+								<div id='div-gpt-ad-1379991864403-1'>
 									<script type='text/javascript'>
-									googletag.cmd.push(function() { googletag.display('div-gpt-ad-1379991864403-5'); });
+									googletag.cmd.push(function() { googletag.display('div-gpt-ad-1379991864403-1'); });
 									</script>
 								</div>
 							</div>
 						</div>
+						<iframe frameborder="0" scrolling="no" id="chat_embed" src="http://twitch.tv/chat/embed?channel=<?php echo $model->getExtraData('twichtv')?>&amp;popout_chat=true" height="400" width="100%"></iframe>
 					</div>
 				<?php else: ?>
 					<div class="span12">
@@ -83,6 +84,7 @@
 				<?php endif;?>
 			</div>
 		</div>
+		<?php /*
 		<section class="glc-publicidade glc-superbanner-footer">
 			<div class="container">
 				<div class="bl-pub-superbanner">
@@ -95,7 +97,8 @@
 					</div>
 				</div>
 			</div>
-		</section>		
+		</section>
+		*/?>		
 		<div class="glc-streaming-player-image">
 			<div class="container">
 				<img border="0" class="img-circle glc-image-profile" src="<?php echo $model->getImageProfile(200) ?>" alt="<?php echo $model->name ?>"/>
