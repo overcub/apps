@@ -9,7 +9,13 @@
     body {
       color: #5a5a5a;
     }
-
+	
+	a {
+		color: #8D50AB;
+	}
+	a:hover {
+		color: #704189;
+	}
 
 
     /* CUSTOMIZE THE NAVBAR
@@ -428,7 +434,7 @@ background-color: #e5e5e5 !important;
       text-shadow: 0 1px 1px rgba(0,0,0,.4);
 }
 	#glc-doc .glc-footer .about {
-		max-width: 300px;
+		max-width: 350px;
 	}
 /* login */
 #glc-doc .container .row-fluid .glc-bl-center {
@@ -538,7 +544,7 @@ background-color: #e5e5e5 !important;
 	
 /* Publicidade */
 #glc-doc .glc-publicidade{
-	margin: 40px 0;
+	margin: 20px 0 30px 0;
 }
 	#glc-doc .glc-publicidade.glc-publicidade-margin-bottom{
 		margin-top: 0;
@@ -638,7 +644,7 @@ background-color: #e5e5e5 !important;
 	.glc-streaming #glc-doc .glc-streaming-content .glc-header{
 	    color: #fff;
 	    text-shadow: 2px 2px 2px #000000;
-	    height: 130px;
+	    height: 200px;
 	    position: relative;
 	    margin-bottom: 0;
 	}
@@ -679,7 +685,7 @@ background-color: #e5e5e5 !important;
 
 		}
 		.glc-streaming #glc-doc .glc-streaming-content .glc-streaming-player-data .glc-streaming-player-explain{
-			border-bottom: 1px solid #DDDDDD;
+			/*border-bottom: 1px solid #DDDDDD;*/
 			display: block;
 			padding-top: 0;
 		}
@@ -696,6 +702,7 @@ background-color: #e5e5e5 !important;
 		    top: -10px;
 		    width: 0;
 		}
+		.glc-streaming #glc-doc .glc-streaming-content .glc-streaming-player-data 
 /* usuario editar*/
 .glc-user-edit{
 }
@@ -803,7 +810,9 @@ background-color: #e5e5e5 !important;
     /* Remove border and change up box shadow for more contrast */
     .navbar .navbar-inner {
       border: 0;
-         -moz-box-shadow: 0 5px 20px rgba(0, 0, 0, 0.71);
+      -webkit-box-shadow: none;
+         -moz-box-shadow: none;
+         box-shadow: none;
     }
 
     /* Downsize the brand/project name a bit */
@@ -873,14 +882,15 @@ background-color: #e5e5e5 !important;
       margin: 0;
       line-height: 1.25;
       color: #fff;
-      text-shadow: none;
+      text-shadow: none !important;
     }
     	.carousel-caption .lead {
     		margin-top: 10px;
     	}
         .carousel-caption .lead strong {
-          margin-top: 5px;
+          margin-top: 15px;
           display: block;
+          text-transform: uppercase;
         }
     .carousel-caption .btn {
       margin-top: 10px;
@@ -1068,4 +1078,16 @@ border-bottom-color: #333333 !important;
 .navbar .nav li.dropdown.open > .dropdown-toggle, .navbar .nav li.dropdown.active > .dropdown-toggle, .navbar .nav li.dropdown.open.active > .dropdown-toggle {
 color: #555555 !important;
 background-color: #e5e5e5 !important;
+}
+
+
+.social-top-container .buttons .facebook {
+	top: -6px;
+	position: relative;
+}
+
+
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus, .dropdown-submenu:hover > a, .dropdown-submenu:focus > a {
+	background: none repeat scroll 0 0 rgba(122, 98, 155, 0.9);
+	background-image: none;
 }
