@@ -109,6 +109,7 @@ return array(
 				'sobre'=>'Site/about',
 				'usuario/editar'=>'Players/edit',
 				'usuario/imagem-capa-upload'=>'Players/ajaxUploadImageCover',
+				'lolplayer/findSummonerBasic'=>'LolPlayer/findSummonerBasic',
 				'cadastro/'=>'Players/register',
 				//'stream'=>'Players/stream',
 				'stream/<username>'=>'Players/streaming',

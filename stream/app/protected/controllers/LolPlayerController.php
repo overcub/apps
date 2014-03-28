@@ -231,8 +231,8 @@ class LolPlayerController extends Controller
 	{
 		header('Content-Type: application/json; charset="UTF-8"');
 		$error = '{"success":false}';
-		$name = strtolower(str_replace(" ", "", $_POST['LolPlayer']['name']));
 		if( isset($_POST['LolPlayer']['name']) && isset($_POST['LolPlayer']['server']) ){
+			$name = strtolower(str_replace(" ", "", $_POST['LolPlayer']['name']));
 			if( ( $return = LolPlayer::model()->findByNameAndServer($name,$_POST['LolPlayer']['server']) ) ){
 				echo $return->mixData;
 			}elseif( ($return = $this->findSummonerBasicByRestAPI() ) ){
