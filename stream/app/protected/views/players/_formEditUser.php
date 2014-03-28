@@ -80,27 +80,8 @@
 			<?php echo $form->error($model,'gender', array()); ?>
 		</div>
 	</div>
-
-	<div class="control-group ">
-		<label for="Players_birthdate" class="control-label">Data de Nascimento</label>
-		<div class="controls">
-			<?php $this->widget('zii.widgets.jui.CJuiDatePicker', array(
-			    //'name'=>'Players[birthdate]',
-			    //'id'=>'user_Birthdate',
-			    'model'=>$model,
-			    'attribute' => 'birthdate',
-			    // additional javascript options for the date picker plugin
-			    'options'=>array(
-			        'showAnim'=>'fold',
-					'dateFormat' => 'yyyy-mm-dd',
-			    ),
-			    'htmlOptions'=>array(
-			        'style'=>'height:20px;',
-			    ),
-			));
-			?>
-		</div>
-	</div>
+	
+	<?php echo $form->textFieldRow($model,'birthdate',array('class'=>'span5','placeholder'=>'yyyy-mm-dd')); ?>
 	
 	<div class="form-actions">
 		<?php $this->widget('bootstrap.widgets.TbButton', array(

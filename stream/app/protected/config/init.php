@@ -30,10 +30,10 @@ switch($ambient){
     break;
 
     case AMBIENT_LOCAL:
-        $CONFIG['database'][1]['connectionString'] = 'mysql:host=192.168.1.109;dbname=apps.geeklifeclub';
+        $CONFIG['database'][1]['connectionString'] = 'mysql:host=192.168.1.102;dbname=apps.geeklifeclub';
         $CONFIG['database'][1]['username'] = 'geeklifeclub';
         $CONFIG['database'][1]['password'] = 'geeklifeclubaabc33163356';
-        $CONFIG['database'][2]['connectionString'] = 'mysql:host=192.168.1.109;dbname=apps.geeklifeclub';
+        $CONFIG['database'][2]['connectionString'] = 'mysql:host=192.168.1.102;dbname=apps.geeklifeclub';
         $CONFIG['database'][2]['username'] = 'geeklifeclub';
         $CONFIG['database'][2]['password'] = 'geeklifeclubaabc33163356';
         

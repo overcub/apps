@@ -114,9 +114,11 @@ class PlayersController extends Controller
 				$message = "Ocorreu um erro";
 			}
 		}
+
 		$this->setHeaderMetas(array('title'=>$model->username . " | manete.tv",'description'=>$model->getExtraData('descriptionStream'),'keyword'=>$model->username.',manete.tv, stream, geek life club'));
 		$this->render('edit',array(
 				'model'=>$model,
+				'lolPlayer'=>LolPlayer::model()->findByIdPlayer($model->id),
 				'message' => $message,
 				'image' => $model->getImageCover(),
 				'listGame' => $model->listGame()

@@ -183,6 +183,6 @@ return array(
 	    'salt'=>'g33KL1f3Clu3123',
 	    'mashapeKey'=> array('LOL' =>'MWDMOJlVh625v8o0365WsPn9A3rVmf7J'),
 	    'version'=>'1',
-	    'domain'=>'http://stream.geeklifeclub.com.br/'
+	    'domain'=>'http://manete.tv'
 	),
 );
