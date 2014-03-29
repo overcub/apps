@@ -110,6 +110,7 @@ return array(
 				'usuario/editar'=>'Players/edit',
 				'usuario/imagem-capa-upload'=>'Players/ajaxUploadImageCover',
 				'lolplayer/findSummonerBasic'=>'LolPlayer/findSummonerBasic',
+				'lolplayer/updateSummonerBasic'=>'LolPlayer/updateSummonerBasic',
 				'cadastro/'=>'Players/register',
 				//'stream'=>'Players/stream',
 				'stream/<username>'=>'Players/streaming',

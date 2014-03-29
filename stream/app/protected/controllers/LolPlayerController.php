@@ -31,7 +31,7 @@ class LolPlayerController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','findSummonerBasic'),
+				'actions'=>array('create','update','findSummonerBasic','updateSummonerBasic'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -190,41 +190,102 @@ class LolPlayerController extends Controller
 		}
 	}
 
-	private function findSummonerBasicByRestAPI()
-	{
-		$keyCache = __METHOD__;
-		$keyCache .= "::" . $_POST['LolPlayer']['name'] . "::" . $_POST['LolPlayer']['server'];
-		$value=Yii::app()->cache->get($keyCache);
-		$name = strtolower(str_replace(" ", "", $_POST['LolPlayer']['name']));
-		if($value===false) {
-			//https://teemojson.p.mashape.com/player/na/Studio
-			$url = "https://teemojson.p.mashape.com/player/".$_POST['LolPlayer']['server']."/" . $name;
-			$ch = curl_init();
-			curl_setopt($ch, CURLOPT_URL, $url);
-			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);			
-			curl_setopt($ch, CURLOPT_HTTPHEADER, array('X-Mashape-Authorization: '.Yii::app()->params->mashapeKey['LOL']));
-			curl_setopt($ch, CURLOPT_TIMEOUT, 30);
-			$response = curl_exec($ch);
-			$responseCode = curl_getinfo($ch,CURLINFO_HTTP_CODE);
-			curl_close ($ch);
-			if( $this->checkResponse( $responseCode, $response) ){
-				$arr = CJSON::decode($response);	
-				$time = 30;
-				if($arr['success'] == true){
-					$time = (60*10);
-				}
-
-				$return = array('data' => $arr['data'], 'mixData' => $response);
-
-				Yii::app()->cache->set($keyCache, $return, $time);
-				return $return;
-			}else{
-				return false;
-			}
+	private function restAPIByCurl($url){
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_URL, $url);
+		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);			
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array('X-Mashape-Authorization: '.Yii::app()->params->mashapeKey['LOL']));
+		curl_setopt($ch, CURLOPT_TIMEOUT, 30);
+		$response = curl_exec($ch);
+		$responseCode = curl_getinfo($ch,CURLINFO_HTTP_CODE);
+		curl_close ($ch);
+		if( $this->checkResponse( $responseCode, $response) ){
+			return $response;
 		}else{
 			return false;
 		}
+	}
+
+	private function findSummonerHonorByRestAPI($name,$server)
+	{
+		$keyCache = __METHOD__;
+		$keyCache .= "::" . $name . "::" . $server;
+		$value =Yii::app()->cache->get($keyCache);
+		$return = false;
+		if($value===false) {
+			$url = "https://teemojson.p.mashape.com/player/" . $server . "/" . $name . "/honor";
+			if( ( $return = $this->restAPIByCurl($url) ) ){
+				$arr = CJSON::decode($return);	
+				$time = 30;
+				if($arr['success'] == true){
+					$time = (60*10);
+					$return = array('player' => $arr['player'], 'data' => $arr['data'], 'mixData' => $return);
+				}
+				Yii::app()->cache->set($keyCache, $return, $time);
+			}else{
+				$return = false;
+			}
+		}else{
+			$return = $value;
+		}
+		return $return;
+	}
+	
+	private function findSummonerBasicByRestAPI($name,$server)
+	{
+		$keyCache = __METHOD__;
+		$keyCache .= "::" . $name . "::" . $server;
+		$value =Yii::app()->cache->get($keyCache);
+		$return = false;
+		if($value===false) {
+			$url = "https://teemojson.p.mashape.com/player/" . $server . "/" . $name;
+			if( ( $return = $this->restAPIByCurl($url) ) ){
+				$arr = CJSON::decode($response);
+				$time = 30;
+				if($arr['success'] == true){
+					$time = (60*10);
+					$return = array('data' => $arr['data'], 'mixData' => $response);
+				}
+				Yii::app()->cache->set($keyCache, $return, $time);
+			}
+		}else{
+			$return = $value;
+		}
+		return $return;
+	}
+
+	private function processBeforeFindSummonerHonorByRestAPI($data,$server){
+		return array(
+			'id_players' => Yii::app()->user->getId(),
+			'accountId' => $data['player']['accountId'],
+			'summonerId' => $data['player']['summonerId'],
+			'server' => $server,
+			'name' => $data['player']['name'],
+			'internalName' => $data['player']['internalName'],
+			'icon' => $data['player']['icon'],
+			'level' => $data['player']['level'],
+			'mixData' => $data['mixData'],
+			'honorData' => CJSON::encode(array(
+				'data' => array(
+					'colaborator' => $data['data']['totals'][1],
+					'friendly' => $data['data']['totals'][2],
+					'job' => $data['data']['totals'][3],
+					'enimy' => $data['data']['totals'][4],
+					'nothing' => $data['data']['totals'][0],
+					)
+			)),
+		);
+	}
+
+	public function processNameRestAPI($name){
+		return strtolower(str_replace(" ", "", $name));
+	}
+
+	public function saveSummoner($data){
+		$lolPlayer = new LolPlayer;
+		$lolPlayer->attributes = $data;
+		$lolPlayer->save();
 	}
 
 	public function actionFindSummonerBasic()
@@ -232,25 +293,44 @@ class LolPlayerController extends Controller
 		header('Content-Type: application/json; charset="UTF-8"');
 		$error = '{"success":false}';
 		if( isset($_POST['LolPlayer']['name']) && isset($_POST['LolPlayer']['server']) ){
-			$name = strtolower(str_replace(" ", "", $_POST['LolPlayer']['name']));
-			if( ( $return = LolPlayer::model()->findByNameAndServer($name,$_POST['LolPlayer']['server']) ) ){
+			$name = $this->processNameRestAPI($_POST['LolPlayer']['name']);
+			$server = $_POST['LolPlayer']['server'];
+			if( ( $return = LolPlayer::model()->findByIdPlayer( Yii::app()->user->getId() ) ) ){
 				echo $return->mixData;
-			}elseif( ($return = $this->findSummonerBasicByRestAPI() ) ){
-				$lolPlayer = new LolPlayer;
-				$lolPlayer->id_players=Yii::app()->user->getId();
-				$lolPlayer->server=$_POST['LolPlayer']['server'];
-				$lolPlayer->summonerId=$return['data']['summonerId'];
-				$lolPlayer->accountId=$return['data']['accountId'];
-				$lolPlayer->icon=$return['data']['icon'];
-				$lolPlayer->level=$return['data']['level'];
-				$lolPlayer->name=$return['data']['name'];
-				$lolPlayer->internalName=$return['data']['internalName'];
-				$lolPlayer->mixData=$return['mixData'];
-				$lolPlayer->createTime = date('Y-m-d H:i:s');
-				$lolPlayer->updateTime = date('Y-m-d H:i:s');
-				$lolPlayer->save();
-				Yii::app()->user->setFlash('success', "Invocador ".$lolPlayer->name." de lvl ".$lolPlayer->level." Criado com sucesso!");
+			}elseif( ($return = $this->findSummonerHonorByRestAPI($name,$server) ) ){
+				$return = $this->processBeforeFindSummonerHonorByRestAPI($return,$server);
+				$return['createTime'] = date('Y-m-d H:i:s');
+				$return['updateTime'] = date('Y-m-d H:i:s');
+				$this->saveSummoner($return);
+				Yii::app()->user->setFlash('success', "Invocador ".$return['name']." de lvl ".$return['level']." Criado com sucesso!");
 				echo $return['mixData'];
+			}else{
+				echo $error;
+			}
+		}else{
+			echo $error;
+		}
+		Yii::app()->end();
+	}
+
+	public function actionUpdateSummonerBasic()
+	{
+		header('Content-Type: application/json; charset="UTF-8"');
+		$error = '{"success":false}';
+		if( isset($_POST['LolPlayer']['name']) && isset($_POST['LolPlayer']['server']) ){
+			$name = $this->processNameRestAPI($_POST['LolPlayer']['name']);
+			$server = $_POST['LolPlayer']['server'];
+			if( ( $lolPlayer = LolPlayer::model()->findByIdPlayer( Yii::app()->user->getId() ) ) ){
+				if( ($return = $this->findSummonerHonorByRestAPI($name,$server) ) ){
+					$return = $this->processBeforeFindSummonerHonorByRestAPI($return,$server);
+					$lolPlayer->attributes = $return;
+					$lolPlayer->updateTime = NULL;
+					$lolPlayer->save();
+					Yii::app()->user->setFlash('success', "Invocador ".$return['name']." de lvl ".$return['level']." alterado com sucesso!");
+					echo $return['mixData'];
+				}else{
+					echo $error;
+				}
 			}else{
 				echo $error;
 			}

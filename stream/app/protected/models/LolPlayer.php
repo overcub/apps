@@ -14,6 +14,8 @@
  * @property string $icon
  * @property string $level
  * @property string $mixData
+ * @property string $honorData
+ * @property string $rankedData
  * @property string $updateTime
  * @property string $createTime
  */
@@ -39,10 +41,10 @@ class LolPlayer extends CActiveRecord
 			array('id_players, accountId, summonerId, level', 'length', 'max'=>20),
 			array('server', 'length', 'max'=>10),
 			array('name, internalName, icon', 'length', 'max'=>255),
-			array('mixData, createTime', 'safe'),
+			array('mixData, honorData, rankedData, createTime', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, id_players, accountId, summonerId, server, name, internalName, icon, level, mixData, updateTime, createTime', 'safe', 'on'=>'search'),
+			array('id, id_players, accountId, summonerId, server, name, internalName, icon, level, mixData, honorData, rankedData, updateTime, createTime', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -73,6 +75,8 @@ class LolPlayer extends CActiveRecord
 			'icon' => 'Icon',
 			'level' => 'Level',
 			'mixData' => 'Mix Data',
+			'honorData' => 'Honor Data',
+			'rankedData' => 'Ranked Data',
 			'updateTime' => 'Update Time',
 			'createTime' => 'Create Time',
 		);
@@ -106,6 +110,8 @@ class LolPlayer extends CActiveRecord
 		$criteria->compare('icon',$this->icon,true);
 		$criteria->compare('level',$this->level,true);
 		$criteria->compare('mixData',$this->mixData,true);
+		$criteria->compare('honorData',$this->honorData,true);
+		$criteria->compare('rankedData',$this->rankedData,true);
 		$criteria->compare('updateTime',$this->updateTime,true);
 		$criteria->compare('createTime',$this->createTime,true);
 

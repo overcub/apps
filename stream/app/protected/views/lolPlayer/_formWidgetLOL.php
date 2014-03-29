@@ -6,6 +6,10 @@
               <th>Invocador</th>
               <th>Level</th>
               <th>Server</th>
+              <th>Prestativo</th>
+              <th>Amigável</th>
+              <th>Trabalho em Equipe</th>
+              <th>Oponente Honrado</th>
             </tr>
           </thead>
           <tbody>
@@ -13,6 +17,11 @@
               <td><?php echo $model->name ?></td>
               <td><?php echo $model->level ?></td>
               <td><?php echo $model->server ?></td>
+              <?php $honorData = CJSON::decode($model->honorData) ?>
+              <td><?php echo $honorData['data']['colaborator'] ?></td>
+              <td><?php echo $honorData['data']['friendly'] ?></td>
+              <td><?php echo $honorData['data']['job'] ?></td>
+              <td><?php echo $honorData['data']['enimy'] ?></td>
             </tr>
           </tbody>
         </table>
@@ -60,37 +69,69 @@
 		</div>
 
 		<div class="form-actions">
-			<button data-loading-text="Buscando..." id="btn-load-lol-player" type="button" class="btn btn-primary">Buscar</button>	
+			<?php if($model instanceof LolPlayer ) :?>
+				<button data-loading-text="Alterando..." id="btn-update-lol-player" type="button" class="btn btn-primary">Alterar</button>
+				<script type="text/javascript">
+					$(document).ready(function(){
+						$('#btn-update-lol-player').on('click', function() {
+							var name = $('#LolPlayer_name').val(),
+							//platform = $('#btn-platform .btn.active').attr('data-value'),
+							platform = $('#btn-platform').val(),
+							resultPlayers = "",	
+							conteudo = "";	
+							if(name == "" || platform == ""){
+								alert('ops! faltou incluir o nome do invocador e o server.');
+							}else{
+								$.ajax({
+								    url: '/lolplayer/updateSummonerBasic', // The URL to the API. You can get this by clicking on "Show CURL example" from an API profile
+								    type: 'POST',
+								    crossDomain: true,
+									data : {
+										LolPlayer : {
+											name : name,
+											server : platform
+										}
+									},
+								    success: function(data) {
+								    	window.location.reload();
+								    }
+								});
+							}
+						});
+					});
+				</script>
+			<?php else: ?>
+				<button data-loading-text="Buscando..." id="btn-load-lol-player" type="button" class="btn btn-primary">Buscar</button>
+				<script type="text/javascript">
+					$(document).ready(function(){
+						$('#btn-load-lol-player').on('click', function() {
+							var name = $('#LolPlayer_name').val(),
+							//platform = $('#btn-platform .btn.active').attr('data-value'),
+							platform = $('#btn-platform').val(),
+							resultPlayers = "",	
+							conteudo = "";	
+							if(name == "" || platform == ""){
+								alert('ops! faltou incluir o nome do invocador e o server.');
+							}else{
+								$.ajax({
+								    url: '/lolplayer/findSummonerBasic', // The URL to the API. You can get this by clicking on "Show CURL example" from an API profile
+								    type: 'POST',
+								    crossDomain: true,
+									data : {
+										LolPlayer : {
+											name : name,
+											server : platform
+										}
+									},
+								    success: function(data) {
+								    	window.location.reload();
+								    }
+								});
+							}
+						});
+					});
+				</script>				
+			<?php endif; ?>
 		</div>
 	</fieldset>
 </div>
-<script type="text/javascript">
-
-	$(document).ready(function(){
-		$('#btn-load-lol-player').on('click', function() {
-			var name = $('#LolPlayer_name').val(),
-			//platform = $('#btn-platform .btn.active').attr('data-value'),
-			platform = $('#btn-platform').val(),
-			resultPlayers = "",	
-			conteudo = "";	
-			if(name == "" || platform == ""){
-				alert('ops! faltou incluir o nome do invocador e o server.');
-			}else{
-				$.ajax({
-				    url: '/lolplayer/findSummonerBasic', // The URL to the API. You can get this by clicking on "Show CURL example" from an API profile
-				    type: 'POST',
-				    crossDomain: true,
-					data : {
-						LolPlayer : {
-							name : name,
-							server : platform
-						}
-					},
-				    success: function(data) {
-				    	window.location.reload();
-				    }
-				});
-			}
-		});
-	});
-</script>
