@@ -32,3 +32,9 @@ ADD COLUMN `honorData` TEXT NULL DEFAULT NULL AFTER `mixData`;
 
 ALTER TABLE `apps.geeklifeclub`.`lol_player` 
 ADD COLUMN `rankedData` TEXT NULL DEFAULT NULL AFTER `honorData`;
+
+
+JSON.parse('{"data":{"totals":[0,51,66,249,80]}}')
+
+
+{     "_": {         "APP_ID": "server_tracked"     },     "success": true,     "requestTime": "2014-03-28T17:27:20-07:00",     "shard": "Brasil:N2M3Y2IwNzA4YmYzODQ0Nzc3N2VmZDE4NjAwMTI1MTlhZTg1YWVkMA",     "player": {         "accountId": 201003886,         "summonerId": 2876377,         "name": "rtancman",         "icon": 12,         "internalName": "rtancman",         "level": 30     },     "data": {         "totals": [             0,             35,             27,             175,             94         ]     } }

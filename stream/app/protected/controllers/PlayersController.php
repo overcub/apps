@@ -153,7 +153,7 @@ class PlayersController extends Controller
 	{
 		if( ($streamer = Players::model()->findByUsername($username)) ){
 			$this->sessionClass = 'glc-streaming';
-			$this->layout='//layouts/default';
+			$this->layout='//layouts/full';
 			$this->adsChannel=$username;
 			$this->setHeaderMetas(array('title'=>"$username | manete.tv",'description'=>$streamer->getExtraData('descriptionStream'),'keyword'=>$username.',manete.tv, stream, geek life club'));
 			$this->render('streaming',array(
