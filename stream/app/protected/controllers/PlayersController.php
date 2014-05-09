@@ -158,7 +158,8 @@ class PlayersController extends Controller
 			$this->setHeaderMetas(array('title'=>"$username | manete.tv",'description'=>$streamer->getExtraData('descriptionStream'),'keyword'=>$username.',manete.tv, stream, geek life club'));
 			$this->render('streaming',array(
 				'model'=>$streamer,
-				'listGame' => $streamer->listGame()
+				'listGame' => $streamer->listGame(),
+				'lolPlayer'=>LolPlayer::model()->findByIdPlayer($streamer->id),
 			));
 		}else{
 			throw new CHttpException(404,'The requested page does not exist.');
