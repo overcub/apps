@@ -109,6 +109,8 @@ return array(
 				'sobre'=>'Site/about',
 				'usuario/editar'=>'Players/edit',
 				'usuario/imagem-capa-upload'=>'Players/ajaxUploadImageCover',
+				'lolplayer/findSummonerBasic'=>'LolPlayer/findSummonerBasic',
+				'lolplayer/updateSummonerBasic'=>'LolPlayer/updateSummonerBasic',
 				'cadastro/'=>'Players/register',
 				//'stream'=>'Players/stream',
 				'stream/<username>'=>'Players/streaming',
@@ -183,6 +185,6 @@ return array(
 	    'salt'=>'g33KL1f3Clu3123',
 	    'mashapeKey'=> array('LOL' =>'MWDMOJlVh625v8o0365WsPn9A3rVmf7J'),
 	    'version'=>'1',
-	    'domain'=>'http://stream.geeklifeclub.com.br/'
+	    'domain'=>'http://manete.tv'
 	),
 );
