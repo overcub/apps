@@ -1,5 +1,7 @@
 	<style type="text/css">
-
+body{
+	overflow: hidden;
+}
 .container-full .man-menu {
     background-color: #262626;
     bottom: 0;
@@ -25,6 +27,7 @@
     padding-right: 10px;
     max-width: 1022px;
     background: none repeat scroll 0 0 #202020;
+    overflow: auto;
 }
 .container-full .man-player {
     height: 478px;
@@ -87,11 +90,36 @@
 					</div>
 					<div class="man-player-profile">
 						<div class="row-fluid">
-							<div class="span6">
-							<img border="0" class="pull-left" src="<?php echo $model->getImageProfile(56) ?>" alt="<?php echo $model->name ?>"/>
-							<p><?php echo $model->username; ?></p>
+							<div class="span8">
+								<?php if($lolPlayer instanceof LolPlayer ) :?>
+								    <table class="table">
+							          <thead>
+							            <tr>
+							              <th><img border="0" class="pull-left" src="<?php echo $model->getImageProfile(56) ?>" alt="<?php echo $model->name ?>"/></th>
+							              <th>Level</th>
+							              <th>Server</th>
+							              <th>Prestativo</th>
+							              <th>Amigável</th>
+							              <th>Trabalho em Equipe</th>
+							              <th>Oponente Honrado</th>
+							            </tr>
+							          </thead>
+							          <tbody>
+							            <tr>
+							              <td><?php echo $lolPlayer->name ?></td>
+							              <td><?php echo $lolPlayer->level ?></td>
+							              <td><?php echo $lolPlayer->server ?></td>
+							              <?php $honorData = CJSON::decode($lolPlayer->honorData) ?>
+							              <td><?php echo $honorData['data']['colaborator'] ?></td>
+							              <td><?php echo $honorData['data']['friendly'] ?></td>
+							              <td><?php echo $honorData['data']['job'] ?></td>
+							              <td><?php echo $honorData['data']['enimy'] ?></td>
+							            </tr>
+							          </tbody>
+							        </table>
+								<?php endif ?>
 							</div>
-							<div class="span6">
+							<div class="span2 pull-right">
 							<?php $this->widget('yii-sharrre.widgets.WSocialShare', array(
 									'htmlOptions' => array('id' => 'social-top-container','class'=>'demo5 pull-left'),
 									'elementId' => 'social-bottom',
