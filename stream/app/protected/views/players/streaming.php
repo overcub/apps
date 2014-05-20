@@ -89,6 +89,10 @@ body{
 	font-size: 14px;
     margin-bottom: 0;
 }
+.nav-tabs .dropdown-toggle .caret {
+	border-top-color: #805da7;
+	border-bottom-color: #805da7;
+}
 	</style>
 	
 		<div class="man-doc">
