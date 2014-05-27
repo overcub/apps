@@ -223,7 +223,7 @@ body{
 							</div>
 						</div>
 					</div>
-					<iframe frameborder="0" scrolling="no" src="http://twitch.tv/rtancman_lol/chat?popout=" class="man-chat-widget"></iframe>
+					<iframe frameborder="0" scrolling="no" src="http://twitch.tv/<?php echo $model->getExtraData('twichtv')?>/chat?popout=" class="man-chat-widget"></iframe>
 				</div>
 			</div>
 		</div>
