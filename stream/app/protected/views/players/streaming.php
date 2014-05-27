@@ -51,6 +51,7 @@ body{
     padding-left: 5px;
     padding-right: 5px;
     padding-top: 10px;
+    min-height: 200px;
 }
 .container-full .man-chat {
     background-color: #262126;
@@ -123,7 +124,7 @@ body{
 										<img border="0" class="pull-left" src="<?php echo $model->getImageProfile(56) ?>" alt="<?php echo $model->name ?>"/>
 									</div>
 									<div class="stream-name">
-										<p class="user"><strong>USUARIO</strong> - Streamando de boa aqui</p>
+										<p class="user"><strong><?php echo $model->name ?></strong></p>
 										<p class="game">League of Legends</p>
 									</div>
 								</div>
@@ -177,7 +178,7 @@ body{
 								<?php endif ?>
 							</div>
 						</div>
-						<div class="row-fluid">
+						<div class="row-fluid hide">
 			<ul class="nav nav-tabs" id="myTab">
               <li class="active"><a data-toggle="tab" href="#home">Meu Perfil</a></li>
               <li class=""><a data-toggle="tab" href="#profile">Todos os Vídeos</a></li>
