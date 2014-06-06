@@ -94,6 +94,21 @@ body{
 	border-top-color: #805da7;
 	border-bottom-color: #805da7;
 }
+
+.streaming-tab-user .nav{
+	margin: 0;
+}
+.streaming-tab-user .tab-content{
+	margin-top: -1px; 
+}
+.streaming-tab-user .tab-pane{
+	background-color: #FFFFFF;
+    border-top: 0;
+    border-color: #DDDDDD #DDDDDD rgba(0, 0, 0, 0);;
+    border-style: solid;
+    border-width: 1px;
+	padding:20px;
+}
 	</style>
 	
 		<div class="man-doc">
@@ -124,7 +139,7 @@ body{
 										<img border="0" class="pull-left" src="<?php echo $model->getImageProfile(56) ?>" alt="<?php echo $model->name ?>"/>
 									</div>
 									<div class="stream-name">
-										<p class="user"><strong><?php echo $model->name ?></strong></p>
+										<p class="user"><strong><?php echo $model->name ?></strong> <?php echo $model->getExtraData('descriptionStream') ?></p>
 										<p class="game">League of Legends</p>
 									</div>
 								</div>
@@ -178,27 +193,19 @@ body{
 								<?php endif ?>
 							</div>
 						</div>
-						<div class="row-fluid hide">
-			<ul class="nav nav-tabs" id="myTab">
-              <li class="active"><a data-toggle="tab" href="#home">Meu Perfil</a></li>
-              <li class=""><a data-toggle="tab" href="#profile">Todos os Vídeos</a></li>
-              <li class="dropdown">
-                <a data-toggle="dropdown" class="dropdown-toggle" href="#">Siga-me <b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                  <li><a href="www.twitter.com">Twitter</a></li>
-                  <li><a href="www.facebook.com">Facebook</a></li>
-                </ul>
-              </li>
-            </ul>
-            <div class="tab-content" id="myTabContent">
-              <div id="home" class="tab-pane fade active in">
-                <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
-              </div>
-              <div id="profile" class="tab-pane fade">
-                <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</p>
-              </div>
-              
-            </div>
+						<div class="row-fluid streaming-tab-user">
+							<ul class="nav nav-tabs" id="myTab">
+								<li class="active"><a data-toggle="tab" href="#profileHome">Bem vindo(a) a stream</a></li>
+								<li class=""><a data-toggle="tab" href="#profileClass">Aulas de LoL</a></li>
+							</ul>
+							<div class="tab-content" id="myTabContent">
+								<div id="profileHome" class="tab-pane fade active in">
+									<?php echo $model->getExtraData('textStream') ?>
+								</div>
+								<div id="profileClass" class="tab-pane fade">
+									<?php echo $model->getExtraData('textClassStream') ?>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>

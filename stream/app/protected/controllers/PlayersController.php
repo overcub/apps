@@ -1,5 +1,6 @@
 <?php
 
+Yii::import('ext.imperavi-redactor-widget.ImperaviRedactorWidget');
 class PlayersController extends Controller
 {
 	/**

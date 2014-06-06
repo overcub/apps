@@ -83,6 +83,62 @@
 	
 	<?php echo $form->textFieldRow($model,'birthdate',array('class'=>'span5','placeholder'=>'yyyy-mm-dd')); ?>
 	
+	
+	<legend>Aba de conteúdo <small>Bem vindo(a) a stream do ..."</small></legend>
+
+	<div class="control-group">
+		<label for="Players_textStream" class="control-label required">Html</label>
+		<div class="controls">
+			<textarea rows="5" id="Players_textStream" name="extra[textStream]" maxlength="500" class="span5" autocomplete="off" placeholder="HTML para aba sobre você..."><?php echo $model->getExtraData('textStream')?></textarea>
+			 <?php 
+			 $this->widget('ImperaviRedactorWidget', array(
+                // You can either use it for model attribute
+                //'id' => "Players_textStream",
+                //'name' => "extra[textStream]",
+                'selector' => '#Players_textStream',
+                // or just for input field
+                //'name' => 'my_input_name',
+
+                // Some options, see http://imperavi.com/redactor/docs/
+                'options' => array(
+                	'class' => 'span8',
+                    'lang' => 'pt_br',
+                    'toolbar' => false,
+                    'iframe' => false,
+                    'css' => 'wym.css',
+                ),
+            ));
+            ?>
+		</div>
+	</div>
+
+	<legend>Aba de conteúdo <small>"Aulas de LoL - ..."</small></legend>
+
+	<div class="control-group">
+		<label for="Players_textClassStream" class="control-label required">Html</label>
+		<div class="controls">
+			<textarea rows="5" id="Players_textClassStream" name="extra[textClassStream]" maxlength="500" class="span5" autocomplete="off" placeholder="HTML para aba de aulas..."><?php echo $model->getExtraData('textClassStream')?></textarea>
+			 <?php $this->widget('ImperaviRedactorWidget', array(
+                // You can either use it for model attribute
+                //'id' => "Players_textStream",
+                //'name' => "extra[textStream]",
+                'selector' => '#Players_textClassStream',
+                // or just for input field
+                //'name' => 'my_input_name',
+
+                // Some options, see http://imperavi.com/redactor/docs/
+                'options' => array(
+                	'class' => 'span8',
+                    'lang' => 'pt_br',
+                    'toolbar' => false,
+                    'iframe' => false,
+                    'css' => 'wym.css',
+                ),
+            ));
+            ?>
+		</div>
+	</div>
+
 	<div class="form-actions">
 		<?php $this->widget('bootstrap.widgets.TbButton', array(
 			'buttonType'=>'submit',
@@ -93,8 +149,19 @@
 </fieldset>
 <?php $this->endWidget(); ?>
 <script type="text/javascript">
-
+$(function()
+        {
+            $('#Players_textStream').redactor({
+                //buttons: ['html', 'bold', 'italic', 'link', 'image'],
+                //buttonsAdd: ['insertArticle']
+            });
+            $('#Players_textClassStream').redactor({
+               // buttons: ['html', 'bold', 'italic'],
+               // linebreaks: true
+            });
+        });
 	$(document).ready(function(){
+		
 		$('#btn-players-form-newpassword').on('click', function() {
 			$('#players-link-newpassword').removeClass('in').addClass('hide');
 			$('#players-form-newpassword').removeClass('hide').addClass('in');

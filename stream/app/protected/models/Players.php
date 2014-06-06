@@ -238,6 +238,12 @@ class Players extends CActiveRecord
 		return $return;
 	}
 	
+	public function getFirstName()
+	{  			
+		$userName = explode(' ',trim($this->name));
+		return $userName[0];
+	}
+
 	public function findByEmail($email)
 	{
 		$dependency = new CDbCacheDependency("SELECT MAX(updateTime) FROM ".$this->tableName()." WHERE email = '".$email."'" );

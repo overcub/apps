@@ -722,6 +722,10 @@ background-color: #e5e5e5 !important;
 		 margin-bottom: 0;
 	}
 
+	.glc-user-edit #glc-doc .redactor_span5.redactor_editor{
+		border: 1px solid #CCCCCC;
+	}
+
 #glc-doc #footer .about {
 	font-size: 12px;
 	color: #9FA1A6;
