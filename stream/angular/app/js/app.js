@@ -8,6 +8,7 @@ angular.module('myApp', [
   'ngSanitize',
   'ui.bootstrap',
   'duScroll',
+  'angular-loading-bar',
   'myApp.filters',
   'myApp.services',
   'myApp.factories',
