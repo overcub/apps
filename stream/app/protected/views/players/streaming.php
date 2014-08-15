@@ -196,14 +196,10 @@ body{
 						<div class="row-fluid streaming-tab-user">
 							<ul class="nav nav-tabs" id="myTab">
 								<li class="active"><a data-toggle="tab" href="#profileHome">Bem vindo(a) a stream</a></li>
-								<li class=""><a data-toggle="tab" href="#profileClass">Aulas de LoL</a></li>
 							</ul>
 							<div class="tab-content" id="myTabContent">
 								<div id="profileHome" class="tab-pane fade active in">
 									<?php echo $model->getExtraData('textStream') ?>
-								</div>
-								<div id="profileClass" class="tab-pane fade">
-									<?php echo $model->getExtraData('textClassStream') ?>
 								</div>
 							</div>
 						</div>
