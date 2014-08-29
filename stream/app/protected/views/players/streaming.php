@@ -19,17 +19,18 @@ body{
     white-space: nowrap;
     width: 60px;
     z-index: 900;
+    display: none;
 }
 
 .container-full .man-view {
     top: 0;
     bottom: 0;
-    left: 60px;
-    right: 338px;
+    left: 0;
+    right: 0;
     position: absolute;
     padding-left: 10px;
     padding-right: 10px;
-    max-width: 1022px;
+    max-width: 1070px;
     background: none repeat scroll 0 0 #202020;
     overflow: auto;
 }
