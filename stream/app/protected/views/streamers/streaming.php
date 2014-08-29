@@ -41,7 +41,7 @@
 		<div class="row-fluid">
 			<div class="span8">
 				<object type="application/x-shockwave-flash" height="500" width="100%" id="live_embed_player_flash" data="http://www.twitch.tv/widgets/live_embed_player.swf?channel=<?php echo $model->nickname?>" bgcolor="#000000">
-					<param name="allowFullScreen" value="false" />
+					<param name="allowFullScreen" value="true" />
 					<param name="allowScriptAccess" value="always" />
 					<param name="allowNetworking" value="all" />
 					<param name="movie" value="http://www.twitch.tv/widgets/live_embed_player.swf" />

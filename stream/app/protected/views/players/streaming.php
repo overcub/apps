@@ -2,6 +2,10 @@
 body{
 	overflow: hidden;
 }
+.container-full {
+    max-width: 1400px;
+    margin: 0 auto;
+}
 .container-full .man-menu {
     background-color: #262626;
     bottom: 0;
@@ -10,7 +14,7 @@ body{
     color: #F7F7F7;
     font-weight: 300;
     overflow: hidden;
-    position: fixed;
+    position: absolute;
     transition: width 0.3s ease 0s;
     white-space: nowrap;
     width: 60px;
@@ -68,9 +72,8 @@ body{
     width: 338px;
     z-index: 900;
 }
-.social-bottom .button.facebook {
-	position: relative;
-	top: -4px;
+#social-bottom.sharrre .facebook{
+	overflow: hidden;
 }
 .streamer-data {
 }
@@ -118,7 +121,7 @@ body{
 					<div class="man-player">
 						<?php if($model->getExtraData('twichtv')): ?>
 							<object type="application/x-shockwave-flash" height="100%" width="100%" id="live_embed_player_flash" data="http://www.twitch.tv/widgets/live_embed_player.swf?channel=<?php echo $model->getExtraData('twichtv')?>" bgcolor="#000000">
-								<param name="allowFullScreen" value="false" />
+								<param name="allowFullScreen" value="true" />
 								<param name="allowScriptAccess" value="always" />
 								<param name="allowNetworking" value="all" />
 								<param name="movie" value="http://www.twitch.tv/widgets/live_embed_player.swf" />
