@@ -234,3 +234,56 @@ body{
 				</div>
 			</div>
 		</div>
+
+<div id="glc-feedback-stream">
+	<button id="glc-btn-close-feedback-stream" aria-hidden="true" class="close" type="button">×</button>
+	<h4>O manete.tv esta em fases de teste</h4>
+	<p>Por este motivo gostariamos de ouvir você gamer! Mande um email para <a href="mailto:geeklifeclub@gmail.com">geeklifeclub@gmail.com</a> e <a target="_blank" href="https://docs.google.com/forms/d/1mBfHUmlcjtdr50J_cdmwif51ITJ0fS84AVcX2rPYBNc/viewform?usp=send_form">clique aqui para responder a nossa pesquisa</a> é super rápido ;)</p>
+</div>
+<script>
+  $("#glc-feedback-stream").ready(function() {
+  	$( "#glc-btn-close-feedback-stream" ).on( "click", function(){
+  		$('#glc-feedback-stream').removeClass('up');
+	});
+    setTimeout ( " $('#glc-feedback-stream').addClass('up'); ",3000 );
+  });
+</script>
+<style type="text/css">
+#glc-feedback-stream { 
+	background-color: #fff;
+	border:1px solid;
+	border-left-color:#000;
+	border-top-color:#000;
+	border-right-color:#000;
+	border-bottom-color:#000;
+	-webkit-box-shadow:2px 2px 8px 0 #ececec;
+	-moz-box-shadow:2px 2px 8px 0 #ececec;
+	-o-box-shadow:2px 2px 8px 0 #ececec;
+	box-shadow:2px 2px 8px 0 #ececec;
+	padding:20px 25px;
+	border-radius:10px 10px 0 0;
+	-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-o-box-sizing:border-box;box-sizing:border-box
+}
+
+#glc-feedback-stream p {
+  margin-top: 10px;
+}
+.glc-streaming-content{
+	z-index: 50;
+}
+#glc-feedback-stream {
+	margin-left: 20px;
+	max-width: 800px;
+	position: fixed;
+	bottom: -162px;
+	transition:all 2s ease-in-out;
+		-webkit-transition:all 2s ease-in-out;
+			-moz-transition:all 2s ease-in-out;
+				-o-transition:all 2s ease-in-out;
+	z-index: 1000;
+} 
+
+#glc-feedback-stream.up {
+	bottom: 0;
+}
+</style>
