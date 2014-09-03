@@ -1,4 +1,4 @@
-<div id="page-top">
+<div id="inicio">
     <!-- Navigation -->
     <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
         <div class="container">
@@ -16,13 +16,13 @@
                 <ul class="nav navbar-nav">
                     <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
                     <li>
-                        <a class="page-scroll" href="#page-top">início</a>
+                        <a class="page-scroll" href="#inicio">início</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#stream">stream</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#contact">Contato</a>
+                        <a class="page-scroll" href="#sobre">Sobre</a>
                     </li>
                 </ul>
             </div>
@@ -105,39 +105,32 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="container content-section">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2">
-                <?php $this->widget('yii-sharrre.widgets.WSocialShare', array(
-                        'htmlOptions' => array('id' => 'social-top-container','class'=>'demo5 pull-left'),
-                        'elementId' => 'social-bottom',
-                        'dataUrl' => $this->createAbsoluteUrl('/stream/'.$model->username),
-                        'socials' => array(
-                        'facebook' => true,
-                        'googlePlus' => true,
-                        'twitter' => true,
-                        'digg' => false,
-                        'delicious' => false,
-                        'stumbleupon' => false,
-                        'linkedin' => false,
-                        'pinterest' => false
-                    ),
-                )); ?>
-                <h2>Contact Start Bootstrap</h2>
-                <p>Feel free to email us to provide some feedback on our templates, give us suggestions for new templates and themes, or to just say hello!</p>
-                <p><a href="mailto:feedback@startbootstrap.com">feedback@startbootstrap.com</a>
-                </p>
-                <ul class="list-inline banner-social-buttons">
-                    <li>
-                        <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
-                    </li>
-                    <li>
-                        <a href="https://plus.google.com/+Startbootstrap/posts" class="btn btn-default btn-lg"><i class="fa fa-google-plus fa-fw"></i> <span class="network-name">Google+</span></a>
-                    </li>
-                </ul>
+    <section id="sobre" class="text">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Sobre</h2>
+                    <div class="row">
+                        <?php $this->widget('yii-sharrre.widgets.WSocialShare', array(
+                                'htmlOptions' => array('id' => 'social-top-container','class'=>'demo5 pull-left'),
+                                'elementId' => 'social-bottom',
+                                'dataUrl' => $this->createAbsoluteUrl('/stream/'.$model->username),
+                                'socials' => array(
+                                'facebook' => true,
+                                'googlePlus' => true,
+                                'twitter' => true,
+                                'digg' => false,
+                                'delicious' => false,
+                                'stumbleupon' => false,
+                                'linkedin' => false,
+                                'pinterest' => false
+                            ),
+                        )); ?>
+                    </div>
+                    <div class="row">
+                        <?php echo $model->getExtraData('textStream') ?>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

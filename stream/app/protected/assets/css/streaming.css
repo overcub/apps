@@ -252,44 +252,28 @@ a:focus {
     margin: 100px 0;
 }
 
-.download-section {
-    width: 100%;
-    padding: 50px 0;
-    color: #fff;
-    background: url(../img/downloads-bg.jpg) no-repeat center center scroll;
-    background-color: #000;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
+#sobre{
+	color: #000;
+	background-color: #FFFFFF;
+    border-top: 0;
+    border-color: #DDDDDD #DDDDDD rgba(0, 0, 0, 0);;
+    border-style: solid;
+    border-width: 1px;
+	padding:20px;
 }
 
-@media(max-width:1199px) {
-    ul.banner-social-buttons {
-        margin-top: 15px;
-    }
+footer.glc-footer {
+    background-color: #d9d9d9;
+    border-top-color: #b9b9b9;
+    border-top-style: solid;
+    border-top-width: 1px;
+    color: #ffffff;
+    padding-bottom: 20px;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 40px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
 }
-
-footer {
-    padding: 50px 0;
-}
-
-footer p {
-    margin: 0;
-}
-
-	footer.glc-footer {
-	    background-color: #d9d9d9;
-	    border-top-color: #b9b9b9;
-	    border-top-style: solid;
-	    border-top-width: 1px;
-	    color: #ffffff;
-	    padding-bottom: 20px;
-	    padding-left: 0;
-	    padding-right: 0;
-	    padding-top: 40px;
-	    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
-	}
 
 ::-moz-selection {
     text-shadow: none;
