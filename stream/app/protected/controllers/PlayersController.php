@@ -153,6 +153,13 @@ class PlayersController extends Controller
 	public function actionStreaming($username)
 	{
 		if( ($streamer = Players::model()->findByUsername($username)) ){
+			$cs = Yii::app()->getClientScript();
+			$cs->registerScriptFile('https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js',CClientScript::POS_END);
+			$cs->registerScriptFile($this->assetsBase.'/js/grayscale.js',CClientScript::POS_END);
+			$cs->registerCssFile('https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css');
+			$cs->registerCssFile($this->assetsBase.'/css/streaming.css');
+
+			Yii::app()->theme='classic';
 			$this->sessionClass = 'glc-streaming';
 			$this->layout='//layouts/full';
 			$this->adsChannel=$username;
