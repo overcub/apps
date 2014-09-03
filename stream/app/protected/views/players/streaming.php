@@ -37,6 +37,9 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
+                        <div class="avatar">
+                            <img border="0" class="pull-left" src="<?php echo $model->getImageProfile(56) ?>" alt="<?php echo $model->name ?>"/>
+                        </div>
                         <h1 class="brand-heading"><?php echo $model->name ?></h1>
                         <p class="intro-text"><?php echo $model->getExtraData('descriptionStream') ?></p>
                         <a href="#stream" class="btn btn-circle page-scroll">
@@ -49,54 +52,60 @@
     </header>
 
     <!-- About Section -->
-    <section id="stream" class="container content-section text-center">
+    <section id="stream" class="content-section">
         <div class="row">
-            <div class="col-md-8">
-                <?php if($model->getExtraData('twichtv')): ?>
-                    <object type="application/x-shockwave-flash" height="100%" width="100%" id="live_embed_player_flash" data="http://www.twitch.tv/widgets/live_embed_player.swf?channel=<?php echo $model->getExtraData('twichtv')?>" bgcolor="#000000">
-                        <param name="allowFullScreen" value="true" />
-                        <param name="allowScriptAccess" value="always" />
-                        <param name="allowNetworking" value="all" />
-                        <param name="movie" value="http://www.twitch.tv/widgets/live_embed_player.swf" />
-                        <param name="flashvars" value="hostname=www.twitch.tv&channel=<?php echo $model->getExtraData('twichtv')?>&auto_play=true&start_volume=25" />
-                    </object>
-                <?php else: ?>
-                    <div class="alert alert-block">
-                        <h4>Ops!</h4>
-                        O usuário <?php echo $model->username; ?> ainda não informou o seu canal de stream.
-                    </div>
-                <?php endif;?>
+            <div class="col-md-9">
+                <div class="player">
+                    <?php if($model->getExtraData('twichtv')): ?>
+                        <object type="application/x-shockwave-flash" height="100%" width="100%" id="live_embed_player_flash" data="http://www.twitch.tv/widgets/live_embed_player.swf?channel=<?php echo $model->getExtraData('twichtv')?>" bgcolor="#000000">
+                            <param name="allowFullScreen" value="true" />
+                            <param name="allowScriptAccess" value="always" />
+                            <param name="allowNetworking" value="all" />
+                            <param name="movie" value="http://www.twitch.tv/widgets/live_embed_player.swf" />
+                            <param name="flashvars" value="hostname=www.twitch.tv&channel=<?php echo $model->getExtraData('twichtv')?>&auto_play=true&start_volume=25" />
+                        </object>
+                    <?php else: ?>
+                        <div class="alert alert-block">
+                            <h4>Ops!</h4>
+                            O usuário <?php echo $model->username; ?> ainda não informou o seu canal de stream.
+                        </div>
+                    <?php endif;?>
+                </div>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-3">
                 <div class="row">
-                    <div id="glc-pub-square-refresh" class="glc-publicidade glc-publicidade-margin-bottom">
-                        <div class="bl-pub-square">
-                            <button aria-hidden="true" class="close glc-btn-close-pub" type="button">×</button>
-                            <p class="glc-pub-info">publicidade</p>
-                            <div id='div-gpt-ad-1379991864403-1'>
-                                <script type='text/javascript'>
-                                googletag.cmd.push(function() {
-                                var slot1 = googletag.defineSlot('/137203934/square_300x250', [300, 250], 'div-gpt-ad-1379991864403-1').addService(googletag.pubads());
-                                googletag.display("div-gpt-ad-1379991864403-1");
-                                setInterval(function(){
-                                    $('#glc-pub-square-refresh').removeClass('hide');
-                                    googletag.pubads().refresh([slot1]);
-                                }, 30000);
-                                });
-                                </script>
+                    <div class="widget">
+                        <div id="glc-pub-square-refresh" class="glc-publicidade glc-publicidade-margin-bottom">
+                            <div class="bl-pub-square">
+                                <button aria-hidden="true" class="close glc-btn-close-pub" type="button">×</button>
+                                <p class="glc-pub-info">publicidade</p>
+                                <div id='div-gpt-ad-1379991864403-1'>
+                                    <script type='text/javascript'>
+                                    googletag.cmd.push(function() {
+                                    var slot1 = googletag.defineSlot('/137203934/square_300x250', [300, 250], 'div-gpt-ad-1379991864403-1').addService(googletag.pubads());
+                                    googletag.display("div-gpt-ad-1379991864403-1");
+                                    setInterval(function(){
+                                        $('#glc-pub-square-refresh').removeClass('hide');
+                                        googletag.pubads().refresh([slot1]);
+                                    }, 30000);
+                                    });
+                                    </script>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <iframe frameborder="0" scrolling="no" src="http://twitch.tv/<?php echo $model->getExtraData('twichtv')?>/chat?popout=" class="man-chat-widget"></iframe>
+                    <div class="chat">
+                        <iframe width="100%" height="100%" frameborder="0" scrolling="no" src="http://twitch.tv/<?php echo $model->getExtraData('twichtv')?>/chat?popout=" class="man-chat-widget"></iframe>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="container content-section text-center">
+    <section id="contact" class="container content-section">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
                 <?php $this->widget('yii-sharrre.widgets.WSocialShare', array(
