@@ -52,8 +52,8 @@
     </header>
 
     <!-- About Section -->
-    <section id="stream" class="content-section">
-        <div class="row">
+    <section id="stream">
+        <div class="stream-container">
             <div class="col-md-9">
                 <div class="player">
                     <?php if($model->getExtraData('twichtv')): ?>
@@ -73,32 +73,26 @@
                 </div>
             </div>
             <div class="col-md-3">
-                <div class="row">
-                    <div class="widget">
-                        <div id="glc-pub-square-refresh" class="glc-publicidade glc-publicidade-margin-bottom">
-                            <div class="bl-pub-square">
-                                <button aria-hidden="true" class="close glc-btn-close-pub" type="button">×</button>
-                                <p class="glc-pub-info">publicidade</p>
-                                <div id='div-gpt-ad-1379991864403-1'>
-                                    <script type='text/javascript'>
-                                    googletag.cmd.push(function() {
-                                    var slot1 = googletag.defineSlot('/137203934/square_300x250', [300, 250], 'div-gpt-ad-1379991864403-1').addService(googletag.pubads());
-                                    googletag.display("div-gpt-ad-1379991864403-1");
-                                    setInterval(function(){
-                                        $('#glc-pub-square-refresh').removeClass('hide');
-                                        googletag.pubads().refresh([slot1]);
-                                    }, 30000);
-                                    });
-                                    </script>
-                                </div>
+                <div class="widget">
+                    <div id="glc-pub-square-refresh" class="glc-publicidade glc-publicidade-margin-bottom">
+                        <div class="bl-pub-square">
+                            <button aria-hidden="true" class="close glc-btn-close-pub" type="button">×</button>
+                            <p class="glc-pub-info">publicidade</p>
+                            <div id='div-gpt-ad-1379991864403-1'>
+                                <script type='text/javascript'>
+                                googletag.cmd.push(function() {
+                                var slot1 = googletag.defineSlot('/137203934/square_300x250', [300, 250], 'div-gpt-ad-1379991864403-1').addService(googletag.pubads());
+                                googletag.display("div-gpt-ad-1379991864403-1");
+                                setInterval(function(){
+                                    $('#glc-pub-square-refresh').removeClass('hide');
+                                    googletag.pubads().refresh([slot1]);
+                                }, 30000);
+                                });
+                                </script>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="chat">
-                        <iframe width="100%" height="100%" frameborder="0" scrolling="no" src="http://twitch.tv/<?php echo $model->getExtraData('twichtv')?>/chat?popout=" class="man-chat-widget"></iframe>
-                    </div>
+                    <iframe class="chat" width="100%" frameborder="0" scrolling="no" src="http://twitch.tv/<?php echo $model->getExtraData('twichtv')?>/chat?popout=" class="man-chat-widget"></iframe>
                 </div>
             </div>
         </div>

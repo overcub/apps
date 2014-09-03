@@ -237,20 +237,33 @@ a:focus {
 }
 
 #stream{
+	margin: 100px 0;
 	padding: 80px 30px;
-	height: 720px;
+	height: 720px
 }
-	#stream .widget{
-		height: 30%;
+	#stream .stream-container{
+		max-width: 1420px;
+		height: auto;
+	}
+
+	#stream .stream-container .player,
+	#stream .stream-container .widget{
+		height: 620px;
+	}
+
+	#stream .stream-container .widget .bl-pub-square{
+		background-color: #262111;
+	    height: 40%;
+	    min-height: 300px;
 	}	
 
 	#stream .chat{
-		height: 70%;
+		bottom: 5px;
+	    height: 50%;
+	    min-height: 300px;
+	    position: absolute;
+	    width: 100%;
 	}
-
-.content-section {
-    margin: 100px 0;
-}
 
 #sobre{
 	color: #000;
