@@ -159,7 +159,6 @@ class PlayersController extends Controller
 			$cs->registerCssFile('https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css');
 			$cs->registerCssFile($this->assetsBase.'/css/streaming.css');
 
-			Yii::app()->theme='classic';
 			$this->sessionClass = 'glc-streaming';
 			$this->layout='//layouts/full';
 			$this->adsChannel=$username;

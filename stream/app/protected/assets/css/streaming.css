@@ -17,6 +17,10 @@ html {
     height: 100%;
 }
 
+#inicio {
+    background-color: #fff;
+}
+
 .avatar {
     position: relative;
     display: inline-block;
@@ -133,7 +137,7 @@ a:focus {
 
     .top-nav-collapse {
         padding: 0;
-        background-color: #000;
+        background-color: #fafafa;
     }
 
     .navbar-custom.top-nav-collapse {
@@ -220,11 +224,11 @@ a:focus {
     -webkit-transition: background .3s ease-in-out;
     -moz-transition: background .3s ease-in-out;
     transition: background .3s ease-in-out;
+    line-height: 26px;
 }
     .btn-circle .glyphicon.glyphicon-facetime-video {
         font-size: 25px;
-        margin-left: -3px;
-        margin-top: 3px;
+        margin-left: -4px;
     }
 
 .btn-circle:hover,
@@ -288,14 +292,32 @@ a:focus {
 
 #stream{
 	padding: 0 30px;
-	height: 720px;
+    height: 720px;
+    margin-top: 40px;
+
 }
-	#stream .widget{
-		height: 30%;
+	#stream .stream-container{
+		max-width: 1420px;
+		height: auto;
+	}
+
+	#stream .stream-container .player,
+	#stream .stream-container .widget{
+		height: 620px;
+	}
+
+	#stream .stream-container .widget .bl-pub-square{
+		background-color: #262111;
+	    height: 40%;
+	    min-height: 300px;
 	}	
 
 	#stream .chat{
-		height: 70%;
+		bottom: 5px;
+	    height: 50%;
+	    min-height: 300px;
+	    position: absolute;
+	    width: 100%;
 	}
 
 .content-section {
