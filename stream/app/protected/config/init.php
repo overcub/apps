@@ -3,7 +3,7 @@
 DEFINE('AMBIENT_AIR',1);
 DEFINE('AMBIENT_LOCAL',2);
 $CONFIG = array();
-$ambient = AMBIENT_LOCAL;
+$ambient = AMBIENT_AIR;
 $localHostDB = '192.168.1.101';
 switch($ambient){
     case AMBIENT_AIR:
