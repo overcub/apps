@@ -24,6 +24,11 @@
                     <li>
                         <a class="page-scroll" href="#sobre">Sobre</a>
                     </li>
+                    <?php if( !Yii::app()->user->isGuest ): ?>
+                        <li>
+                            <a href="/usuario/editar"><i class="icon-cog"></i> Editar</a>
+                        </li>
+                    <?php endif; ?>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
