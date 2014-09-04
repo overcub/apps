@@ -158,17 +158,28 @@ a:focus {
 		bottom: 0;
 		right: 0;
 		position: absolute;
+		background: url(/images/style/default/slide-lol-01.jpg) no-repeat top center scroll;
 		z-index: -1;
 		-webkit-background-size: cover;
 		    -moz-background-size: cover;
 		    background-size: cover;
 		    -o-background-size: cover;
 	}
-		.intro::after {
-			background: url(/images/style/default/slide-lol-01.jpg) no-repeat top center scroll;
-		}
 		.glc-streaming.glc-streaming-Ayel .intro::after {
+			height: 70%;
+			content: "";
+			opacity: 0.4;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			position: absolute;
 			background: url(/images/style/default/ayel/zed-bladestorm.jpg) no-repeat top center scroll;
+			z-index: -1;
+			-webkit-background-size: cover;
+			    -moz-background-size: cover;
+			    background-size: cover;
+			    -o-background-size: cover;
 		}
 	.intro .intro-body {
 		padding-top: 28px;
