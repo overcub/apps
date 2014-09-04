@@ -42,6 +42,23 @@
                         </div>
                         <h1 class="brand-heading"><?php echo $model->name ?></h1>
                         <p class="intro-text"><?php echo $model->getExtraData('descriptionStream') ?></p>
+                        <div class="social">
+                            <?php $this->widget('yii-sharrre.widgets.WSocialShare', array(
+                                    'htmlOptions' => array('id' => 'social-top-container','class'=>'demo5'),
+                                    'elementId' => 'social-top',
+                                    'dataUrl' => $this->createAbsoluteUrl('/stream/'.$model->username),
+                                    'socials' => array(
+                                    'facebook' => true,
+                                    'googlePlus' => true,
+                                    'twitter' => true,
+                                    'digg' => false,
+                                    'delicious' => false,
+                                    'stumbleupon' => false,
+                                    'linkedin' => false,
+                                    'pinterest' => false
+                                ),
+                            )); ?>
+                        </div>
                         <a href="#stream" class="btn btn-circle page-scroll">
                             <span class="glyphicon glyphicon-facetime-video"></span>
                         </a>
@@ -51,6 +68,10 @@
         </div>
     </header>
 
+    <section id="sponsorship">
+        <div class="container">
+        </div>
+    </section>
     <!-- About Section -->
     <section id="stream">
         <div class="stream-container">
@@ -74,6 +95,7 @@
             </div>
             <div class="col-md-3">
                 <div class="widget">
+                    <?php /*
                     <div id="glc-pub-square-refresh" class="glc-publicidade glc-publicidade-margin-bottom">
                         <div class="bl-pub-square">
                             <button aria-hidden="true" class="close glc-btn-close-pub" type="button">×</button>
@@ -92,6 +114,7 @@
                             </div>
                         </div>
                     </div>
+                    */?>
                     <iframe class="chat" width="100%" frameborder="0" scrolling="no" src="http://twitch.tv/<?php echo $model->getExtraData('twichtv')?>/chat?popout=" class="man-chat-widget"></iframe>
                 </div>
             </div>
@@ -102,28 +125,30 @@
     <section id="sobre" class="text">
         <div class="container">
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-8">
                     <h2>Sobre</h2>
-                    <div class="row">
-                        <?php $this->widget('yii-sharrre.widgets.WSocialShare', array(
-                                'htmlOptions' => array('id' => 'social-top-container','class'=>'demo5 pull-left'),
-                                'elementId' => 'social-bottom',
-                                'dataUrl' => $this->createAbsoluteUrl('/stream/'.$model->username),
-                                'socials' => array(
-                                'facebook' => true,
-                                'googlePlus' => true,
-                                'twitter' => true,
-                                'digg' => false,
-                                'delicious' => false,
-                                'stumbleupon' => false,
-                                'linkedin' => false,
-                                'pinterest' => false
-                            ),
-                        )); ?>
-                    </div>
-                    <div class="row">
-                        <?php echo $model->getExtraData('textStream') ?>
-                    </div>
+                </div>
+                <div class="col-md-4">
+                    <?php $this->widget('yii-sharrre.widgets.WSocialShare', array(
+                            'htmlOptions' => array('id' => 'social-bottom-container','class'=>'demo5 pull-left'),
+                            'elementId' => 'social-bottom',
+                            'dataUrl' => $this->createAbsoluteUrl('/stream/'.$model->username),
+                            'socials' => array(
+                            'facebook' => true,
+                            'googlePlus' => true,
+                            'twitter' => true,
+                            'digg' => false,
+                            'delicious' => false,
+                            'stumbleupon' => false,
+                            'linkedin' => false,
+                            'pinterest' => false
+                        ),
+                    )); ?>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <?php echo $model->getExtraData('textStream') ?>
                 </div>
             </div>
         </div>
@@ -141,4 +166,10 @@
             </p>
         </div>  
     </footer>
+
+    <div id="glc-feedback-stream">
+        <button id="glc-btn-close-feedback-stream" aria-hidden="true" class="close" type="button">×</button>
+        <h4>O manete.tv esta em fases de teste</h4>
+        <p>Por este motivo gostariamos de ouvir você gamer! Mande um email para <a href="mailto:geeklifeclub@gmail.com">geeklifeclub@gmail.com</a> e <a target="_blank" href="https://docs.google.com/forms/d/1mBfHUmlcjtdr50J_cdmwif51ITJ0fS84AVcX2rPYBNc/viewform?usp=send_form">clique aqui para responder a nossa pesquisa</a> é super rápido ;)</p>
+    </div>
 </div>

@@ -158,8 +158,7 @@ class PlayersController extends Controller
 			$cs->registerScriptFile($this->assetsBase.'/js/grayscale.js',CClientScript::POS_END);
 			$cs->registerCssFile('https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css');
 			$cs->registerCssFile($this->assetsBase.'/css/streaming.css');
-
-			$this->sessionClass = 'glc-streaming';
+			$this->sessionClass = 'glc-streaming glc-streaming-' . $username;
 			$this->layout='//layouts/full';
 			$this->adsChannel=$username;
 			$this->setHeaderMetas(array('title'=>"$username | manete.tv",'description'=>$streamer->getExtraData('descriptionStream'),'keyword'=>$username.',manete.tv, stream, geek life club'));

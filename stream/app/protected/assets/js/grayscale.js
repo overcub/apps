@@ -16,8 +16,12 @@ $(window).scroll(function() {
 // jQuery for page scrolling feature - requires jQuery Easing plugin
 $(function() {
     $('a.page-scroll').bind('click', function(event) {
-        var $anchor = $(this);
-        $('html, body').animate({scrollTop: $($anchor.attr('href')).offset().top}, 1000);
+        $(this).attr('disabled','disabled');
+        var anchor = $(this);
+        $('html, body').animate({scrollTop: $(anchor.attr('href')).offset().top}, 1000);
+        setTimeout(function(){
+            $(anchor).removeAttr('disabled');
+        }, 2000);
     });
 });
 
@@ -26,4 +30,11 @@ $(document).ready(function(){
 	if( ancora ){
 	    $('html, body').animate({scrollTop: $("#"+ancora).offset().top}, 1000);
 	}
+});
+
+$("#glc-feedback-stream").ready(function() {
+    $( "#glc-btn-close-feedback-stream" ).on( "click", function(){
+        $('#glc-feedback-stream').removeClass('up');
+    });
+    setTimeout ( " $('#glc-feedback-stream').addClass('up'); ",3000 );
 });
